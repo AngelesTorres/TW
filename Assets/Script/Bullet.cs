@@ -8,7 +8,8 @@ using Fusion.Addons.Physics;
 public class Bullet : NetworkBehaviour
 {
     [SerializeField] private float _initialForce;
-    [SerializeField] private float _lifeTime;
+    [SerializeField] private float _speed = 10f;
+    [SerializeField] private float _lifeTime = 1.8f;
     [SerializeField] private int _damage;
 
     private TickTimer _lifeTimer;

@@ -5,8 +5,8 @@ using Fusion.Addons.Physics;
 
 public class Player : NetworkBehaviour
 {
-    [SerializeField] private float _speed;
-    [SerializeField] private int _maxLife;
+    [SerializeField] private float _speed = 5f;
+    [SerializeField] private int _maxLife = 100;
     [SerializeField] private int _currentLife;
 
     private float _horizontalInput;
