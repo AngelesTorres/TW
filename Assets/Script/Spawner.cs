@@ -13,7 +13,7 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
     {
         var playersCount = Runner.SessionInfo.PlayerCount;
 
-        if (_initialized && playersCount >= 2)
+        if (_initialized && playersCount >= 1)
         {
             CreatePlayer(0);
             return;
@@ -21,7 +21,7 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
 
         if (player == Runner.LocalPlayer)
         {
-            if (playersCount < 2)
+            if (playersCount < 1)
                 _initialized = true;
             else
             {

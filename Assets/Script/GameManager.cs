@@ -18,7 +18,7 @@ public class GameManager : NetworkBehaviour
     {
         var playerRef = player.Object.StateAuthority;
 
-        if (_players.Contains(playerRef))
+        if(_players.Contains(playerRef))
             return;
 
         _players.Add(playerRef);
@@ -42,7 +42,6 @@ public class GameManager : NetworkBehaviour
             RPC_Win(_players[0]);
     }
 
-    //[RpcTarget] El llamado del RPC va a ir dirigido a ese jugador
     [Rpc]
     void RPC_Win([RpcTarget] PlayerRef player)
     {

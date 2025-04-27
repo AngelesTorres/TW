@@ -7,9 +7,10 @@ public class Player : NetworkBehaviour
 {
     [SerializeField] private float _speed = 5f;
     [SerializeField] private int _maxLife = 100;
-    [SerializeField] private int _currentLife;
+    private int _currentLife;
 
     private float _horizontalInput;
+    //private float _verticalInput;
 
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _bulletSpawnerTransform;
@@ -41,6 +42,7 @@ public class Player : NetworkBehaviour
             return;
 
         _horizontalInput = Input.GetAxis("Horizontal");
+        //_verticalInput = Input.GetAxis("Vertical");
 
         if (Input.GetKeyDown(KeyCode.Space))
             _isShootingPressed = true;
@@ -86,6 +88,16 @@ public class Player : NetworkBehaviour
         }
     }
 
+    /*
+    void Rotation()
+    {
+        float turn = Input.GetAxis("Horizontal") * turnSpeed;
+
+        Quaternion turnRotation = Quaternion.Euler(0f, turn * Time.fixedDeltaTime, 0f);
+
+        _rb.MoveRotation(rb.rotation * turnRotation);
+    }
+    */
     void SpawnShoot()
     {
         Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation);
