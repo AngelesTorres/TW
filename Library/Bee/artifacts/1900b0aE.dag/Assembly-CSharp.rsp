@@ -378,7 +378,9 @@
 "Assets/Script/nucleo.cs"
 "Assets/Script/Player.cs"
 "Assets/Script/PlayerView.cs"
-"Assets/Script/Spawner.cs"
+"Assets/Script/Spawner/Spawner.cs"
+"Assets/Script/Spawner/TowerSpawner.cs"
+"Assets/Script/Spawner/WallsSpawner.cs"
 "Assets/Script/tank.cs"
 "Assets/Script/torreta.cs"
 -langversion:9.0

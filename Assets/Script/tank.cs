@@ -85,13 +85,13 @@ public class tank : MonoBehaviour
 
     void FixedUpdate()
     {
-        float move = Input.GetAxis("Vertical") * moveSpeed;
+        //float move = Input.GetAxis("Vertical") * moveSpeed;
         float turn = Input.GetAxis("Horizontal") * turnSpeed;
 
-        Vector3 moveDirection = transform.forward * move * Time.fixedDeltaTime;
+        //Vector3 moveDirection = transform.forward * move * Time.fixedDeltaTime;
         Quaternion turnRotation = Quaternion.Euler(0f, turn * Time.fixedDeltaTime, 0f);
 
-        rb.MovePosition(rb.position + moveDirection);
+        //rb.MovePosition(rb.position + moveDirection);
         rb.MoveRotation(rb.rotation * turnRotation);
     }
 

@@ -18,7 +18,7 @@ public class PlayerView : NetworkBehaviour
 
         p.OnShoot += TriggerShootParticles;
 
-        //p.OnMove += MoveAnimation;
+        p.OnMove += MoveAnimation;
     }
 
     private void TriggerShootParticles()

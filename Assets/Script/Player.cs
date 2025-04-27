@@ -5,12 +5,13 @@ using Fusion.Addons.Physics;
 
 public class Player : NetworkBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _speed = 20f;
+    [SerializeField] private float _turnSspeed = 150f;
     [SerializeField] private int _maxLife = 100;
-    private int _currentLife;
+    [SerializeField]  private int _currentLife;
 
     private float _horizontalInput;
-    //private float _verticalInput;
+    private float _verticalInput;
 
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _bulletSpawnerTransform;
@@ -42,7 +43,7 @@ public class Player : NetworkBehaviour
             return;
 
         _horizontalInput = Input.GetAxis("Horizontal");
-        //_verticalInput = Input.GetAxis("Vertical");
+        _verticalInput = Input.GetAxis("Vertical");
 
         if (Input.GetKeyDown(KeyCode.Space))
             _isShootingPressed = true;
@@ -50,7 +51,8 @@ public class Player : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        Movement(_horizontalInput);
+        Movement(_verticalInput);
+        Rotation(_horizontalInput);
 
         if (_isShootingPressed)
         {
@@ -63,9 +65,7 @@ public class Player : NetworkBehaviour
     {
         if (xAxis != 0)
         {
-            transform.forward = Vector3.right * Mathf.Sign(xAxis);
-
-            _rb.Rigidbody.velocity += Vector3.right * (xAxis * _speed * Runner.DeltaTime);
+            _rb.Rigidbody.velocity += transform.forward * (xAxis * _speed * Runner.DeltaTime);
 
             if (Mathf.Abs(_rb.Rigidbody.velocity.z) > _speed)
             {
@@ -87,17 +87,16 @@ public class Player : NetworkBehaviour
             OnMove(0);
         }
     }
-
-    /*
-    void Rotation()
+    
+    void Rotation(float rrr)
     {
-        float turn = Input.GetAxis("Horizontal") * turnSpeed;
+        float turn = rrr * _turnSspeed;
 
-        Quaternion turnRotation = Quaternion.Euler(0f, turn * Time.fixedDeltaTime, 0f);
+        Quaternion turnRotation = Quaternion.Euler(0f, turn * Runner.DeltaTime, 0f);
 
-        _rb.MoveRotation(rb.rotation * turnRotation);
+        _rb.Rigidbody.MoveRotation(_rb.Rigidbody.rotation * turnRotation);
     }
-    */
+    
     void SpawnShoot()
     {
         Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation);
