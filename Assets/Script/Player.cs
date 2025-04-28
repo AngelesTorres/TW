@@ -23,6 +23,19 @@ public class Player : NetworkBehaviour
     public Action OnShoot;
     public Action<float> OnMove;
 
+    public GameObject demobomb;
+    public GameObject demobomb2;
+    public GameObject demobomb3;
+
+    public float countbomb;
+    public bool espera;
+    public float waitmore;
+
+
+    public GameObject bomba;
+    public Transform bomsalida;
+
+
     public override void Spawned()
     {
         _rb = GetComponent<NetworkRigidbody3D>();
@@ -47,6 +60,61 @@ public class Player : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
             _isShootingPressed = true;
+
+
+        if (countbomb >= 1)
+        {
+            demobomb.SetActive(true);
+
+        }
+        else
+        {
+            demobomb.SetActive(false);
+        }
+
+
+        if (countbomb >= 2)
+        {
+            demobomb2.SetActive(true);
+
+        }
+        else
+        {
+            demobomb2.SetActive(false);
+        }
+
+
+        if (countbomb == 3)
+        {
+            demobomb3.SetActive(true);
+
+        }
+        else
+        {
+            demobomb3.SetActive(false);
+        }
+
+
+        if (espera == false)
+        {
+            waitmore += Time.deltaTime;
+        }
+
+
+        if (waitmore >= 2)
+        {
+            espera = true;
+
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.B) && countbomb >= 1)
+        {
+            Instantiate(bomba, bomsalida.position, bomsalida.rotation);
+            countbomb = countbomb - 1;
+        }
+
+
     }
 
     public override void FixedUpdateNetwork()
@@ -125,4 +193,15 @@ public class Player : NetworkBehaviour
 
         Runner.Despawn(Object);
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "bombspawn" && espera == true)
+        {
+            countbomb = countbomb + 1;
+            espera = false;
+        }
+    }
+
 }
