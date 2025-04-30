@@ -716,6 +716,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 7721536361348014723, guid: 82e6a593e20493d46854c266e2e23a58, type: 3}
   _spawnTransforms:
   - {fileID: 35871}
+  - {fileID: 506566347}
 --- !u!114 &515684640
 MonoBehaviour:
   m_ObjectHideFlags: 0
