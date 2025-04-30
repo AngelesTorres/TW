@@ -12,6 +12,9 @@ public class torreta : NetworkBehaviour
 
     void Update()
     {
+        if (!HasStateAuthority)
+            return;
+
         float input = 0f;
 
         if (Input.GetKey(KeyCode.Q))
