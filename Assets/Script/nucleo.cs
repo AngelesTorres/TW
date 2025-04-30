@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class nucleo : MonoBehaviour
+public class nucleo : NetworkBehaviour
 {
-
     public bool recibe;
     public float live;
     public float waitdaño;
     
-    // Start is called before the first frame update
     void Start()
     {
         recibe = true;
         live = 3;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (!HasStateAuthority)
+            return;
+
         if (recibe == false)
         {
             waitdaño += Time.deltaTime;
@@ -44,5 +45,4 @@ public class nucleo : MonoBehaviour
             recibe = false;
         }
     }
-
 }

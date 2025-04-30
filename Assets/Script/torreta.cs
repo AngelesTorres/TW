@@ -23,12 +23,5 @@ public class torreta : NetworkBehaviour
             input = 1f;
        
         transform.Rotate(Vector3.up * input * rotationSpeed * Time.deltaTime);
-
-        /*
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(prefbal, disparo.position, disparo.rotation);
-        }
-        */
     }
 }
