@@ -51,10 +51,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -322,7 +320,7 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 624b7f5c525b09b2aeed596f4ef3b3f1
+      Hash: 753d4c0d7abf8a9e660cbdc3c1e59e15
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Bullet

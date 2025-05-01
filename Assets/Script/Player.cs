@@ -7,7 +7,8 @@ public class Player : NetworkBehaviour
 {
     [SerializeField] private float _speed = 20f;
     [SerializeField] private float _turnSspeed = 150f;
-    [SerializeField] private int _maxLife = 100;
+    [SerializeField] private int _maxLife ;
+   
     [SerializeField]  private int _currentLife;
 
     private float _horizontalInput;
@@ -66,8 +67,8 @@ public class Player : NetworkBehaviour
           if (Input.GetKeyDown(KeyCode.Space))
             _isShootingPressed = true;
         }
-     
 
+       
 
         if (countbomb >= 1)
         {
@@ -142,13 +143,7 @@ public class Player : NetworkBehaviour
             wait_shoot= 0;
         }
 
-        if (_maxLife <=0)
-        {
-            print("fuera por un momento");
-            _speed = 0;
-            _turnSspeed = 0;
-        }
-
+        
     }
 
     public override void FixedUpdateNetwork()
@@ -210,38 +205,41 @@ public class Player : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_TakeDamage(int dmg)
     {
-        Local_TakeDamage(dmg);
+      //  Local_TakeDamage(dmg);
     }
 
     void Local_TakeDamage(int dmg)
     {
-        _currentLife -= dmg;
-        if (_currentLife <= 0)
-            Death();
+       // _currentLife -= dmg;
+        //if (_currentLife <= 0)
+          //  Death();
     }
 
     private void Death()
     {
-        Debug.Log($"Mori :(");
+        //Debug.Log($"Mori :(");
 
-        GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
+        //GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
 
-        //Runner.Despawn(Object);
+      // Runner.Despawn(Object);
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
+       
+
         if (other.gameObject.tag == "bombspawn" && espera == true)
         {
             countbomb = countbomb + 1;
             espera = false;
         }
 
-        if (other.gameObject.tag == "bala")
+        if (other.gameObject.tag=="bala")
         {
-            _maxLife -= 1;
+           _maxLife -= 1;
         }
+       
     }
 
 }
