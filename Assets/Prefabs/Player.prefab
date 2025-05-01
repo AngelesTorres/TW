@@ -5496,7 +5496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 17.69
   _turnSspeed: 130.7
-  _maxLife: 100
+  _maxLife: 5
   _currentLife: 0
   _bulletPrefab: {fileID: 3889431172487914551, guid: e95509daeff647641b1524812bb6b24d, type: 3}
   _bulletSpawnerTransform: {fileID: 426826263682421453}

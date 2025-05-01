@@ -101,6 +101,7 @@ MonoBehaviour:
   recibe: 0
   live: 0
   "waitda\xF1o": 0
+  "colorda\xF1o": {fileID: 2100000, guid: 0834355b6601b584da19868580c4d22c, type: 2}
 --- !u!136 &2533495189777155483
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 2299025788
   ObjectInterest: 1
-  Flags: 1
+  Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4348412551470172944}

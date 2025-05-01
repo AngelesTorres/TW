@@ -2483,6 +2483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: nucleobase (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2528001628200274187, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0834355b6601b584da19868580c4d22c, type: 2}
     - target: {fileID: 2928986202103392432, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.939995
@@ -2522,6 +2526,14 @@ PrefabInstance:
     - target: {fileID: 2928986202103392432, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348412551470172944, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
+      propertyPath: "colorda\xF1o"
+      value: 
+      objectReference: {fileID: 2100000, guid: 0834355b6601b584da19868580c4d22c, type: 2}
+    - target: {fileID: 7361599820435403930, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
+      propertyPath: Flags
+      value: 262145
       objectReference: {fileID: 0}
     - target: {fileID: 7361599820435403930, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
       propertyPath: SortKey
@@ -2885,6 +2897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: nucleobase
       objectReference: {fileID: 0}
+    - target: {fileID: 2528001628200274187, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0834355b6601b584da19868580c4d22c, type: 2}
     - target: {fileID: 2928986202103392432, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -45
@@ -2925,6 +2941,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4348412551470172944, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
+      propertyPath: "colorda\xF1o"
+      value: 
+      objectReference: {fileID: 2100000, guid: 0834355b6601b584da19868580c4d22c, type: 2}
     - target: {fileID: 7361599820435403930, guid: 2f6c130276849904d812c6d266d1d4bf, type: 3}
       propertyPath: Flags
       value: 262145

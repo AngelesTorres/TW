@@ -17,6 +17,9 @@ public class Player : NetworkBehaviour
     [SerializeField] private Transform _bulletSpawnerTransform;
 
     private bool _isShootingPressed;
+    public float wait_shoot;
+    public bool recharg;
+    public float charge;
 
     private NetworkRigidbody3D _rb;
 
@@ -57,9 +60,12 @@ public class Player : NetworkBehaviour
 
         _horizontalInput = Input.GetAxis("Horizontal");
         _verticalInput = Input.GetAxis("Vertical");
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (recharg == false)
+        {
+          if (Input.GetKeyDown(KeyCode.Space))
             _isShootingPressed = true;
+        }
+     
 
 
         if (countbomb >= 1)
@@ -95,18 +101,9 @@ public class Player : NetworkBehaviour
         }
 
 
-        if (espera == false)
-        {
-            waitmore += Time.deltaTime;
-        }
+        
 
-
-        if (waitmore >= 2)
-        {
-            espera = true;
-
-        }
-
+        
 
         if (Input.GetKeyDown(KeyCode.B) && countbomb >= 1)
         {
@@ -114,7 +111,28 @@ public class Player : NetworkBehaviour
             countbomb = countbomb - 1;
         }
 
+        if (_maxLife <=0)
+        {
+            print("mori");
+        }
 
+        if (wait_shoot >= 6)
+        {
+            recharg = true;
+        }
+
+        if (recharg == true)
+        {
+            charge+= Time.deltaTime;
+        }
+
+
+        if (charge >= 3)
+        {
+            recharg = false;
+           charge = 0;
+            wait_shoot= 0;
+        }
     }
 
     public override void FixedUpdateNetwork()
@@ -126,6 +144,7 @@ public class Player : NetworkBehaviour
         {
             SpawnShoot();
             _isShootingPressed = false;
+            wait_shoot += 1;
         }
     }
 
@@ -202,6 +221,12 @@ public class Player : NetworkBehaviour
             countbomb = countbomb + 1;
             espera = false;
         }
+
+        if (other.gameObject.tag == "bala" )
+        {
+            _maxLife -= 1;
+        }
+
     }
 
 }
