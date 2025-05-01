@@ -9,7 +9,7 @@ public class Bullet : NetworkBehaviour
 {
     [SerializeField] private float _initialForce;
     [SerializeField] private float _lifeTime = 5f;
-    [SerializeField] private int _damage;
+   // [SerializeField] private int _damage;
 
     private TickTimer _lifeTimer;
 
@@ -34,8 +34,13 @@ public class Bullet : NetworkBehaviour
             return;
 
         if (other.TryGetComponent(out Player player))
-            player.RPC_TakeDamage(_damage);
+          //  player.RPC_TakeDamage(_damage);
 
         Runner.Despawn(Object);
+
+        if (other.gameObject.tag == "nucleo")
+        {
+            Destroy(gameObject);
+        }
     }
 }

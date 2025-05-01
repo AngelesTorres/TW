@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initialForce: 8.06
   _lifeTime: 1.8
-  _damage: 10
+  _damage: 1
 --- !u!114 &8074248679759128952
 MonoBehaviour:
   m_ObjectHideFlags: 0

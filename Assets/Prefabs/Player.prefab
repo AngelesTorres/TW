@@ -5480,8 +5480,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5, y: 1.4932984, z: 3.111454}
-  m_Center: {x: 0, y: -0.5033508, z: -0.48713303}
+  m_Size: {x: 2.5, y: 2.538591, z: 3.0085788}
+  m_Center: {x: 0, y: 0.019295454, z: -0.53857064}
 --- !u!114 &8568355597665583583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5494,12 +5494,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597ace9f3d6219e46a25793d254adf65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 17.69
-  _turnSspeed: 130.7
+  _speed: 17.3
+  _turnSspeed: 108.5
   _maxLife: 5
   _currentLife: 0
   _bulletPrefab: {fileID: 3889431172487914551, guid: e95509daeff647641b1524812bb6b24d, type: 3}
   _bulletSpawnerTransform: {fileID: 426826263682421453}
+  wait_shoot: 0
+  recharg: 0
+  charge: 0
   demobomb: {fileID: 4038895217231125847}
   demobomb2: {fileID: 8259721149336781750}
   demobomb3: {fileID: 2674287568347120471}

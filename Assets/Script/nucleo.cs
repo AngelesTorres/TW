@@ -12,8 +12,9 @@ public class nucleo : NetworkBehaviour
     
     void Start()
     {
-        recibe = true;
+        recibe = false;
         live = 3;
+        colordaño.color = Color.green;
     }
 
     void Update()
@@ -21,31 +22,22 @@ public class nucleo : NetworkBehaviour
         if (!HasStateAuthority)
             return;
 
-        if (recibe == false)
-        {
-            waitdaño += Time.deltaTime;
-            colordaño.color = Color.red;
-        }
-
-        if (waitdaño >= 4)
-        {
-            recibe = true;
-            waitdaño = 0;
-            colordaño.color = Color.green;
-        }
+      
 
         if (live <=0)
         {
-            Destroy(gameObject);
+           Destroy(gameObject);
+            print("muerto");
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag=="bala" && recibe == true)
+        if (other.gameObject.tag=="bala" )
         {
-            live = live - 1;
-            recibe = false;
+            live = live - 0.5f;
+          
+            colordaño.color = Color.red;
         }
     }
 }

@@ -38,6 +38,7 @@ public class Player : NetworkBehaviour
     public GameObject bomba;
     public Transform bomsalida;
 
+    public bool stop;
 
     public override void Spawned()
     {
@@ -101,9 +102,19 @@ public class Player : NetworkBehaviour
         }
 
 
-        
+        if (espera == false)
+        {
+            waitmore += Time.deltaTime;
+        }
 
-        
+
+        if (waitmore >= 2)
+        {
+            espera = true;
+
+        }
+
+
 
         if (Input.GetKeyDown(KeyCode.B) && countbomb >= 1)
         {
@@ -111,10 +122,7 @@ public class Player : NetworkBehaviour
             countbomb = countbomb - 1;
         }
 
-        if (_maxLife <=0)
-        {
-            print("mori");
-        }
+      
 
         if (wait_shoot >= 6)
         {
@@ -133,6 +141,14 @@ public class Player : NetworkBehaviour
            charge = 0;
             wait_shoot= 0;
         }
+
+        if (_maxLife <=0)
+        {
+            print("fuera por un momento");
+            _speed = 0;
+            _turnSspeed = 0;
+        }
+
     }
 
     public override void FixedUpdateNetwork()
@@ -210,7 +226,7 @@ public class Player : NetworkBehaviour
 
         GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
 
-        Runner.Despawn(Object);
+        //Runner.Despawn(Object);
     }
 
 
@@ -222,11 +238,10 @@ public class Player : NetworkBehaviour
             espera = false;
         }
 
-        if (other.gameObject.tag == "bala" )
+        if (other.gameObject.tag == "bala")
         {
             _maxLife -= 1;
         }
-
     }
 
 }
