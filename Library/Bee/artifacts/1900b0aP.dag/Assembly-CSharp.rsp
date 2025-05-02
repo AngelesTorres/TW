@@ -324,6 +324,7 @@
 "Assets/Script/bomba.cs"
 "Assets/Script/bombaspawn.cs"
 "Assets/Script/Bullet.cs"
+"Assets/Script/controlador.cs"
 "Assets/Script/FollowTarget.cs"
 "Assets/Script/GameManager.cs"
 "Assets/Script/murorompible.cs"

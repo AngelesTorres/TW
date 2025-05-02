@@ -24,11 +24,7 @@ public class nucleo : NetworkBehaviour
 
       
 
-        if (live <=0)
-        {
-           Destroy(gameObject);
-            print("muerto");
-        }
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,4 +36,16 @@ public class nucleo : NetworkBehaviour
             colordaño.color = Color.red;
         }
     }
+
+
+  public float nucleolive
+    {
+        get
+        {
+
+            return live;
+        }
+
+    }
+
 }

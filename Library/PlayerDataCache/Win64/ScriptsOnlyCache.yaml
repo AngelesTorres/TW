@@ -17,6 +17,7 @@ ScriptsOnlyBuild:
     - Spawner
     - bomba
     - bombaspawn
+    - controlador
     - murorompible
     - nucleo
     - torreta
@@ -228,71 +229,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3172}
     - Class: 114
-      Script: {instanceID: 3278}
+      Script: {instanceID: 3266}
     - Class: 114
-      Script: {instanceID: 3288}
+      Script: {instanceID: 3280}
     - Class: 114
-      Script: {instanceID: 3520}
+      Script: {instanceID: 3290}
     - Class: 114
-      Script: {instanceID: 3868}
+      Script: {instanceID: 3522}
     - Class: 114
-      Script: {instanceID: 3984}
+      Script: {instanceID: 3870}
     - Class: 114
-      Script: {instanceID: 4090}
+      Script: {instanceID: 3986}
     - Class: 114
-      Script: {instanceID: 4934}
+      Script: {instanceID: 4092}
     - Class: 114
-      Script: {instanceID: 4984}
+      Script: {instanceID: 4936}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4986}
     - Class: 114
-      Script: {instanceID: 5308}
+      Script: {instanceID: 5298}
     - Class: 114
-      Script: {instanceID: 5446}
+      Script: {instanceID: 5310}
     - Class: 114
-      Script: {instanceID: 5614}
+      Script: {instanceID: 5448}
     - Class: 114
-      Script: {instanceID: 5732}
+      Script: {instanceID: 5616}
     - Class: 114
       Script: {instanceID: 5734}
     - Class: 114
       Script: {instanceID: 5736}
     - Class: 114
-      Script: {instanceID: 5740}
+      Script: {instanceID: 5738}
     - Class: 114
       Script: {instanceID: 5742}
     - Class: 114
       Script: {instanceID: 5744}
     - Class: 114
-      Script: {instanceID: 6132}
+      Script: {instanceID: 5746}
     - Class: 114
-      Script: {instanceID: 6140}
+      Script: {instanceID: 6134}
     - Class: 114
-      Script: {instanceID: 6458}
+      Script: {instanceID: 6142}
     - Class: 114
-      Script: {instanceID: 6538}
+      Script: {instanceID: 6460}
     - Class: 114
-      Script: {instanceID: 6544}
+      Script: {instanceID: 6540}
     - Class: 114
-      Script: {instanceID: 6822}
+      Script: {instanceID: 6546}
     - Class: 114
-      Script: {instanceID: 6838}
+      Script: {instanceID: 6824}
     - Class: 114
-      Script: {instanceID: 6926}
+      Script: {instanceID: 6840}
     - Class: 114
-      Script: {instanceID: 7002}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 7192}
+      Script: {instanceID: 7004}
     - Class: 114
-      Script: {instanceID: 7224}
+      Script: {instanceID: 7194}
     - Class: 114
-      Script: {instanceID: 7406}
+      Script: {instanceID: 7226}
     - Class: 114
-      Script: {instanceID: 7484}
+      Script: {instanceID: 7408}
     - Class: 114
-      Script: {instanceID: 7520}
+      Script: {instanceID: 7486}
     - Class: 114
-      Script: {instanceID: 7944}
+      Script: {instanceID: 7522}
+    - Class: 114
+      Script: {instanceID: 7946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -422,7 +425,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 390c171f9cb4791fc5d2ee772c34b18c
+      Hash: 4029a451d3f416cf853554b0511a36fc
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
@@ -630,6 +633,12 @@ ScriptsOnlyBuild:
     assemblyName: Fusion.Unity
     namespaceName: Fusion.Statistics
     className: FusionNetworkObjectStatistics
+  - hash:
+      serializedVersion: 2
+      Hash: 35b22123d92133461aba50bfa73f1358
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: controlador
   - hash:
       serializedVersion: 2
       Hash: 0249933f35dcc970b31eaae0159aebf9
