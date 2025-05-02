@@ -23,6 +23,7 @@ public class PlayerView : NetworkBehaviour
 
     private void TriggerShootParticles()
     {
+        _networkMecanimAnimator.Animator.SetBool("IsShooting", true);
         _shootParticle.Play();
     }
 
