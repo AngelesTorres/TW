@@ -8,7 +8,7 @@ public class Player : NetworkBehaviour
 {
     [SerializeField] private float _speed = 20f;
     [SerializeField] private float _turnSspeed = 150f;
-    [SerializeField] private int _maxLife;
+    [SerializeField] private int _maxLife = 10;
 
     [SerializeField] private int _currentLife;
 
@@ -18,7 +18,7 @@ public class Player : NetworkBehaviour
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _bulletSpawnerTransform;
 
-    [SerializeField] public nucleo myTower;
+    //[SerializeField] public nucleo myTower;
 
     private bool _isShootingPressed;
     public float wait_shoot;
@@ -57,7 +57,7 @@ public class Player : NetworkBehaviour
 
         GameManager.Instance.AddToList(this);
 
-        myTower = GameManager.Instance.towers.Any()? GameManager.Instance.towers.LastOrDefault() : GameManager.Instance.towers.First();
+        //myTower = GameManager.Instance.towers.Any()? GameManager.Instance.towers.LastOrDefault() : GameManager.Instance.towers.First();
     }
 
     void Update()
@@ -210,12 +210,7 @@ public class Player : NetworkBehaviour
     {
          _currentLife -= dmg;
         if (_currentLife <= 0)
-            BackToTheSpawn();
-    }
-
-    private void BackToTheSpawn()
-    {
-
+            Death();
     }
 
     private void Death()

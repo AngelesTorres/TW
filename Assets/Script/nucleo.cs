@@ -15,7 +15,7 @@ public class nucleo : NetworkBehaviour
         recibe = false;
         live = 3;
         colordaño.color = Color.green;
-        GameManager.Instance.AddToTowerList(this);
+        //GameManager.Instance.AddToTowerList(this);
     }
 
     void Update()

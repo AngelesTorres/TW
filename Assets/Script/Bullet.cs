@@ -40,7 +40,7 @@ public class Bullet : NetworkBehaviour
 
         if (other.gameObject.tag == "nucleo")
         {
-            Destroy(gameObject);
+            Runner.Despawn(Object);
         }
     }
 }
