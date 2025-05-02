@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using Fusion;
 using Fusion.Addons.Physics;
@@ -16,6 +17,8 @@ public class Player : NetworkBehaviour
 
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _bulletSpawnerTransform;
+
+    [SerializeField] public nucleo myTower;
 
     private bool _isShootingPressed;
     public float wait_shoot;
@@ -53,6 +56,8 @@ public class Player : NetworkBehaviour
         }
 
         GameManager.Instance.AddToList(this);
+
+        myTower = GameManager.Instance.towers.Any()? GameManager.Instance.towers.LastOrDefault() : GameManager.Instance.towers.First();
     }
 
     void Update()
@@ -67,8 +72,6 @@ public class Player : NetworkBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
                 _isShootingPressed = true;
         }
-
-
 
         if (countbomb >= 1)
         {
@@ -91,7 +94,6 @@ public class Player : NetworkBehaviour
             demobomb2.SetActive(false);
         }
 
-
         if (countbomb == 3)
         {
             demobomb3.SetActive(true);
@@ -102,12 +104,10 @@ public class Player : NetworkBehaviour
             demobomb3.SetActive(false);
         }
 
-
         if (espera == false)
         {
             waitmore += Time.deltaTime;
         }
-
 
         if (waitmore >= 2)
         {
@@ -115,15 +115,11 @@ public class Player : NetworkBehaviour
 
         }
 
-
-
         if (Input.GetKeyDown(KeyCode.B) && countbomb >= 1)
         {
             Instantiate(bomba, bomsalida.position, bomsalida.rotation);
             countbomb = countbomb - 1;
         }
-
-
 
         if (wait_shoot >= 6)
         {
@@ -135,14 +131,12 @@ public class Player : NetworkBehaviour
             charge += Time.deltaTime;
         }
 
-
         if (charge >= 3)
         {
             recharg = false;
             charge = 0;
             wait_shoot = 0;
         }
-
 
         if (_maxLife <=0)
         {
@@ -216,35 +210,29 @@ public class Player : NetworkBehaviour
     {
          _currentLife -= dmg;
         if (_currentLife <= 0)
-          Death();
+            BackToTheSpawn();
+    }
+
+    private void BackToTheSpawn()
+    {
+
     }
 
     private void Death()
     {
-        Debug.Log($"Mori :(");
+        Debug.Log($"d'oh");
 
         GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
 
-         Runner.Despawn(Object);
+        Runner.Despawn(Object);
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
-
-
         if (other.gameObject.tag == "bombspawn" && espera == true)
         {
             countbomb = countbomb + 1;
             espera = false;
         }
-
-        if (other.gameObject.tag == "bala")
-        {
-            _maxLife -= 1;
-        }
-
     }
-
-
 }

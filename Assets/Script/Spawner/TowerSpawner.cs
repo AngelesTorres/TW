@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using Fusion;
 using UnityEngine;
 
-public class TowerSpawner : MonoBehaviour
+public class TowerSpawner : SimulationBehaviour
 {
     // Start is called before the first frame update
     void Start()

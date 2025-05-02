@@ -9,6 +9,10 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private GameObject _winImage;
     [SerializeField] private GameObject _loseImage;
     private List<PlayerRef> _players = new();
+    public List<nucleo> towers = new();
+
+    [SerializeField] private Transform[] _towerSpawnTransforms;
+
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -26,6 +30,11 @@ public class GameManager : NetworkBehaviour
     void RemoveFromList(PlayerRef player)
     {
         _players.Remove(player);
+    }
+
+    public void AddToTowerList(nucleo tower)
+    {
+        towers.Add(tower);
     }
 
     [Rpc]

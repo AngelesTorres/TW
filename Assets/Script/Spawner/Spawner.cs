@@ -4,8 +4,12 @@ using UnityEngine;
 public class Spawner : SimulationBehaviour, IPlayerJoined
 {
     public GameObject playerPrefab;
+    public GameObject towerPrefab;
+
+    private int numberOfPlayers = 2;
 
     [SerializeField] private Transform[] _spawnTransforms;
+    [SerializeField] private Transform[] _towerSpawnTransforms;
 
     private bool _initialized;
 
@@ -13,7 +17,7 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
     {
         var playersCount = Runner.SessionInfo.PlayerCount;
 
-        if (_initialized && playersCount >= 2)
+        if (_initialized && playersCount >= numberOfPlayers)
         {
             CreatePlayer(0);
             return;
@@ -21,7 +25,7 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
 
         if (player == Runner.LocalPlayer)
         {
-            if (playersCount < 2)
+            if (playersCount < numberOfPlayers)
                 _initialized = true;
             else
             {
@@ -38,5 +42,10 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
         var newRotation = _spawnTransforms[spawnPointIndex].rotation;
 
         Runner.Spawn(playerPrefab, newPosition, newRotation);
+
+        var newTowerPosition = _towerSpawnTransforms[spawnPointIndex].position;
+        var newTowerRotation = _towerSpawnTransforms[spawnPointIndex].rotation;
+
+        Runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
     }
 }

@@ -38,12 +38,6 @@ public class Bullet : NetworkBehaviour
 
         Runner.Despawn(Object);
 
-        if (other.gameObject.tag == "tanque")
-        {
-            Destroy(gameObject);
-        }
-
-
         if (other.gameObject.tag == "nucleo")
         {
             Destroy(gameObject);

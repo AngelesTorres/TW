@@ -8,23 +8,20 @@ public class nucleo : NetworkBehaviour
     public bool recibe;
     public float live;
     public float waitdaño;
-    public Material colordaño;
-    
-    void Start()
+    public Material colordaño;   
+
+    public override void Spawned()
     {
         recibe = false;
         live = 3;
         colordaño.color = Color.green;
+        GameManager.Instance.AddToTowerList(this);
     }
 
     void Update()
     {
         if (!HasStateAuthority)
             return;
-
-      
-
-       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,15 +34,11 @@ public class nucleo : NetworkBehaviour
         }
     }
 
-
   public float nucleolive
     {
         get
         {
-
             return live;
         }
-
     }
-
 }
