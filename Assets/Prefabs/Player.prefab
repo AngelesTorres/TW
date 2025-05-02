@@ -5406,11 +5406,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8339785522956407321}
   - component: {fileID: 8354305810922697537}
-  - component: {fileID: 3692302882109753690}
   - component: {fileID: 8568355597665583583}
   - component: {fileID: 6308591232353982981}
   - component: {fileID: 3601515772549228454}
   - component: {fileID: 2286015496155880598}
+  - component: {fileID: 3176623713558734499}
   m_Layer: 0
   m_Name: Player
   m_TagString: tanque
@@ -5461,27 +5461,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &3692302882109753690
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721536361348014723}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5, y: 2.538591, z: 3.0085788}
-  m_Center: {x: 0, y: 0.019295454, z: -0.53857064}
 --- !u!114 &8568355597665583583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5497,7 +5476,6 @@ MonoBehaviour:
   _speed: 17.3
   _turnSspeed: 108.5
   _maxLife: 5
-  Life: 5
   _currentLife: 0
   _bulletPrefab: {fileID: 3889431172487914551, guid: e95509daeff647641b1524812bb6b24d, type: 3}
   _bulletSpawnerTransform: {fileID: 426826263682421453}
@@ -5572,6 +5550,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootParticle: {fileID: 2766461090557901269}
+--- !u!135 &3176623713558734499
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721536361348014723}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.653841
+  m_Center: {x: -0.011045456, y: 0.30377126, z: -0.49671316}
 --- !u!1001 &2090258323427469495
 PrefabInstance:
   m_ObjectHideFlags: 0
