@@ -16,6 +16,7 @@ public class Player : NetworkBehaviour
     private float _verticalInput;
 
     [SerializeField] private Bullet _bulletPrefab;
+    [SerializeField] private ballafogueo _balafogeo;
     [SerializeField] private Transform _bulletSpawnerTransform;
 
     //[SerializeField] public nucleo myTower;
@@ -24,6 +25,7 @@ public class Player : NetworkBehaviour
     public float wait_shoot;
     public bool recharg;
     public float charge;
+    public bool otrabala;
 
     private NetworkRigidbody3D _rb;
 
@@ -195,8 +197,16 @@ public class Player : NetworkBehaviour
 
     void SpawnShoot()
     {
-        Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation);
+       
+        if (otrabala == false)
+        {
+         Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation);
+        }
 
+        if (otrabala == true)
+        {
+            Runner.Spawn(_balafogeo, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation);
+        }
         OnShoot();
     }
 
@@ -230,4 +240,14 @@ public class Player : NetworkBehaviour
             espera = false;
         }
     }
+
+  public bool cambio
+    {
+
+        set
+        {
+            otrabala = value;
+        }
+    }
+
 }

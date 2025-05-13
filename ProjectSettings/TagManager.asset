@@ -9,6 +9,7 @@ TagManager:
   - bomba
   - bombspawn
   - nucleo
+  - zonasegura
   layers:
   - Default
   - TransparentFX

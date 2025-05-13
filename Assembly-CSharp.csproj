@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\murorompible.cs" />
+    <Compile Include="Assets\Script\desactivadaño.cs" />
     <Compile Include="Assets\Script\Spawner\TowerSpawner.cs" />
     <Compile Include="Assets\Script\Unused\bala.cs" />
     <Compile Include="Assets\Script\PlayerView.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Script\torreta.cs" />
     <Compile Include="Assets\Script\Unused\tank.cs" />
     <Compile Include="Assets\Script\controlador.cs" />
+    <Compile Include="Assets\Script\ballafogueo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

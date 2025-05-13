@@ -10,7 +10,7 @@ public class Bullet : NetworkBehaviour
     [SerializeField] private float _initialForce;
     [SerializeField] private float _lifeTime = 5f;
    [SerializeField] private int _damage =1;
-
+   
     private TickTimer _lifeTimer;
 
     public override void Spawned()
@@ -33,14 +33,22 @@ public class Bullet : NetworkBehaviour
         if(!HasStateAuthority)
             return;
 
-        if (other.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out Player player) )
+        
          player.RPC_TakeDamage(_damage);
 
-        Runner.Despawn(Object);
+           // Runner.Despawn(Object);
+        
+        
+
+        
 
         if (other.gameObject.tag == "nucleo")
         {
             Runner.Despawn(Object);
         }
     }
+
+
+   
 }
