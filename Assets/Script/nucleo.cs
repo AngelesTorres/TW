@@ -41,4 +41,13 @@ public class nucleo : NetworkBehaviour
             return live;
         }
     }
+
+    NetworkObject _player;
+
+    public nucleo SetPlayer(NetworkObject player)
+    {
+        _player = player;
+
+        return this;
+    }
 }

@@ -20,6 +20,9 @@ public class Bullet : NetworkBehaviour
         _lifeTimer = TickTimer.CreateFromSeconds(Runner, _lifeTime);
     }
 
+    //public Bullet SetFlag()
+
+
     public override void FixedUpdateNetwork()
     {
         if(!_lifeTimer.Expired(Runner))
