@@ -6,16 +6,16 @@ using Fusion;
 public class nucleo : NetworkBehaviour
 {
     public bool recibe;
-    public float live;
+    private float _maxLife = 15;
+    private float _currentLife;
     public float waitdaño;
     public Material colordaño;   
 
     public override void Spawned()
     {
         recibe = false;
-        live = 3;
+        _currentLife = _maxLife;
         colordaño.color = Color.green;
-        //GameManager.Instance.AddToTowerList(this);
     }
 
     void Update()
@@ -24,30 +24,35 @@ public class nucleo : NetworkBehaviour
             return;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag=="bala" )
-        {
-            live = live - 0.5f;
-          
-            colordaño.color = Color.red;
-        }
-    }
-
-  public float nucleolive
-    {
-        get
-        {
-            return live;
-        }
-    }
-
-    NetworkObject _player;
+    public NetworkObject _player;
 
     public nucleo SetPlayer(NetworkObject player)
     {
         _player = player;
 
         return this;
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_TakeDamage(int dmg)
+    {
+        Local_TakeDamage(dmg);
+        colordaño.color = Color.red;
+    }
+
+    void Local_TakeDamage(int dmg)
+    {
+        _currentLife -= dmg;
+        if (_currentLife <= 0)
+            Death();
+    }
+    private void Death()
+    {
+        Debug.Log($"d'oh");
+
+        GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
+
+        Runner.Despawn(Object);
+        Runner.Despawn(_player);
     }
 }

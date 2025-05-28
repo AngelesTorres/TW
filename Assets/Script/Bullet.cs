@@ -20,9 +20,6 @@ public class Bullet : NetworkBehaviour
         _lifeTimer = TickTimer.CreateFromSeconds(Runner, _lifeTime);
     }
 
-    //public Bullet SetFlag()
-
-
     public override void FixedUpdateNetwork()
     {
         if(!_lifeTimer.Expired(Runner))
@@ -36,22 +33,17 @@ public class Bullet : NetworkBehaviour
         if(!HasStateAuthority)
             return;
 
-        if (other.TryGetComponent(out Player player) )
-        
-         player.RPC_TakeDamage(_damage);
-
-           // Runner.Despawn(Object);
-        
-        
-
-        
-
-        if (other.gameObject.tag == "nucleo")
+        if (other.TryGetComponent(out Player player) )        
         {
+            player.RPC_TakeDamage(_damage);
+            Runner.Despawn(Object);
+
+        }
+        if (other.TryGetComponent(out nucleo tower) )
+        {
+
+            tower.RPC_TakeDamage(_damage);
             Runner.Despawn(Object);
         }
     }
-
-
-   
 }

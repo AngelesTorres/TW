@@ -4,13 +4,13 @@ using UnityEngine;
 public class Spawner : SimulationBehaviour, IPlayerJoined
 {
     public GameObject playerPrefab;
-    //public GameObject towerPrefab;
+    public GameObject towerPrefab;
 
     private int numberOfPlayers = 2;
 
     [SerializeField] private Transform[] _spawnTransforms;
     [SerializeField] private nucleo[] _nucleos;
-    //[SerializeField] private Transform[] _towerSpawnTransforms;
+    [SerializeField] private Transform[] _towerSpawnTransforms;
 
     private bool _initialized;
 
@@ -46,11 +46,9 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
 
         _nucleos[spawnPointIndex].SetPlayer(cl);
 
+        var newTowerPosition = _towerSpawnTransforms[spawnPointIndex].position;
+        var newTowerRotation = _towerSpawnTransforms[spawnPointIndex].rotation;
 
-
-        //var newTowerPosition = _towerSpawnTransforms[spawnPointIndex].position;
-        //var newTowerRotation = _towerSpawnTransforms[spawnPointIndex].rotation;
-
-        //Runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
+        var tower = Runner.Spawn(_nucleos[spawnPointIndex], newTowerPosition, newTowerRotation);
     }
 }

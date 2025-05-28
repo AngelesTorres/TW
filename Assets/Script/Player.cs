@@ -19,7 +19,7 @@ public class Player : NetworkBehaviour
     [SerializeField] private ballafogueo _balafogeo;
     [SerializeField] private Transform _bulletSpawnerTransform;
 
-    //[SerializeField] public nucleo myTower;
+    [SerializeField] public nucleo myTower;
 
     private bool _isShootingPressed;
     public float wait_shoot;
@@ -58,8 +58,6 @@ public class Player : NetworkBehaviour
         }
 
         GameManager.Instance.AddToList(this);
-
-        //myTower = GameManager.Instance.towers.Any()? GameManager.Instance.towers.LastOrDefault() : GameManager.Instance.towers.First();
     }
 
     void Update()
@@ -139,11 +137,6 @@ public class Player : NetworkBehaviour
             charge = 0;
             wait_shoot = 0;
         }
-
-        if (_maxLife <=0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     public override void FixedUpdateNetwork()
@@ -219,11 +212,11 @@ public class Player : NetworkBehaviour
     void Local_TakeDamage(int dmg)
     {
          _currentLife -= dmg;
-        if (_currentLife <= 0)
-            Death();
+        //if (_currentLife <= 0)
+            //Death();
     }
 
-    private void Death()
+    public void Death()
     {
         Debug.Log($"d'oh");
 
@@ -243,11 +236,9 @@ public class Player : NetworkBehaviour
 
   public bool cambio
     {
-
         set
         {
             otrabala = value;
         }
     }
-
 }

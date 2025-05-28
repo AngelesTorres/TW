@@ -22,6 +22,7 @@ ScriptsOnlyBuild:
     - bombaspawn
     - "desactivada\xF1o"
     - murorompible
+    - nucleo
     - torreta
     Fusion.Addons.Physics:
     - Fusion.Addons.Physics.NetworkRigidbody3D
@@ -62,10 +63,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -241,107 +240,107 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 622}
     - Class: 114
-      Script: {instanceID: 1578}
+      Script: {instanceID: 16620}
     - Class: 114
-      Script: {instanceID: 1620}
+      Script: {instanceID: 16662}
     - Class: 114
-      Script: {instanceID: 2210}
+      Script: {instanceID: 17252}
     - Class: 114
-      Script: {instanceID: 2266}
+      Script: {instanceID: 17308}
     - Class: 114
-      Script: {instanceID: 2382}
+      Script: {instanceID: 17424}
     - Class: 114
-      Script: {instanceID: 2426}
+      Script: {instanceID: 17468}
     - Class: 114
-      Script: {instanceID: 2632}
+      Script: {instanceID: 17674}
     - Class: 114
-      Script: {instanceID: 2696}
+      Script: {instanceID: 17738}
     - Class: 114
-      Script: {instanceID: 2732}
+      Script: {instanceID: 17774}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 17870}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 17888}
     - Class: 114
-      Script: {instanceID: 3132}
+      Script: {instanceID: 18174}
     - Class: 114
-      Script: {instanceID: 3200}
+      Script: {instanceID: 18242}
     - Class: 114
-      Script: {instanceID: 3308}
+      Script: {instanceID: 18350}
     - Class: 114
-      Script: {instanceID: 3318}
+      Script: {instanceID: 18360}
     - Class: 114
-      Script: {instanceID: 3550}
+      Script: {instanceID: 18592}
     - Class: 114
-      Script: {instanceID: 3898}
+      Script: {instanceID: 18940}
     - Class: 114
-      Script: {instanceID: 4014}
+      Script: {instanceID: 19056}
     - Class: 114
-      Script: {instanceID: 4120}
+      Script: {instanceID: 19162}
     - Class: 114
-      Script: {instanceID: 4134}
+      Script: {instanceID: 19176}
     - Class: 114
-      Script: {instanceID: 4388}
+      Script: {instanceID: 19430}
     - Class: 114
-      Script: {instanceID: 4964}
+      Script: {instanceID: 20006}
     - Class: 114
-      Script: {instanceID: 5014}
+      Script: {instanceID: 20056}
     - Class: 114
-      Script: {instanceID: 5086}
+      Script: {instanceID: 20128}
     - Class: 114
-      Script: {instanceID: 5326}
+      Script: {instanceID: 20368}
     - Class: 114
-      Script: {instanceID: 5338}
+      Script: {instanceID: 20380}
     - Class: 114
-      Script: {instanceID: 5476}
+      Script: {instanceID: 20518}
     - Class: 114
-      Script: {instanceID: 5644}
+      Script: {instanceID: 20686}
     - Class: 114
-      Script: {instanceID: 5762}
+      Script: {instanceID: 20804}
     - Class: 114
-      Script: {instanceID: 5764}
+      Script: {instanceID: 20806}
     - Class: 114
-      Script: {instanceID: 5766}
+      Script: {instanceID: 20808}
     - Class: 114
-      Script: {instanceID: 5770}
+      Script: {instanceID: 20812}
     - Class: 114
-      Script: {instanceID: 5772}
+      Script: {instanceID: 20814}
     - Class: 114
-      Script: {instanceID: 5774}
+      Script: {instanceID: 20816}
     - Class: 114
-      Script: {instanceID: 5828}
+      Script: {instanceID: 20870}
     - Class: 114
-      Script: {instanceID: 6162}
+      Script: {instanceID: 21204}
     - Class: 114
-      Script: {instanceID: 6170}
+      Script: {instanceID: 21212}
     - Class: 114
-      Script: {instanceID: 6488}
+      Script: {instanceID: 21530}
     - Class: 114
-      Script: {instanceID: 6568}
+      Script: {instanceID: 21610}
     - Class: 114
-      Script: {instanceID: 6574}
+      Script: {instanceID: 21616}
     - Class: 114
-      Script: {instanceID: 6852}
+      Script: {instanceID: 21894}
     - Class: 114
-      Script: {instanceID: 6868}
+      Script: {instanceID: 21910}
     - Class: 114
-      Script: {instanceID: 6896}
+      Script: {instanceID: 21938}
     - Class: 114
-      Script: {instanceID: 6958}
+      Script: {instanceID: 22000}
     - Class: 114
-      Script: {instanceID: 7034}
+      Script: {instanceID: 22076}
     - Class: 114
-      Script: {instanceID: 7224}
+      Script: {instanceID: 22266}
     - Class: 114
-      Script: {instanceID: 7256}
+      Script: {instanceID: 22298}
     - Class: 114
-      Script: {instanceID: 7438}
+      Script: {instanceID: 22480}
     - Class: 114
-      Script: {instanceID: 7516}
+      Script: {instanceID: 22558}
     - Class: 114
-      Script: {instanceID: 7552}
+      Script: {instanceID: 22594}
     - Class: 114
-      Script: {instanceID: 7976}
+      Script: {instanceID: 23018}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -471,7 +470,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 19e4eaebe86319ef6c55a0ba97f4454e
+      Hash: cf68d5e06c0704d72aa0dcf3fdd6d924
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
@@ -543,7 +542,7 @@ ScriptsOnlyBuild:
     className: UnityMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 0ee2e49ff7cd177f9947b7f2f2a647e1
+      Hash: e8c6ead4a2967e512053de309f674d8f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Spawner
@@ -685,12 +684,6 @@ ScriptsOnlyBuild:
     assemblyName: Fusion.Unity
     namespaceName: Fusion.Statistics
     className: FusionNetworkObjectStatistics
-  - hash:
-      serializedVersion: 2
-      Hash: 35b22123d92133461aba50bfa73f1358
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: controlador
   - hash:
       serializedVersion: 2
       Hash: 0249933f35dcc970b31eaae0159aebf9
@@ -1227,7 +1220,7 @@ ScriptsOnlyBuild:
     className: UnityOnDragMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 64244856baf7a2fdfb2995557f6ccc1e
+      Hash: 9358f926f5271de6051d1f89a8c25b69
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: nucleo
@@ -1552,4 +1545,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Lucas/Videos/TW.exe
+  playerPath: C:/Users/Alumno/Downloads/TW.exe

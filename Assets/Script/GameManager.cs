@@ -9,7 +9,6 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private GameObject _winImage;
     [SerializeField] private GameObject _loseImage;
     private List<PlayerRef> _players = new();
-    //public List<nucleo> towers = new();
 
     [SerializeField] private Transform[] _towerSpawnTransforms;
 
@@ -31,12 +30,6 @@ public class GameManager : NetworkBehaviour
     {
         _players.Remove(player);
     }
-    /*
-    public void AddToTowerList(nucleo tower)
-    {
-        towers.Add(tower);
-    }
-    */
     [Rpc]
     public void RPC_Defeat(PlayerRef player)
     {
