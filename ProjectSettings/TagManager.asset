@@ -10,6 +10,8 @@ TagManager:
   - bombspawn
   - nucleo
   - zonasegura
+  - tanque1
+  - tanque2
   layers:
   - Default
   - TransparentFX

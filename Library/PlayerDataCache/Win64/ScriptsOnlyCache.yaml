@@ -18,6 +18,7 @@ ScriptsOnlyBuild:
     - PlayerView
     - Spawner
     - ballafogueo
+    - bandera
     - bomba
     - bombaspawn
     - "desactivada\xF1o"
@@ -240,107 +241,109 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 622}
     - Class: 114
-      Script: {instanceID: 16620}
+      Script: {instanceID: 1578}
     - Class: 114
-      Script: {instanceID: 16662}
+      Script: {instanceID: 1620}
     - Class: 114
-      Script: {instanceID: 17252}
+      Script: {instanceID: 2210}
     - Class: 114
-      Script: {instanceID: 17308}
+      Script: {instanceID: 2266}
     - Class: 114
-      Script: {instanceID: 17424}
+      Script: {instanceID: 2382}
     - Class: 114
-      Script: {instanceID: 17468}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 17674}
+      Script: {instanceID: 2694}
     - Class: 114
-      Script: {instanceID: 17738}
+      Script: {instanceID: 2730}
     - Class: 114
-      Script: {instanceID: 17774}
+      Script: {instanceID: 2826}
     - Class: 114
-      Script: {instanceID: 17870}
+      Script: {instanceID: 2844}
     - Class: 114
-      Script: {instanceID: 17888}
+      Script: {instanceID: 3130}
     - Class: 114
-      Script: {instanceID: 18174}
+      Script: {instanceID: 3198}
     - Class: 114
-      Script: {instanceID: 18242}
+      Script: {instanceID: 3304}
     - Class: 114
-      Script: {instanceID: 18350}
+      Script: {instanceID: 3314}
     - Class: 114
-      Script: {instanceID: 18360}
+      Script: {instanceID: 3546}
     - Class: 114
-      Script: {instanceID: 18592}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 18940}
+      Script: {instanceID: 4010}
     - Class: 114
-      Script: {instanceID: 19056}
+      Script: {instanceID: 4116}
     - Class: 114
-      Script: {instanceID: 19162}
+      Script: {instanceID: 4130}
     - Class: 114
-      Script: {instanceID: 19176}
+      Script: {instanceID: 4384}
     - Class: 114
-      Script: {instanceID: 19430}
+      Script: {instanceID: 4960}
     - Class: 114
-      Script: {instanceID: 20006}
+      Script: {instanceID: 5010}
     - Class: 114
-      Script: {instanceID: 20056}
+      Script: {instanceID: 5082}
     - Class: 114
-      Script: {instanceID: 20128}
+      Script: {instanceID: 5322}
     - Class: 114
-      Script: {instanceID: 20368}
+      Script: {instanceID: 5334}
     - Class: 114
-      Script: {instanceID: 20380}
+      Script: {instanceID: 5472}
     - Class: 114
-      Script: {instanceID: 20518}
+      Script: {instanceID: 5640}
     - Class: 114
-      Script: {instanceID: 20686}
+      Script: {instanceID: 5758}
     - Class: 114
-      Script: {instanceID: 20804}
+      Script: {instanceID: 5760}
     - Class: 114
-      Script: {instanceID: 20806}
+      Script: {instanceID: 5762}
     - Class: 114
-      Script: {instanceID: 20808}
+      Script: {instanceID: 5766}
     - Class: 114
-      Script: {instanceID: 20812}
+      Script: {instanceID: 5768}
     - Class: 114
-      Script: {instanceID: 20814}
+      Script: {instanceID: 5770}
     - Class: 114
-      Script: {instanceID: 20816}
+      Script: {instanceID: 5824}
     - Class: 114
-      Script: {instanceID: 20870}
+      Script: {instanceID: 6158}
     - Class: 114
-      Script: {instanceID: 21204}
+      Script: {instanceID: 6166}
     - Class: 114
-      Script: {instanceID: 21212}
+      Script: {instanceID: 6484}
     - Class: 114
-      Script: {instanceID: 21530}
+      Script: {instanceID: 6564}
     - Class: 114
-      Script: {instanceID: 21610}
+      Script: {instanceID: 6570}
     - Class: 114
-      Script: {instanceID: 21616}
+      Script: {instanceID: 6848}
     - Class: 114
-      Script: {instanceID: 21894}
+      Script: {instanceID: 6864}
     - Class: 114
-      Script: {instanceID: 21910}
+      Script: {instanceID: 6952}
     - Class: 114
-      Script: {instanceID: 21938}
+      Script: {instanceID: 7028}
     - Class: 114
-      Script: {instanceID: 22000}
+      Script: {instanceID: 7218}
     - Class: 114
-      Script: {instanceID: 22076}
+      Script: {instanceID: 7250}
     - Class: 114
-      Script: {instanceID: 22266}
+      Script: {instanceID: 7432}
     - Class: 114
-      Script: {instanceID: 22298}
+      Script: {instanceID: 7510}
     - Class: 114
-      Script: {instanceID: 22480}
+      Script: {instanceID: 7546}
     - Class: 114
-      Script: {instanceID: 22558}
+      Script: {instanceID: 7970}
     - Class: 114
-      Script: {instanceID: 22594}
+      Script: {instanceID: 8018}
     - Class: 114
-      Script: {instanceID: 23018}
+      Script: {instanceID: 8022}
+    - Class: 114
+      Script: {instanceID: 24552}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -470,7 +473,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: cf68d5e06c0704d72aa0dcf3fdd6d924
+      Hash: 9d21ebce38b31ee0c0c3b0b2b735dfad
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
@@ -492,12 +495,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: torreta
-  - hash:
-      serializedVersion: 2
-      Hash: a9dc156b6c463830a11aab6d7f5aa58e
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ballafogueo
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1220,7 +1217,7 @@ ScriptsOnlyBuild:
     className: UnityOnDragMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 9358f926f5271de6051d1f89a8c25b69
+      Hash: 65ee5891442243597d30299ce61889d9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: nucleo
@@ -1326,12 +1323,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: bombaspawn
-  - hash:
-      serializedVersion: 2
-      Hash: db402cf0b8849d56bdb10e8904169663
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: "desactivada\xF1o"
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1542,7 +1533,25 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: a9dc156b6c463830a11aab6d7f5aa58e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ballafogueo
+  - hash:
+      serializedVersion: 2
+      Hash: db402cf0b8849d56bdb10e8904169663
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: "desactivada\xF1o"
+  - hash:
+      serializedVersion: 2
+      Hash: c21e570cabee33bf8a6798ade2f107a8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: bandera
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Alumno/Downloads/TW.exe
+  playerPath: C:/Users/Lucas/Videos/TW.exe

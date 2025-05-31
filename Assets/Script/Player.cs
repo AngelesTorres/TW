@@ -45,7 +45,9 @@ public class Player : NetworkBehaviour
     public Transform bomsalida;
 
     public bool stop;
-
+    public bool version1;
+    public bool version2;
+    public bool cual = true;
     public override void Spawned()
     {
         _rb = GetComponent<NetworkRigidbody3D>();
@@ -137,6 +139,7 @@ public class Player : NetworkBehaviour
             charge = 0;
             wait_shoot = 0;
         }
+
     }
 
     public override void FixedUpdateNetwork()
@@ -232,6 +235,20 @@ public class Player : NetworkBehaviour
             countbomb = countbomb + 1;
             espera = false;
         }
+
+        if (other.gameObject.tag=="tanque1" && cual==true)
+        {
+            version1 = true;
+            cual = false;
+                
+        }
+
+
+        if (other.gameObject.tag == "tanque2" && cual ==true)
+        {
+            version2 = true;
+            cual = false;
+        }
     }
 
   public bool cambio
@@ -239,6 +256,32 @@ public class Player : NetworkBehaviour
         set
         {
             otrabala = value;
+           
         }
+    }
+
+
+ public bool quien1
+    {
+
+        get
+        {
+
+          return  version1 ;
+           
+        }
+
+    }
+
+    public bool quien2
+    {
+
+        get
+        {
+
+            
+            return version2;
+        }
+
     }
 }
