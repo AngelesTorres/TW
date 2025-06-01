@@ -5,7 +5,6 @@ ScriptsOnlyBuild:
     - Player
     - PlayerView
     - ballafogueo
-    - bandera
     - bomba
     - camptura
     - "desactivada\xF1o"
@@ -48,8 +47,6 @@ ScriptsOnlyBuild:
     - Fusion.Statistics.FusionStatsConfig
     - Fusion.Statistics.FusionStatsGraphDefault
     - Fusion.Statistics.FusionStatsPanelHeader
-    Fusion.Unity.Editor.dll:
-    - Fusion.Editor.FusionEditorSkin
     Fusion.Unity.dll:
     - Fusion.EnableOnSingleRunner
     - Fusion.FusionBootstrap
@@ -348,7 +345,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7976}
     - Class: 114
-      Script: {instanceID: 24012}
+      Script: {instanceID: 8004}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1558,7 +1555,7 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: e91af4c5a672950ae52793760d9d3e46
+      Hash: 8fe80124456a5b02afa7dcf00bec50d7
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: camptura
