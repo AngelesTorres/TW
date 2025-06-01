@@ -43,10 +43,9 @@ public class Player : NetworkBehaviour
 
     public GameObject bomba;
     public Transform bomsalida;
-
+    public camptura capture;
     public bool stop;
-    public bool version1;
-    public bool version2;
+
     public bool cual = true;
     public override void Spawned()
     {
@@ -238,7 +237,7 @@ public class Player : NetworkBehaviour
 
         if (other.gameObject.tag=="tanque1" && cual==true)
         {
-            version1 = true;
+            capture.quien1 = true;
             cual = false;
                 
         }
@@ -246,7 +245,7 @@ public class Player : NetworkBehaviour
 
         if (other.gameObject.tag == "tanque2" && cual ==true)
         {
-            version2 = true;
+            capture.quien2 = true;
             cual = false;
         }
     }
@@ -261,27 +260,4 @@ public class Player : NetworkBehaviour
     }
 
 
- public bool quien1
-    {
-
-        get
-        {
-
-          return  version1 ;
-           
-        }
-
-    }
-
-    public bool quien2
-    {
-
-        get
-        {
-
-            
-            return version2;
-        }
-
-    }
 }

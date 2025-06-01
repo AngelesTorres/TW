@@ -373,6 +373,7 @@
 "Assets/Script/bomba.cs"
 "Assets/Script/bombaspawn.cs"
 "Assets/Script/Bullet.cs"
+"Assets/Script/camptura.cs"
 "Assets/Script/desactivadaño.cs"
 "Assets/Script/FollowTarget.cs"
 "Assets/Script/GameManager.cs"

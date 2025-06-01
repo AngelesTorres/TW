@@ -6,7 +6,7 @@ public class bandera : MonoBehaviour
 {
     
     public Transform casa;
-    public Player tanque;
+ 
     public bool bandera1;
     public bool bandera2;
     // Start is called before the first frame update
@@ -23,20 +23,17 @@ public class bandera : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (bandera1 == true)
+        if (bandera1 == true && other.gameObject.tag=="zonacaptura1")
         {
-            if (other.gameObject.tag=="tanque" )
-            {
+            
                 Destroy(gameObject);
-            }
+            
         }
 
-        if (bandera2 == true)
+        if (bandera2 == true && other.gameObject.tag == "zonacaptura2")
         {
-            if (other.gameObject.tag == "tanque" )
-            {
                 Destroy(gameObject);
-            }
+            
         }
 
 

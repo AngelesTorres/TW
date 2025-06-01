@@ -12,6 +12,10 @@ TagManager:
   - zonasegura
   - tanque1
   - tanque2
+  - zonacaptura1
+  - zonacaptura2
+  - bandera1
+  - bandera2
   layers:
   - Default
   - TransparentFX
