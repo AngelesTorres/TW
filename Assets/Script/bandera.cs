@@ -30,13 +30,25 @@ public class bandera : MonoBehaviour
             
         }
 
+        if (bandera1 == true && other.gameObject.tag == "zonacaptura2")
+        {
+
+            Destroy(gameObject);
+
+        }
+
         if (bandera2 == true && other.gameObject.tag == "zonacaptura2")
         {
             transform.position = casa.position;
 
         }
 
+        if (bandera2 == true && other.gameObject.tag == "zonacaptura1")
+        {
 
+            Destroy(gameObject);
+
+        }
     }
 
     

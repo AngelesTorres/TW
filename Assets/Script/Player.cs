@@ -35,7 +35,7 @@ public class Player : NetworkBehaviour
     public GameObject demobomb;
     public GameObject demobomb2;
     public GameObject demobomb3;
-
+    
     public float countbomb;
     public bool espera;
     public float waitmore;
@@ -137,6 +137,11 @@ public class Player : NetworkBehaviour
             recharg = false;
             charge = 0;
             wait_shoot = 0;
+        }
+
+        if (_currentLife ==1)
+        {
+            capture.GetComponent<camptura>().suelta = true;
         }
 
     }
