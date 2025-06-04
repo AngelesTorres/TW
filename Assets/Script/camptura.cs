@@ -8,7 +8,11 @@ public class camptura : MonoBehaviour
     public bool version1;
     public bool version2;
     public bool suelta;
+    public int banderas;
     public GameObject demobandera;
+    public Transform sueltabandera;
+    public GameObject truebandera1;
+    public GameObject truebandera2;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +35,21 @@ public class camptura : MonoBehaviour
             gameObject.tag = "zonacaptura2";
         }
 
-        if (suelta == true )
+        if (suelta == true && gameObject.tag == "zonacaptura1")
         {
             demobandera.SetActive(false);
+            Instantiate(truebandera1, sueltabandera.position, sueltabandera.rotation);
+            suelta = false;
+            banderas = 0;
         }
 
+        if (suelta == true && gameObject.tag == "zonacaptura2")
+        {
+            demobandera.SetActive(false);
+            Instantiate(truebandera2, sueltabandera.position, sueltabandera.rotation);
+            suelta = false;
+            banderas = 0;
+        }
     }
 
     public bool dejalo
@@ -65,12 +79,14 @@ public class camptura : MonoBehaviour
         {
             demobandera.SetActive(true);
             suelta = false;
+            banderas = 1;
         }
 
         if (other.gameObject.tag == "bandera2" && gameObject.tag == "zonacaptura2")
         {
             demobandera.SetActive(true);
             suelta = false;
+            banderas = 1;
         }
 
     }
@@ -89,4 +105,13 @@ public class camptura : MonoBehaviour
        
     }
 
+    public int cantidadB
+    {
+        get
+        {
+            return banderas;
+
+        }
+
+    }
 }

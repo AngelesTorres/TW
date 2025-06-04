@@ -139,7 +139,7 @@ public class Player : NetworkBehaviour
             wait_shoot = 0;
         }
 
-        if (_currentLife ==1)
+        if (_currentLife == 1 && capture.banderas == 1)
         {
             capture.GetComponent<camptura>().suelta = true;
         }
