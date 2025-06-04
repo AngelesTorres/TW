@@ -9,7 +9,7 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
     private int numberOfPlayers = 2;
 
     [SerializeField] private Transform[] _spawnTransforms;
-    [SerializeField] private nucleo[] _nucleos;
+    //[SerializeField] private nucleo[] _nucleos;
     [SerializeField] private Transform[] _towerSpawnTransforms;
 
     private bool _initialized;
@@ -44,11 +44,19 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
 
         var cl = Runner.Spawn(playerPrefab, newPosition, newRotation);
 
-        _nucleos[spawnPointIndex].SetPlayer(cl);
+        //_nucleos[spawnPointIndex].SetPlayer(cl);
 
         var newTowerPosition = _towerSpawnTransforms[spawnPointIndex].position;
         var newTowerRotation = _towerSpawnTransforms[spawnPointIndex].rotation;
 
-        var tower = Runner.Spawn(_nucleos[spawnPointIndex], newTowerPosition, newTowerRotation);
+        NetworkObject tower = Runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
+
+        if(tower.TryGetComponent(out nucleo core))
+        {
+            if (core != null)
+            {
+                core.SetPlayer(cl);
+            }
+        }
     }
 }

@@ -7,20 +7,32 @@
       "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\spawner\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Documents\\GitHub\\TW\\assets\\script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Documents\\GitHub\\TW\\assets\\script\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Documents\\GitHub\\TW\\assets\\script\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\nucleo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Documents\\GitHub\\TW\\assets\\script\\nucleo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\nucleo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Documents\\GitHub\\TW\\assets\\script\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\mainmenu\\sessionlisthandler - copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mainmenu\\sessionlisthandler - copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\mainmenu\\sessionlisthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mainmenu\\sessionlisthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Documents\\GitHub\\TW\\assets\\script\\mainmenuhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mainmenuhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Documents\\GitHub\\TW\\assets\\script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,17 +42,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "SessionListHandler - Copy.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\MainMenu\\SessionListHandler - Copy.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\MainMenu\\SessionListHandler - Copy.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\MainMenu\\SessionListHandler - Copy.cs",
+              "RelativeToolTip": "Assets\\Script\\MainMenu\\SessionListHandler - Copy.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwEcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T18:25:25.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SessionListHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\MainMenu\\SessionListHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\MainMenu\\SessionListHandler.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\MainMenu\\SessionListHandler.cs",
+              "RelativeToolTip": "Assets\\Script\\MainMenu\\SessionListHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T18:24:28.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainMenuHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\MainMenuHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\MainMenuHandler.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\MainMenuHandler.cs",
+              "RelativeToolTip": "Assets\\Script\\MainMenuHandler.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T18:17:56.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Player.cs",
               "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player.cs",
               "RelativeToolTip": "Assets\\Script\\Player.cs",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAAADsAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwEEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T17:18:29.334Z",
               "EditorCaption": ""
@@ -53,7 +104,7 @@
               "RelativeDocumentMoniker": "Assets\\Script\\nucleo.cs",
               "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\nucleo.cs",
               "RelativeToolTip": "Assets\\Script\\nucleo.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwDcAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwB4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T18:36:37.859Z",
               "EditorCaption": ""
@@ -66,14 +117,14 @@
               "RelativeDocumentMoniker": "Assets\\Script\\Bullet.cs",
               "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Bullet.cs",
               "RelativeToolTip": "Assets\\Script\\Bullet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T18:31:52.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\GameManager.cs",
@@ -81,8 +132,7 @@
               "RelativeToolTip": "Assets\\Script\\GameManager.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAmwCsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T18:33:07.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T18:33:07.614Z"
             },
             {
               "$type": "Document",
@@ -92,7 +142,7 @@
               "RelativeDocumentMoniker": "Assets\\Script\\Spawner\\Spawner.cs",
               "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Spawner\\Spawner.cs",
               "RelativeToolTip": "Assets\\Script\\Spawner\\Spawner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwDkAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T17:17:32.911Z",
               "EditorCaption": ""

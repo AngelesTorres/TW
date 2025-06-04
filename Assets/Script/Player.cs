@@ -19,7 +19,7 @@ public class Player : NetworkBehaviour
     [SerializeField] private ballafogueo _balafogeo;
     [SerializeField] private Transform _bulletSpawnerTransform;
 
-    [SerializeField] public nucleo myTower;
+    [SerializeField] private nucleo _myTower;
 
     private bool _isShootingPressed;
     public float wait_shoot;
@@ -43,7 +43,7 @@ public class Player : NetworkBehaviour
 
     public GameObject bomba;
     public Transform bomsalida;
-    public camptura capture;
+   
     public bool stop;
 
     public bool cual = true;
@@ -59,6 +59,11 @@ public class Player : NetworkBehaviour
         }
 
         GameManager.Instance.AddToList(this);
+    }
+    public Player SetTower(nucleo tower)
+    {
+        _myTower = tower;
+        return this;
     }
 
     void Update()
@@ -138,12 +143,6 @@ public class Player : NetworkBehaviour
             charge = 0;
             wait_shoot = 0;
         }
-
-        if (_currentLife == 1 && capture.banderas == 1)
-        {
-            capture.GetComponent<camptura>().suelta = true;
-        }
-
     }
 
     public override void FixedUpdateNetwork()
@@ -200,7 +199,7 @@ public class Player : NetworkBehaviour
        
         if (otrabala == false)
         {
-         Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation);
+         Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation).SetPlayer(this);
         }
 
         if (otrabala == true)
@@ -240,19 +239,7 @@ public class Player : NetworkBehaviour
             espera = false;
         }
 
-        if (other.gameObject.tag=="tanque1" && cual==true)
-        {
-            capture.quien1 = true;
-            cual = false;
-                
-        }
-
-
-        if (other.gameObject.tag == "tanque2" && cual ==true)
-        {
-            capture.quien2 = true;
-            cual = false;
-        }
+       
     }
 
   public bool cambio

@@ -13,6 +13,20 @@ public class Bullet : NetworkBehaviour
    
     private TickTimer _lifeTimer;
 
+    private Player _player;
+    private nucleo _nucleo;
+
+    public Bullet SetPlayer(Player player)
+    {
+        _player = player;
+        return this;
+    }
+    public Bullet SetTower(nucleo tower)
+    {
+        _nucleo = tower;
+        return this;
+    }
+
     public override void Spawned()
     {
         GetComponent<NetworkRigidbody3D>().Rigidbody.AddForce(transform.forward * _initialForce, ForceMode.VelocityChange);
@@ -33,7 +47,7 @@ public class Bullet : NetworkBehaviour
         if(!HasStateAuthority)
             return;
 
-        if (other.TryGetComponent(out Player player) )        
+        if (other.TryGetComponent(out Player player) && player != _player )        
         {
             player.RPC_TakeDamage(_damage);
             Runner.Despawn(Object);
