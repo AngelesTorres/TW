@@ -5413,7 +5413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7339771948579006621
 Transform:
   m_ObjectHideFlags: 0
@@ -5446,7 +5446,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 4.92, y: 0.59, z: 3.75}
   m_Center: {x: 0, y: 0.38, z: 0}
@@ -5465,7 +5465,6 @@ GameObject:
   - component: {fileID: 3601515772549228454}
   - component: {fileID: 2286015496155880598}
   - component: {fileID: 3176623713558734499}
-  - component: {fileID: -4318070499492915412}
   m_Layer: 0
   m_Name: Player
   m_TagString: tanque
@@ -5536,7 +5535,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 3889431172487914551, guid: e95509daeff647641b1524812bb6b24d, type: 3}
   _balafogeo: {fileID: 5563173513778546433, guid: aea4039e7fafa7e4b8cc86e49f438f54, type: 3}
   _bulletSpawnerTransform: {fileID: 426826263682421453}
-  myTower: {fileID: 0}
+  _myTower: {fileID: 0}
   wait_shoot: 0
   recharg: 0
   charge: 0
@@ -5549,7 +5548,6 @@ MonoBehaviour:
   waitmore: 0
   bomba: {fileID: 2670387273952359904, guid: cbc9efd53000aeb47a5b567f63bab7a0, type: 3}
   bomsalida: {fileID: 8731225884789054360}
-  capture: {fileID: 0}
   stop: 0
   cual: 1
 --- !u!114 &6308591232353982981
@@ -5632,20 +5630,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.653841
   m_Center: {x: -0.011045456, y: 0.30377126, z: -0.49671316}
---- !u!114 &-4318070499492915412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721536361348014723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1541381998, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guid:
-    RawGuidValue: 82e6a593e20493d46854c266e2e23a58
 --- !u!1 &7854507824823452790
 GameObject:
   m_ObjectHideFlags: 0

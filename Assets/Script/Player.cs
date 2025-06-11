@@ -19,7 +19,7 @@ public class Player : NetworkBehaviour
     [SerializeField] private ballafogueo _balafogeo;
     [SerializeField] private Transform _bulletSpawnerTransform;
 
-    [SerializeField] private nucleo _myTower;
+    [SerializeField] public NetworkObject _myTower;
 
     private bool _isShootingPressed;
     public float wait_shoot;
@@ -60,7 +60,7 @@ public class Player : NetworkBehaviour
 
         GameManager.Instance.AddToList(this);
     }
-    public Player SetTower(nucleo tower)
+    public Player SetTower(NetworkObject tower)
     {
         _myTower = tower;
         return this;
@@ -199,7 +199,7 @@ public class Player : NetworkBehaviour
        
         if (otrabala == false)
         {
-         Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation).SetPlayer(this);
+            Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation).SetPlayer(this).SetTower(_myTower);
         }
 
         if (otrabala == true)
@@ -237,19 +237,14 @@ public class Player : NetworkBehaviour
         {
             countbomb = countbomb + 1;
             espera = false;
-        }
-
-       
+        }       
     }
 
   public bool cambio
     {
         set
         {
-            otrabala = value;
-           
+            otrabala = value;           
         }
     }
-
-
 }

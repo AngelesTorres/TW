@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 
-public class nucleo : NetworkBehaviour
+public class NetworkObject : NetworkBehaviour
 {
     public bool recibe;
     private float _maxLife = 15;
@@ -24,9 +24,9 @@ public class nucleo : NetworkBehaviour
             return;
     }
 
-    public NetworkObject _player;
+    public Fusion.NetworkObject _player;
 
-    public nucleo SetPlayer(NetworkObject player)
+    public NetworkObject SetPlayer(Fusion.NetworkObject player)
     {
         _player = player;
 

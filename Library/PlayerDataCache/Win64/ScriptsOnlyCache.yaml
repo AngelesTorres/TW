@@ -320,27 +320,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 21614}
     - Class: 114
-      Script: {instanceID: 21894}
+      Script: {instanceID: 21892}
     - Class: 114
-      Script: {instanceID: 21910}
+      Script: {instanceID: 21908}
     - Class: 114
-      Script: {instanceID: 21938}
+      Script: {instanceID: 21936}
     - Class: 114
-      Script: {instanceID: 22000}
+      Script: {instanceID: 21998}
     - Class: 114
-      Script: {instanceID: 22076}
+      Script: {instanceID: 22074}
     - Class: 114
-      Script: {instanceID: 22266}
+      Script: {instanceID: 22264}
     - Class: 114
-      Script: {instanceID: 22298}
+      Script: {instanceID: 22296}
     - Class: 114
-      Script: {instanceID: 22480}
+      Script: {instanceID: 22478}
     - Class: 114
-      Script: {instanceID: 22558}
+      Script: {instanceID: 22556}
     - Class: 114
-      Script: {instanceID: 22594}
+      Script: {instanceID: 22592}
     - Class: 114
-      Script: {instanceID: 23018}
+      Script: {instanceID: 23016}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -470,7 +470,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 8d17720ff20bc92eb6419003a94b8a5d
+      Hash: 63f7e8b0fe18dfdfcb6dbdd43fca5cdc
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
@@ -1544,17 +1544,23 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: c87cad3958960e5a9e29fb3ef0b7ff63
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SessionItem
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: NewBehaviourScript
   - hash:
       serializedVersion: 2
-      Hash: c87cad3958960e5a9e29fb3ef0b7ff63
+      Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: SessionItem
+    className: NewBehaviourScript1
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Alumno/Documents/GitHub/TW.exe
+  playerPath: C:/Users/Alumno/Downloads/TW.exe
