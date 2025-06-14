@@ -4917,7 +4917,7 @@ Transform:
   m_GameObject: {fileID: 1378573696383808509}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0001, y: 0.0075, z: 0.0019}
+  m_LocalPosition: {x: 0.0001, y: 0.0075, z: 0.01}
   m_LocalScale: {x: 0.7888213, y: 0.7888213, z: 0.7888213}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5540,6 +5540,10 @@ MonoBehaviour:
   recharg: 0
   charge: 0
   otrabala: 0
+  _bombPlaces:
+  - {fileID: 5696925273283936266}
+  - {fileID: 134732369741867018}
+  - {fileID: 4304330026251668650}
   demobomb: {fileID: 4038895217231125847}
   demobomb2: {fileID: 8259721149336781750}
   demobomb3: {fileID: 2674287568347120471}
@@ -5692,7 +5696,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7854507824823452790}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddda325b7c65f104fbb43de9ae538d75, type: 3}
   m_Name: 

@@ -9,19 +9,19 @@ public class Bullet : NetworkBehaviour
 {
     [SerializeField] private float _initialForce;
     [SerializeField] private float _lifeTime = 5f;
-   [SerializeField] private int _damage =1;
+    [SerializeField] private int _damage =1;
    
     private TickTimer _lifeTimer;
 
-    private Player _player;
-    private NetworkObject _nucleo;
+    public Player _player;
+    public Tower _nucleo;
 
     public Bullet SetPlayer(Player player)
     {
         _player = player;
         return this;
     }
-    public Bullet SetTower(NetworkObject tower)
+    public Bullet SetTower(Tower tower)
     {
         _nucleo = tower;
         return this;
@@ -52,7 +52,7 @@ public class Bullet : NetworkBehaviour
             Runner.Despawn(Object);
         }
                
-        if (other.TryGetComponent(out NetworkObject tower) && tower != _nucleo)
+        if (other.TryGetComponent(out Tower tower) && tower != _nucleo)
         {
             tower.RPC_TakeDamage(_damage);
             Runner.Despawn(Object);

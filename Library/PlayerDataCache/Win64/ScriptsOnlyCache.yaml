@@ -4,11 +4,11 @@ ScriptsOnlyBuild:
     - Bullet
     - Player
     - PlayerView
+    - Tower
     - ballafogueo
     - bomba
     - "desactivada\xF1o"
     - murorompible
-    - nucleo
     - torreta
     Assembly-CSharp.dll:
     - Bullet
@@ -17,12 +17,12 @@ ScriptsOnlyBuild:
     - Player
     - PlayerView
     - Spawner
+    - Tower
     - ballafogueo
     - bomba
     - bombaspawn
     - "desactivada\xF1o"
     - murorompible
-    - nucleo
     - torreta
     Fusion.Addons.Physics:
     - Fusion.Addons.Physics.NetworkRigidbody3D
@@ -240,107 +240,107 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 622}
     - Class: 114
-      Script: {instanceID: 16620}
+      Script: {instanceID: 1618}
     - Class: 114
-      Script: {instanceID: 16662}
+      Script: {instanceID: 2204}
     - Class: 114
-      Script: {instanceID: 17252}
+      Script: {instanceID: 2416}
     - Class: 114
-      Script: {instanceID: 17308}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 17424}
+      Script: {instanceID: 2722}
     - Class: 114
-      Script: {instanceID: 17468}
+      Script: {instanceID: 2818}
     - Class: 114
-      Script: {instanceID: 17674}
+      Script: {instanceID: 2836}
     - Class: 114
-      Script: {instanceID: 17738}
+      Script: {instanceID: 3122}
     - Class: 114
-      Script: {instanceID: 17774}
+      Script: {instanceID: 3190}
     - Class: 114
-      Script: {instanceID: 17870}
+      Script: {instanceID: 3296}
     - Class: 114
-      Script: {instanceID: 17888}
+      Script: {instanceID: 3880}
     - Class: 114
-      Script: {instanceID: 18174}
+      Script: {instanceID: 3996}
     - Class: 114
-      Script: {instanceID: 18242}
+      Script: {instanceID: 4104}
     - Class: 114
-      Script: {instanceID: 18348}
+      Script: {instanceID: 4118}
     - Class: 114
-      Script: {instanceID: 18358}
+      Script: {instanceID: 4370}
     - Class: 114
-      Script: {instanceID: 18590}
+      Script: {instanceID: 4946}
     - Class: 114
-      Script: {instanceID: 18938}
+      Script: {instanceID: 4996}
     - Class: 114
-      Script: {instanceID: 19054}
+      Script: {instanceID: 5068}
     - Class: 114
-      Script: {instanceID: 19160}
+      Script: {instanceID: 5318}
     - Class: 114
-      Script: {instanceID: 19174}
+      Script: {instanceID: 5456}
     - Class: 114
-      Script: {instanceID: 19428}
+      Script: {instanceID: 5624}
     - Class: 114
-      Script: {instanceID: 20004}
+      Script: {instanceID: 5742}
     - Class: 114
-      Script: {instanceID: 20054}
+      Script: {instanceID: 5744}
     - Class: 114
-      Script: {instanceID: 20126}
+      Script: {instanceID: 5746}
     - Class: 114
-      Script: {instanceID: 20366}
+      Script: {instanceID: 5750}
     - Class: 114
-      Script: {instanceID: 20378}
+      Script: {instanceID: 5752}
     - Class: 114
-      Script: {instanceID: 20516}
+      Script: {instanceID: 5754}
     - Class: 114
-      Script: {instanceID: 20684}
+      Script: {instanceID: 5808}
     - Class: 114
-      Script: {instanceID: 20802}
+      Script: {instanceID: 6138}
     - Class: 114
-      Script: {instanceID: 20804}
+      Script: {instanceID: 6146}
     - Class: 114
-      Script: {instanceID: 20806}
+      Script: {instanceID: 6540}
     - Class: 114
-      Script: {instanceID: 20810}
+      Script: {instanceID: 6546}
     - Class: 114
-      Script: {instanceID: 20812}
+      Script: {instanceID: 6824}
     - Class: 114
-      Script: {instanceID: 20814}
+      Script: {instanceID: 6866}
     - Class: 114
-      Script: {instanceID: 20868}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 21202}
+      Script: {instanceID: 7004}
     - Class: 114
-      Script: {instanceID: 21210}
+      Script: {instanceID: 7192}
     - Class: 114
-      Script: {instanceID: 21528}
+      Script: {instanceID: 7224}
     - Class: 114
-      Script: {instanceID: 21608}
+      Script: {instanceID: 7404}
     - Class: 114
-      Script: {instanceID: 21614}
+      Script: {instanceID: 7480}
     - Class: 114
-      Script: {instanceID: 21892}
+      Script: {instanceID: 7516}
     - Class: 114
-      Script: {instanceID: 21908}
+      Script: {instanceID: 8340}
     - Class: 114
-      Script: {instanceID: 21936}
+      Script: {instanceID: 8344}
     - Class: 114
-      Script: {instanceID: 21998}
+      Script: {instanceID: 8356}
     - Class: 114
-      Script: {instanceID: 22074}
+      Script: {instanceID: 8364}
     - Class: 114
-      Script: {instanceID: 22264}
+      Script: {instanceID: 8368}
     - Class: 114
-      Script: {instanceID: 22296}
+      Script: {instanceID: 8388}
     - Class: 114
-      Script: {instanceID: 22478}
+      Script: {instanceID: 8396}
     - Class: 114
-      Script: {instanceID: 22556}
+      Script: {instanceID: 8408}
     - Class: 114
-      Script: {instanceID: 22592}
+      Script: {instanceID: 8420}
     - Class: 114
-      Script: {instanceID: 23016}
+      Script: {instanceID: 8424}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -366,12 +366,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 753d4c0d7abf8a9e660cbdc3c1e59e15
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Bullet
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -428,12 +422,6 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: d2ba025b58091bb62542cc7ef050cbb8
-    assemblyName: Fusion.Addons.Physics
-    namespaceName: Fusion.Addons.Physics
-    className: NetworkRigidbody2D
-  - hash:
-      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -470,12 +458,6 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 63f7e8b0fe18dfdfcb6dbdd43fca5cdc
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Player
-  - hash:
-      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -488,12 +470,6 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: ddcee8c718d466e80785b2bc8ea179ca
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: torreta
-  - hash:
-      serializedVersion: 2
       Hash: a9dc156b6c463830a11aab6d7f5aa58e
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -504,6 +480,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: c87cad3958960e5a9e29fb3ef0b7ff63
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SessionItem
   - hash:
       serializedVersion: 2
       Hash: bcdedb1b3a567eb05111be4716618ce1
@@ -540,12 +522,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: eba9e8a23a9af76aa53cc98e4581c05f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Spawner
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -692,12 +668,6 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
-      Hash: d34071592710772c6836c6f1b406e3c2
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: bomba
-  - hash:
-      serializedVersion: 2
       Hash: f6831ac80ec81c5d5b370c0ed0fee997
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -732,12 +702,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnControllerColliderHitMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: d2ba025b58091bb62542cc7ef050cbb8
-    assemblyName: Fusion.Addons.Physics
-    namespaceName: Fusion.Addons.Physics
-    className: NetworkRigidbody3D
   - hash:
       serializedVersion: 2
       Hash: 747284d692f6c45bae4955ed655ed04c
@@ -927,12 +891,6 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: TowerSpawner
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBeginDragMessageListener
@@ -998,12 +956,6 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 6961e916a1078949a528f26c9adf6a7a
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: tank
-  - hash:
-      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1032,12 +984,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDeselectMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: ae3f24ce89a60173722f7940acc2cc5f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: 1ed846c1ed9d69c8c2fcff9a6896b04f
@@ -1220,12 +1166,6 @@ ScriptsOnlyBuild:
     className: UnityOnDragMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 65ee5891442243597d30299ce61889d9
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: nucleo
-  - hash:
-      serializedVersion: 2
       Hash: ea1569413d805748b7cef2dcb4622c85
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -1254,12 +1194,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
-  - hash:
-      serializedVersion: 2
-      Hash: c26b506740579ef54402d53db88a7758
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: bala
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1320,12 +1254,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollRectValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: c1a94dc477518a4a332dbca104d0eb8c
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: bombaspawn
   - hash:
       serializedVersion: 2
       Hash: db402cf0b8849d56bdb10e8904169663
@@ -1448,12 +1376,6 @@ ScriptsOnlyBuild:
     className: UnityOnMouseOverMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 1bb5a9428abd91dfae66b96412a3d7df
-    assemblyName: Fusion.Addons.Physics
-    namespaceName: Fusion.Addons.Physics
-    className: RunnerSimulatePhysics2D
-  - hash:
-      serializedVersion: 2
       Hash: 60e0094d3a1a2bfbe8348f2aa0b92f9f
     assemblyName: Fusion.Unity
     namespaceName: Fusion.Statistics
@@ -1490,18 +1412,6 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 1bb5a9428abd91dfae66b96412a3d7df
-    assemblyName: Fusion.Addons.Physics
-    namespaceName: Fusion.Addons.Physics
-    className: RunnerSimulatePhysics3D
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: WallsSpawner
-  - hash:
-      serializedVersion: 2
       Hash: afe1800287c9574079eab3fea2622416
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1526,12 +1436,6 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: bdf543f65531861515845cd01584adb0
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PlayerView
-  - hash:
-      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1544,23 +1448,107 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: c87cad3958960e5a9e29fb3ef0b7ff63
+      Hash: 6961e916a1078949a528f26c9adf6a7a
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: SessionItem
+    className: tank
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: NewBehaviourScript
+    className: WallsSpawner
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: NewBehaviourScript1
+    className: TowerSpawner
+  - hash:
+      serializedVersion: 2
+      Hash: 65ee5891442243597d30299ce61889d9
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Tower
+  - hash:
+      serializedVersion: 2
+      Hash: 2a77b6728465146cc1f737420838e973
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Bullet
+  - hash:
+      serializedVersion: 2
+      Hash: d2ba025b58091bb62542cc7ef050cbb8
+    assemblyName: Fusion.Addons.Physics
+    namespaceName: Fusion.Addons.Physics
+    className: NetworkRigidbody2D
+  - hash:
+      serializedVersion: 2
+      Hash: c1a94dc477518a4a332dbca104d0eb8c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: bombaspawn
+  - hash:
+      serializedVersion: 2
+      Hash: c26b506740579ef54402d53db88a7758
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: bala
+  - hash:
+      serializedVersion: 2
+      Hash: ae3f24ce89a60173722f7940acc2cc5f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: eba9e8a23a9af76aa53cc98e4581c05f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Spawner
+  - hash:
+      serializedVersion: 2
+      Hash: bdf543f65531861515845cd01584adb0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerView
+  - hash:
+      serializedVersion: 2
+      Hash: a5a17f0ce9a19abc05805af25d416fa7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Player
+  - hash:
+      serializedVersion: 2
+      Hash: 1bb5a9428abd91dfae66b96412a3d7df
+    assemblyName: Fusion.Addons.Physics
+    namespaceName: Fusion.Addons.Physics
+    className: RunnerSimulatePhysics2D
+  - hash:
+      serializedVersion: 2
+      Hash: d2ba025b58091bb62542cc7ef050cbb8
+    assemblyName: Fusion.Addons.Physics
+    namespaceName: Fusion.Addons.Physics
+    className: NetworkRigidbody3D
+  - hash:
+      serializedVersion: 2
+      Hash: 1bb5a9428abd91dfae66b96412a3d7df
+    assemblyName: Fusion.Addons.Physics
+    namespaceName: Fusion.Addons.Physics
+    className: RunnerSimulatePhysics3D
+  - hash:
+      serializedVersion: 2
+      Hash: d34071592710772c6836c6f1b406e3c2
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: bomba
+  - hash:
+      serializedVersion: 2
+      Hash: ddcee8c718d466e80785b2bc8ea179ca
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: torreta
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Alumno/Downloads/TW.exe
+  playerPath: Z:/Tareas de Mariel/Programacion/GitHub_Projects/Builds/TW.exe

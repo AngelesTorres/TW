@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3786454572194296283}
   - component: {fileID: 7356627409117074086}
   - component: {fileID: 8565499496352360379}
-  - component: {fileID: 8774701984808697730}
   m_Layer: 0
   m_Name: nucleobase 1
   m_TagString: nucleo
@@ -96,13 +95,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7298349308185118778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 961a321c578014849b10ed6523fa6468, type: 3}
+  m_Script: {fileID: 11500000, guid: 0416d1e3ea45641428f403f0bf05508d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   recibe: 0
-  live: 0
   "waitda\xF1o": 0
-  "colorda\xF1o": {fileID: 2100000, guid: ed81513f103441447843c045aa6d8a40, type: 2}
+  "colorda\xF1o": {fileID: 0}
+  _player: {fileID: 0}
 --- !u!136 &7356627409117074086
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -145,17 +144,3 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 3786454572194296283}
   ForceRemoteRenderTimeframe: 0
---- !u!114 &8774701984808697730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7298349308185118778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1541381998, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guid:
-    RawGuidValue: 2f6c130276849904d812c6d266d1d4bf
