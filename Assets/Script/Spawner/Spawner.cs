@@ -43,8 +43,6 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
 
         var cl = Runner.Spawn(playerPrefab, newPosition, newRotation);
 
-        //_nucleos[spawnPointIndex].SetPlayer(cl);
-
         var newTowerPosition = _towerSpawnTransforms[spawnPointIndex].position;
         var newTowerRotation = _towerSpawnTransforms[spawnPointIndex].rotation;
 
@@ -56,6 +54,13 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
             if (core != null)
             {
                 core.SetPlayer(cl);
+            }
+        }
+        if (cl.TryGetComponent(out Player player))
+        {
+            if (player != null)
+            {
+                player.SetTower(tower);
             }
         }
         */

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 using Fusion.Addons.Physics;
@@ -21,14 +18,18 @@ public class Bullet : NetworkBehaviour
         _player = player;
         return this;
     }
+    /*
     public Bullet SetTower(Tower tower)
     {
         _nucleo = tower;
         return this;
     }
-
+    */
     public override void Spawned()
     {
+        if(!HasStateAuthority)
+            return;
+
         GetComponent<NetworkRigidbody3D>().Rigidbody.AddForce(transform.forward * _initialForce, ForceMode.VelocityChange);
 
         _lifeTimer = TickTimer.CreateFromSeconds(Runner, _lifeTime);
@@ -43,7 +44,7 @@ public class Bullet : NetworkBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(!HasStateAuthority)
+        if (!Object || !Object.HasStateAuthority)
             return;
 
         if (other.TryGetComponent(out Player player) && player != _player )        
@@ -51,7 +52,8 @@ public class Bullet : NetworkBehaviour
             player.RPC_TakeDamage(_damage);
             Runner.Despawn(Object);
         }
-               
+
+        /*
         if (other.TryGetComponent(out Tower tower) && tower != _nucleo)
         {
             tower.RPC_TakeDamage(_damage);
@@ -61,5 +63,6 @@ public class Bullet : NetworkBehaviour
         {
             Runner.Despawn(Object);
         }
+               */
     }
 }

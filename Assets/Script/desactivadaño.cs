@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class desactivadaño : MonoBehaviour
 {
+    /*
     public Player Player;
     
 
@@ -34,4 +35,5 @@ public class desactivadaño : MonoBehaviour
             Player.GetComponent<Player>().otrabala = false;
         }
     }
+    */
 }

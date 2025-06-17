@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recibe: 0
   "waitda\xF1o": 0
-  "colorda\xF1o": {fileID: 0}
+  "colorda\xF1o": {fileID: 2100000, guid: ed81513f103441447843c045aa6d8a40, type: 2}
   _player: {fileID: 0}
 --- !u!136 &7356627409117074086
 CapsuleCollider:

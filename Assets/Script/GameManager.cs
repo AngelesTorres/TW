@@ -10,8 +10,6 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private GameObject _loseImage;
     private List<PlayerRef> _players = new();
 
-    [SerializeField] private Transform[] _towerSpawnTransforms;
-
     public static GameManager Instance { get; private set; }
     private void Awake()
     {

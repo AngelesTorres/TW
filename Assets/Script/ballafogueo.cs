@@ -35,18 +35,11 @@ public class ballafogueo : NetworkBehaviour
 
             player.RPC_TakeDamage(_damage);
 
-        // Runner.Despawn(Object);
-
-
-
-
-
         if (other.gameObject.tag == "nucleo")
         {
             Runner.Despawn(Object);
         }
     }
-
 
     private void OnTriggerExit(Collider other)
     {

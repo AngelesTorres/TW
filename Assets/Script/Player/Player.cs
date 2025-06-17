@@ -16,16 +16,12 @@ public class Player : NetworkBehaviour
     private float _verticalInput;
 
     [SerializeField] private Bullet _bulletPrefab;
-    [SerializeField] private ballafogueo _balafogeo;
     [SerializeField] private Transform _bulletSpawnerTransform;
-
-    [SerializeField] public Tower _myTower;
 
     private bool _isShootingPressed;
     public float wait_shoot;
     public bool recharg;
     public float charge;
-    public bool otrabala;
 
     private NetworkRigidbody3D _rb;
 
@@ -40,7 +36,6 @@ public class Player : NetworkBehaviour
     public float countbomb;
     public bool espera;
     public float waitmore;
-
 
     public GameObject bomba;
     public Transform bomsalida;
@@ -61,6 +56,9 @@ public class Player : NetworkBehaviour
 
         GameManager.Instance.AddToList(this);
     }
+
+    [SerializeField] public Tower _myTower;
+
     public Player SetTower(Tower tower)
     {
         _myTower = tower;
@@ -128,11 +126,7 @@ public class Player : NetworkBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.B) && countbomb >= 1)
-        {
-            Instantiate(bomba, bomsalida.position, bomsalida.rotation);
-            countbomb = countbomb - 1;
-        }
+
 
         if (wait_shoot >= 6)
         {
@@ -162,6 +156,12 @@ public class Player : NetworkBehaviour
             SpawnShoot();
             _isShootingPressed = false;
             wait_shoot += 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.B) && countbomb >= 1)
+        {
+            Instantiate(bomba, bomsalida.position, bomsalida.rotation);
+            countbomb = countbomb - 1;
         }
     }
 
@@ -202,20 +202,15 @@ public class Player : NetworkBehaviour
     }
 
     void SpawnShoot()
-    {
-       
-            Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation).SetPlayer(this);
-        /*
-        if (otrabala == false)
-        {
-        }
+    {       
+        Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation).SetPlayer(this);        
 
-        if (otrabala == true)
-        {
-            Runner.Spawn(_balafogeo, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation);
-        }
-        */
         OnShoot();
+    }
+
+    void SpawnBomb()
+    {
+
     }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
@@ -227,8 +222,8 @@ public class Player : NetworkBehaviour
     void Local_TakeDamage(int dmg)
     {
          _currentLife -= dmg;
-        //if (_currentLife <= 0)
-            //Death();
+        if (_currentLife <= 0)
+            Death();
     }
 
     public void Death()

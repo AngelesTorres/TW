@@ -1,20 +1,40 @@
+using Fusion;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Fusion;
 
 public class torreta : NetworkBehaviour
 {
     public float rotationSpeed = 100f;
-    [SerializeField]
-    public GameObject prefbal;
+    [SerializeField] public GameObject prefbal;
     public Transform disparo;
-
+    [SerializeField] private float _rotationLimit = 90f;
+    public Action OnShoot;
     void Update()
     {
         if (!HasStateAuthority)
             return;
 
+        rotation();
+
+        /*
+        if (recharg == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                _isShootingPressed = true;
+        }
+        if (_isShootingPressed)
+        {
+            SpawnShoot();
+            _isShootingPressed = false;
+            wait_shoot += 1;
+        }
+        */
+    }
+
+    void rotation()
+    {
         float input = 0f;
 
         if (Input.GetKey(KeyCode.Q))
@@ -23,5 +43,10 @@ public class torreta : NetworkBehaviour
             input = 1f;
        
         transform.Rotate(Vector3.up * input * rotationSpeed * Time.deltaTime);
+    }
+
+    void SpawnShoot()
+    {
+
     }
 }

@@ -5465,6 +5465,7 @@ GameObject:
   - component: {fileID: 3601515772549228454}
   - component: {fileID: 2286015496155880598}
   - component: {fileID: 3176623713558734499}
+  - component: {fileID: 3302204837409525331}
   m_Layer: 0
   m_Name: Player
   m_TagString: tanque
@@ -5533,13 +5534,10 @@ MonoBehaviour:
   _maxLife: 5
   _currentLife: 0
   _bulletPrefab: {fileID: 3889431172487914551, guid: e95509daeff647641b1524812bb6b24d, type: 3}
-  _balafogeo: {fileID: 5563173513778546433, guid: aea4039e7fafa7e4b8cc86e49f438f54, type: 3}
   _bulletSpawnerTransform: {fileID: 426826263682421453}
-  _myTower: {fileID: 0}
   wait_shoot: 0
   recharg: 0
   charge: 0
-  otrabala: 0
   _bombPlaces:
   - {fileID: 5696925273283936266}
   - {fileID: 134732369741867018}
@@ -5554,6 +5552,7 @@ MonoBehaviour:
   bomsalida: {fileID: 8731225884789054360}
   stop: 0
   cual: 1
+  _myTower: {fileID: 0}
 --- !u!114 &6308591232353982981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5574,6 +5573,7 @@ MonoBehaviour:
   - {fileID: 8568355597665583583}
   - {fileID: 3601515772549228454}
   - {fileID: 2286015496155880598}
+  - {fileID: 3302204837409525331}
   - {fileID: 4746958581574830151}
   - {fileID: 4014377678212652419}
   ForceRemoteRenderTimeframe: 0
@@ -5634,6 +5634,23 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.653841
   m_Center: {x: -0.011045456, y: 0.30377126, z: -0.49671316}
+--- !u!114 &3302204837409525331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721536361348014723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1039544458, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config: 3
+  BroadRadius: 1.653841
+  Offset: {x: -0.01104546, y: 0.3037713, z: -0.4967132}
+  GizmosColor: {r: 1, g: 0, b: 0, a: 1}
+  Hitboxes: []
 --- !u!1 &7854507824823452790
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,7 +5669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7379070405712205404
 Transform:
   m_ObjectHideFlags: 0
@@ -5701,7 +5718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddda325b7c65f104fbb43de9ae538d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 8568355597665583583}
 --- !u!54 &471937863630253297
 Rigidbody:
   m_ObjectHideFlags: 0

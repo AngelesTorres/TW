@@ -13,6 +13,9 @@ public class Tower : NetworkBehaviour
 
     public override void Spawned()
     {
+        if (!HasStateAuthority)
+            return;
+
         recibe = false;
         _currentLife = _maxLife;
         colordaño.color = Color.green;
@@ -20,8 +23,6 @@ public class Tower : NetworkBehaviour
 
     void Update()
     {
-        if (!HasStateAuthority)
-            return;
     }
 
     public NetworkObject _player;
