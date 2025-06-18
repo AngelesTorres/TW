@@ -1,5 +1,7 @@
+using System;
 using Fusion;
 using UnityEngine;
+using Fusion.Sockets;
 
 public class Spawner : SimulationBehaviour, IPlayerJoined
 {
@@ -41,28 +43,19 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
         var newPosition = _spawnTransforms[spawnPointIndex].position;
         var newRotation = _spawnTransforms[spawnPointIndex].rotation;
 
-        var cl = Runner.Spawn(playerPrefab, newPosition, newRotation);
+        NetworkObject cl = Runner.Spawn(playerPrefab, newPosition, newRotation);
 
         var newTowerPosition = _towerSpawnTransforms[spawnPointIndex].position;
         var newTowerRotation = _towerSpawnTransforms[spawnPointIndex].rotation;
 
         var tower = Runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
 
-        if(tower.TryGetComponent(out Tower core))
+        if(tower.TryGetComponent(out Tower core) && cl.TryGetComponent(out Player player))
         {
             if (core != null)
             {
-                core.SetPlayer(cl);
+                core.SetPlayer(player);
             }
         }
-        /*
-        if (cl.TryGetComponent(out Player player))
-        {
-            if (player != null)
-            {
-                player.SetTower(tower);
-            }
-        }
-        */
     }
 }

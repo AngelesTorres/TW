@@ -4,11 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class torreta : NetworkBehaviour
 {
     public float rotationSpeed = 100f;
-    [SerializeField] public GameObject prefbal;
-    public Transform disparo;
+    [SerializeField] private NetworkPrefabRef _bulletPrefab;
+    [SerializeField] private Transform _shootPlace;
     [SerializeField] private float _rotationLimit = 90f;
     public Action OnShoot;
     void Update()
@@ -45,6 +46,10 @@ public class torreta : NetworkBehaviour
         transform.Rotate(Vector3.up * input * rotationSpeed * Time.deltaTime);
     }
 
+    public void Shoot()
+    {
+
+    }
     void SpawnShoot()
     {
 

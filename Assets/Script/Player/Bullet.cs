@@ -11,20 +11,12 @@ public class Bullet : NetworkBehaviour
     private TickTimer _lifeTimer;
 
     public Player _player;
-    public Tower _nucleo;
 
     public Bullet SetPlayer(Player player)
     {
         _player = player;
         return this;
     }
-    /*
-    public Bullet SetTower(Tower tower)
-    {
-        _nucleo = tower;
-        return this;
-    }
-    */
     public override void Spawned()
     {
         if(!HasStateAuthority)
@@ -52,7 +44,6 @@ public class Bullet : NetworkBehaviour
             player.RPC_TakeDamage(_damage);
             Runner.Despawn(Object);
         }
-
         
         if (other.TryGetComponent(out Tower tower) && tower._player != _player)
         {
@@ -62,7 +53,6 @@ public class Bullet : NetworkBehaviour
         else
         {
             Runner.Despawn(Object);
-        }
-               
+        }               
     }
 }

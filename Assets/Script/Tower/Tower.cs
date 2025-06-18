@@ -25,9 +25,9 @@ public class Tower : NetworkBehaviour
     {
     }
 
-    public NetworkObject _player;
+    public Player _player;
 
-    public Tower SetPlayer(NetworkObject player)
+    public Tower SetPlayer(Player player)
     {
         _player = player;
         return this;
@@ -53,6 +53,6 @@ public class Tower : NetworkBehaviour
         GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
 
         Runner.Despawn(Object);
-        Runner.Despawn(_player);
+        //Runner.Despawn(Runner.LocalPlayer);
     }
 }

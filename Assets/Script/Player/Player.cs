@@ -33,7 +33,7 @@ public class Player : NetworkBehaviour
     public GameObject demobomb2;
     public GameObject demobomb3;
     
-    public float countbomb;
+    public int countbomb;
     public bool espera;
     public float waitmore;
 
@@ -41,8 +41,6 @@ public class Player : NetworkBehaviour
     public Transform bomsalida;
    
     public bool stop;
-
-    public bool cual = true;
     public override void Spawned()
     {
         _rb = GetComponent<NetworkRigidbody3D>();
@@ -77,38 +75,25 @@ public class Player : NetworkBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
                 _isShootingPressed = true;
         }
-        /*
-        switch(countbomb)
-            case 1: 
-            case 2: 
-            case 3:
-            default:
-        */
         if (countbomb >= 1)
         {
             demobomb.SetActive(true);
-
         }
         else
         {
             demobomb.SetActive(false);
         }
-
-
         if (countbomb >= 2)
         {
             demobomb2.SetActive(true);
-
         }
         else
         {
             demobomb2.SetActive(false);
         }
-
         if (countbomb == 3)
         {
             demobomb3.SetActive(true);
-
         }
         else
         {
@@ -210,7 +195,23 @@ public class Player : NetworkBehaviour
 
     void SpawnBomb()
     {
-
+        /*
+        switch(countbomb)
+            case 1: _bombPlaces[1].SetActive(true);
+                    _bombPlaces[2].SetActive(false);
+                    _bombPlaces[3].SetActive(false);
+                break;
+            case 2: _bombPlaces[2].SetActive(true);
+                    _bombPlaces[3].SetActive(false);
+                break;
+            case 3: _bombPlaces[3].SetActive(true);
+                break;
+            default:
+                    _bombPlaces[1].SetActive(false);
+                    _bombPlaces[1].SetActive(false);
+                    _bombPlaces[1].SetActive(false);
+                break;
+        */
     }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
