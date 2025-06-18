@@ -4939,6 +4939,7 @@ MonoBehaviour:
   rotationSpeed: 100
   prefbal: {fileID: 7674975360963408604, guid: e95509daeff647641b1524812bb6b24d, type: 3}
   disparo: {fileID: 426826263682421453}
+  _rotationLimit: 90
 --- !u!1 &2677157033693093600
 GameObject:
   m_ObjectHideFlags: 0
@@ -5034,7 +5035,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8748892135801146194, guid: 3bf3be3dcc907d54cac9caeae861c9d6, type: 3}
+  - {fileID: 2100000, guid: 9685adcd996421542ad2000e0df042c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5259,7 +5260,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8748892135801146194, guid: 795b5d7b3bf64a14880270c62b67b6bc, type: 3}
+  - {fileID: 2100000, guid: b96600b8d939214419257479917897c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5342,7 +5343,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8748892135801146194, guid: 3bf3be3dcc907d54cac9caeae861c9d6, type: 3}
+  - {fileID: 2100000, guid: 9685adcd996421542ad2000e0df042c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
