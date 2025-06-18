@@ -48,7 +48,6 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
 
         var tower = Runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
 
-        /*
         if(tower.TryGetComponent(out Tower core))
         {
             if (core != null)
@@ -56,6 +55,7 @@ public class Spawner : SimulationBehaviour, IPlayerJoined
                 core.SetPlayer(cl);
             }
         }
+        /*
         if (cl.TryGetComponent(out Player player))
         {
             if (player != null)

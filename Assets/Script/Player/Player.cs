@@ -243,14 +243,4 @@ public class Player : NetworkBehaviour
             espera = false;
         }       
     }
-
-    /*
-  public bool cambio
-    {
-        set
-        {
-            otrabala = value;           
-        }
-    }
-    */
 }

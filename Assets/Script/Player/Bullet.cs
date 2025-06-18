@@ -53,8 +53,8 @@ public class Bullet : NetworkBehaviour
             Runner.Despawn(Object);
         }
 
-        /*
-        if (other.TryGetComponent(out Tower tower) && tower != _nucleo)
+        
+        if (other.TryGetComponent(out Tower tower) && tower._player != _player)
         {
             tower.RPC_TakeDamage(_damage);
             Runner.Despawn(Object);
@@ -63,6 +63,6 @@ public class Bullet : NetworkBehaviour
         {
             Runner.Despawn(Object);
         }
-               */
+               
     }
 }

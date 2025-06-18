@@ -368,11 +368,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity 2022.3.5f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity 2022.3.5f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Script/ballafogueo.cs"
 "Assets/Script/bomba.cs"
 "Assets/Script/bombaspawn.cs"
 "Assets/Script/Camera/FollowTarget.cs"
-"Assets/Script/desactivadaño.cs"
 "Assets/Script/GameManager.cs"
 "Assets/Script/MainMenu/SessionItem.cs"
 "Assets/Script/MainMenu/SessionListHandler - Copy.cs"
@@ -385,8 +383,6 @@
 "Assets/Script/Player/torreta.cs"
 "Assets/Script/Spawner/Spawner.cs"
 "Assets/Script/Tower/Tower.cs"
-"Assets/Script/Unused/bala.cs"
-"Assets/Script/Unused/tank.cs"
 "Assets/Script/Wall/murorompible.cs"
 -langversion:9.0
 /unsafe+
