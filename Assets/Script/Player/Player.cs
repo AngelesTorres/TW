@@ -4,8 +4,15 @@ using UnityEngine;
 using Fusion;
 using Fusion.Addons.Physics;
 
+[RequireComponent(typeof(LocalInputs))]
 public class Player : NetworkBehaviour
 {
+    public static NetworkPlayer Local { get; private set; }
+
+    public LocalInputs LocalInputs { get; private set; }
+
+    public event Action OnLeft = delegate { };
+
     [SerializeField] private float _speed = 20f;
     [SerializeField] private float _turnSspeed = 150f;
     [SerializeField] private int _maxLife = 10;
@@ -43,13 +50,19 @@ public class Player : NetworkBehaviour
     public bool stop;
     public override void Spawned()
     {
+        LocalInputs = GetComponent<LocalInputs>();
+
         _rb = GetComponent<NetworkRigidbody3D>();
 
         _currentLife = _maxLife;
 
-        if (HasStateAuthority)
+        if (Object.HasInputAuthority)
         {
             Camera.main.GetComponent<FollowTarget>()?.SetTarget(this);
+        }
+        else
+        {
+            LocalInputs.enabled = false;
         }
 
         GameManager.Instance.AddToList(this);
@@ -225,6 +238,11 @@ public class Player : NetworkBehaviour
          _currentLife -= dmg;
         if (_currentLife <= 0)
             Death();
+    }
+
+    public override void Despawned(NetworkRunner runner, bool hasState)
+    {
+        OnLeft();
     }
 
     public void Death()

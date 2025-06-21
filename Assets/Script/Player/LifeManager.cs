@@ -1,17 +1,16 @@
 using Fusion;
 
 public class LifeManager : NetworkBehaviour
-{
-    /*
+{    
     private byte _currentLife;
 
-    private const byte MAX_LIFE = 100;
+    private const byte _maxLife = 100;
 
     public override void Spawned()
     {
         if (HasStateAuthority)
         {
-            _currentLife = MAX_LIFE;
+            _currentLife = _maxLife;
         }
     }
 
@@ -23,7 +22,7 @@ public class LifeManager : NetworkBehaviour
 
         if (_currentLife != 0) return;
 
-        DisconnectPlayer();
+        //DisconnectPlayer();
     }
 
     void DisconnectPlayer()
@@ -34,6 +33,5 @@ public class LifeManager : NetworkBehaviour
         }
 
         Runner.Despawn(Object);
-    }
-    */
+    }    
 }

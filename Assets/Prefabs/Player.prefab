@@ -4937,8 +4937,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  prefbal: {fileID: 7674975360963408604, guid: e95509daeff647641b1524812bb6b24d, type: 3}
-  disparo: {fileID: 426826263682421453}
+  _bulletPrefab:
+    RawGuidValue: 00000000000000000000000000000000
+  _shootPlace: {fileID: 0}
   _rotationLimit: 90
 --- !u!1 &2677157033693093600
 GameObject:
@@ -5413,6 +5414,7 @@ GameObject:
   - component: {fileID: 2286015496155880598}
   - component: {fileID: 3176623713558734499}
   - component: {fileID: 3302204837409525331}
+  - component: {fileID: 1134799168177232705}
   m_Layer: 0
   m_Name: Player
   m_TagString: tanque
@@ -5497,7 +5499,6 @@ MonoBehaviour:
   bomba: {fileID: 2670387273952359904, guid: cbc9efd53000aeb47a5b567f63bab7a0, type: 3}
   bomsalida: {fileID: 8731225884789054360}
   stop: 0
-  cual: 1
   _myTower: {fileID: 0}
 --- !u!114 &6308591232353982981
 MonoBehaviour:
@@ -5520,6 +5521,7 @@ MonoBehaviour:
   - {fileID: 3601515772549228454}
   - {fileID: 2286015496155880598}
   - {fileID: 3302204837409525331}
+  - {fileID: 1134799168177232705}
   - {fileID: 4746958581574830151}
   - {fileID: 4014377678212652419}
   ForceRemoteRenderTimeframe: 0
@@ -5597,6 +5599,18 @@ MonoBehaviour:
   Offset: {x: -0.01104546, y: 0.3037713, z: -0.4967132}
   GizmosColor: {r: 1, g: 0, b: 0, a: 1}
   Hitboxes: []
+--- !u!114 &1134799168177232705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721536361348014723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe67189ab72c07c408266bfabfc90018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2090258323427469495
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,27 +11,14 @@ public class torreta : NetworkBehaviour
     [SerializeField] private NetworkPrefabRef _bulletPrefab;
     [SerializeField] private Transform _shootPlace;
     [SerializeField] private float _rotationLimit = 90f;
-    public Action OnShoot;
+
+    public Action OnShoot = delegate { };
     void Update()
     {
         if (!HasStateAuthority)
             return;
 
         rotation();
-
-        /*
-        if (recharg == false)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                _isShootingPressed = true;
-        }
-        if (_isShootingPressed)
-        {
-            SpawnShoot();
-            _isShootingPressed = false;
-            wait_shoot += 1;
-        }
-        */
     }
 
     void rotation()
@@ -48,10 +35,29 @@ public class torreta : NetworkBehaviour
 
     public void Shoot()
     {
+        /*
+        if (recharg == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                _isShootingPressed = true;
+        }
+        if (_isShootingPressed)
+        {
+            SpawnShoot();
+            _isShootingPressed = false;
+            wait_shoot += 1;
+        }
+        */
+        if (hitInfo.Hitbox == null) return;
 
+        if (!hitInfo.Hitbox.transform.root.TryGetComponent(out LifeManager player)) return;
+
+        player.TakeDamage(25);
     }
     void SpawnShoot()
     {
+        //Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation).SetPlayer(this);
 
+        OnShoot();
     }
 }

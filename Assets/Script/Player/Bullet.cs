@@ -50,9 +50,8 @@ public class Bullet : NetworkBehaviour
             tower.RPC_TakeDamage(_damage);
             Runner.Despawn(Object);
         }
-        else
-        {
-            Runner.Despawn(Object);
-        }               
+        
+        Runner.Despawn(Object);
+                    
     }
 }
