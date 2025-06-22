@@ -7,7 +7,8 @@ using Fusion.Addons.Physics;
 [RequireComponent(typeof(LocalInputs))]
 public class Player : NetworkBehaviour
 {
-    public static NetworkPlayer Local { get; private set; }
+    
+    public static Player Local { get; private set; }
 
     public LocalInputs LocalInputs { get; private set; }
 
@@ -22,8 +23,8 @@ public class Player : NetworkBehaviour
     private float _horizontalInput;
     private float _verticalInput;
 
-    [SerializeField] private Bullet _bulletPrefab;
-    [SerializeField] private Transform _bulletSpawnerTransform;
+    //[SerializeField] private Bullet _bulletPrefab;
+    //[SerializeField] private Transform _bulletSpawnerTransform;
 
     private bool _isShootingPressed;
     public float wait_shoot;
@@ -146,7 +147,7 @@ public class Player : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        Movement(_verticalInput);
+        //Movement(_verticalInput);
         Rotation(_horizontalInput);
 
         if (_isShootingPressed)
@@ -163,8 +164,10 @@ public class Player : NetworkBehaviour
         }
     }
 
+    
     void Movement(float xAxis)
     {
+        /*
         if (xAxis != 0)
         {
             _rb.Rigidbody.velocity += transform.forward * (xAxis * _speed * Runner.DeltaTime);
@@ -188,7 +191,9 @@ public class Player : NetworkBehaviour
 
             OnMove(0);
         }
+        */
     }
+    
 
     void Rotation(float r)
     {
@@ -201,14 +206,14 @@ public class Player : NetworkBehaviour
 
     void SpawnShoot()
     {       
-        Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation).SetPlayer(this);        
+        //Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation).SetPlayer(this);        
 
-        OnShoot();
+        //OnShoot();
     }
 
     void SpawnBomb()
     {
-        /*
+    /*    
         switch(countbomb)
             case 1: _bombPlaces[1].SetActive(true);
                     _bombPlaces[2].SetActive(false);
@@ -262,4 +267,5 @@ public class Player : NetworkBehaviour
             espera = false;
         }       
     }
+    
 }

@@ -5,7 +5,7 @@ using Fusion;
 
 [RequireComponent(typeof(Player))]
 public class PlayerView : NetworkBehaviour
-{
+{    
     [SerializeField] private ParticleSystem _shootParticle;
 
     private NetworkMecanimAnimator _networkMecanimAnimator;
@@ -30,5 +30,5 @@ public class PlayerView : NetworkBehaviour
     private void MoveAnimation(float xAxis)
     {
         _networkMecanimAnimator.Animator.SetFloat("xAxis", Mathf.Abs(xAxis));
-    }
+    }    
 }

@@ -1,14 +1,17 @@
 using Fusion;
 using UnityEngine;
 
+[RequireComponent(typeof(NetworkCharacterControllerCustom))]
 [RequireComponent(typeof(torreta))]
 public class PlayerController : NetworkBehaviour
-{
+{    
+    private NetworkCharacterControllerCustom _characterMovement;
     private torreta _torreta;
 
     public override void Spawned()
     {
-        _torreta = GetComponent<WeaponHandler>();
+        _characterMovement = GetComponent<NetworkCharacterControllerCustom>();
+        _torreta = GetComponent<torreta>();
     }
 
     public override void FixedUpdateNetwork()
@@ -23,6 +26,7 @@ public class PlayerController : NetworkBehaviour
 
 
         //Shoot
+        
         if (inputs.isShootPressed)
         {
             _torreta.Shoot();
@@ -34,4 +38,4 @@ public class PlayerController : NetworkBehaviour
             
         }
     }
-}
+}            

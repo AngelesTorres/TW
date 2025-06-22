@@ -3,7 +3,7 @@ using Fusion;
 using Fusion.Addons.Physics;
 
 public class Bullet : NetworkBehaviour
-{
+{    
     [SerializeField] private float _initialForce;
     [SerializeField] private float _lifeTime = 5f;
     [SerializeField] private int _damage =1;
@@ -51,7 +51,6 @@ public class Bullet : NetworkBehaviour
             Runner.Despawn(Object);
         }
         
-        Runner.Despawn(Object);
-                    
-    }
+        Runner.Despawn(Object);                    
+    }    
 }

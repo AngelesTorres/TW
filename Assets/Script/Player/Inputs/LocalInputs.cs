@@ -12,7 +12,6 @@ public class LocalInputs : MonoBehaviour
         _networkInputData = new NetworkInputData();
     }
 
-    // Update is called once per frame
     void Update()
     {
         _networkInputData.movementInput = Input.GetAxis("Vertical");

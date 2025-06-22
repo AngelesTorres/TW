@@ -6,11 +6,10 @@ using UnityEngine;
 
 
 public class torreta : NetworkBehaviour
-{
+{        
     public float rotationSpeed = 100f;
     [SerializeField] private NetworkPrefabRef _bulletPrefab;
     [SerializeField] private Transform _shootPlace;
-    [SerializeField] private float _rotationLimit = 90f;
 
     public Action OnShoot = delegate { };
     void Update()
@@ -47,12 +46,12 @@ public class torreta : NetworkBehaviour
             _isShootingPressed = false;
             wait_shoot += 1;
         }
-        */
         if (hitInfo.Hitbox == null) return;
 
         if (!hitInfo.Hitbox.transform.root.TryGetComponent(out LifeManager player)) return;
 
         player.TakeDamage(25);
+        */
     }
     void SpawnShoot()
     {
@@ -60,4 +59,5 @@ public class torreta : NetworkBehaviour
 
         OnShoot();
     }
+        
 }
