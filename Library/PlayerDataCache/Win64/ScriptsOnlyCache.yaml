@@ -2,31 +2,30 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp:
     - Bullet
+    - LifeManager
+    - LocalInputs
+    - NetworkCharacterControllerCustom
     - Player
+    - PlayerController
     - PlayerView
     - Tower
-    - ballafogueo
-    - bomba
-    - "desactivada\xF1o"
     - murorompible
     - torreta
     Assembly-CSharp.dll:
-    - Bullet
     - FollowTarget
     - GameManager
-    - Player
-    - PlayerView
+    - NetworkRunnerHandler
+    - SessionItem
+    - SessionListHandler
     - Spawner
     - Tower
     - bomba
     - bombaspawn
-    - "desactivada\xF1o"
     - murorompible
-    - torreta
     Fusion.Addons.Physics:
     - Fusion.Addons.Physics.NetworkRigidbody3D
     Fusion.Addons.Physics.dll:
-    - Fusion.Addons.Physics.NetworkRigidbody3D
+    - Fusion.Addons.Physics.RunnerSimulatePhysics3D
     Fusion.Realtime.dll:
     - Fusion.Photon.Realtime.PhotonAppSettings
     Fusion.Runtime.dll:
@@ -60,14 +59,15 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -91,9 +91,16 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
     Fusion.Addons.Physics:
     - Fusion.Addons.Physics.TRSThresholds
@@ -123,6 +130,7 @@ ScriptsOnlyBuild:
     - Fusion.NetworkEvents/ShutdownEvent
     - Fusion.NetworkEvents/SimulationMessageEvent
     - Fusion.NetworkObjectGuid
+    - Fusion.NetworkPrefabRef
     - Fusion.NetworkPrefabTableOptions
     - Fusion.NetworkProjectConfig
     - Fusion.NetworkProjectConfigAsset/SerializableSimulationBehaviourMeta
@@ -201,7 +209,104 @@ ScriptsOnlyBuild:
     fullTypeName: Fusion.Statistics.FusionNetworkObjectStatsGraphCombine
     methodName: DestroyCombinedGraph
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Game.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 622}
+    - Class: 114
+      Script: {instanceID: 1620}
+    - Class: 114
+      Script: {instanceID: 2630}
+    - Class: 114
+      Script: {instanceID: 2694}
+    - Class: 114
+      Script: {instanceID: 2844}
+    - Class: 114
+      Script: {instanceID: 4010}
+    - Class: 114
+      Script: {instanceID: 5084}
+    - Class: 114
+      Script: {instanceID: 5322}
+    - Class: 114
+      Script: {instanceID: 5472}
+    - Class: 114
+      Script: {instanceID: 5642}
+    - Class: 114
+      Script: {instanceID: 5756}
+    - Class: 114
+      Script: {instanceID: 5762}
+    - Class: 114
+      Script: {instanceID: 5766}
+    - Class: 114
+      Script: {instanceID: 5770}
+    - Class: 114
+      Script: {instanceID: 5774}
+    - Class: 114
+      Script: {instanceID: 5828}
+    - Class: 114
+      Script: {instanceID: 5912}
+    - Class: 114
+      Script: {instanceID: 6164}
+    - Class: 114
+      Script: {instanceID: 6572}
+    - Class: 114
+      Script: {instanceID: 6854}
+    - Class: 114
+      Script: {instanceID: 6870}
+    - Class: 114
+      Script: {instanceID: 7440}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -241,8 +346,6 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 622}
-    - Class: 114
       Script: {instanceID: 1578}
     - Class: 114
       Script: {instanceID: 1620}
@@ -253,101 +356,101 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2382}
     - Class: 114
-      Script: {instanceID: 2426}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 2634}
+      Script: {instanceID: 2694}
     - Class: 114
-      Script: {instanceID: 2698}
+      Script: {instanceID: 2730}
     - Class: 114
-      Script: {instanceID: 2734}
+      Script: {instanceID: 2826}
     - Class: 114
-      Script: {instanceID: 2830}
+      Script: {instanceID: 2844}
     - Class: 114
-      Script: {instanceID: 2848}
+      Script: {instanceID: 3130}
     - Class: 114
-      Script: {instanceID: 3134}
+      Script: {instanceID: 3198}
     - Class: 114
-      Script: {instanceID: 3202}
+      Script: {instanceID: 3304}
     - Class: 114
-      Script: {instanceID: 3308}
+      Script: {instanceID: 3546}
     - Class: 114
-      Script: {instanceID: 3318}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 3550}
+      Script: {instanceID: 4118}
     - Class: 114
-      Script: {instanceID: 3898}
+      Script: {instanceID: 4132}
     - Class: 114
-      Script: {instanceID: 4014}
+      Script: {instanceID: 4284}
     - Class: 114
-      Script: {instanceID: 4122}
+      Script: {instanceID: 4388}
     - Class: 114
-      Script: {instanceID: 4136}
+      Script: {instanceID: 4962}
     - Class: 114
-      Script: {instanceID: 4390}
+      Script: {instanceID: 5012}
     - Class: 114
-      Script: {instanceID: 4966}
+      Script: {instanceID: 5020}
     - Class: 114
-      Script: {instanceID: 5016}
+      Script: {instanceID: 5084}
     - Class: 114
-      Script: {instanceID: 5088}
+      Script: {instanceID: 5334}
     - Class: 114
-      Script: {instanceID: 5328}
+      Script: {instanceID: 5472}
     - Class: 114
-      Script: {instanceID: 5340}
+      Script: {instanceID: 5532}
     - Class: 114
-      Script: {instanceID: 5478}
+      Script: {instanceID: 5642}
     - Class: 114
-      Script: {instanceID: 5646}
+      Script: {instanceID: 5682}
+    - Class: 114
+      Script: {instanceID: 5756}
     - Class: 114
       Script: {instanceID: 5758}
-    - Class: 114
-      Script: {instanceID: 5760}
     - Class: 114
       Script: {instanceID: 5764}
     - Class: 114
       Script: {instanceID: 5766}
     - Class: 114
-      Script: {instanceID: 5768}
+      Script: {instanceID: 5770}
     - Class: 114
       Script: {instanceID: 5772}
     - Class: 114
       Script: {instanceID: 5774}
     - Class: 114
-      Script: {instanceID: 5776}
+      Script: {instanceID: 5828}
     - Class: 114
-      Script: {instanceID: 5830}
+      Script: {instanceID: 5912}
     - Class: 114
-      Script: {instanceID: 5914}
+      Script: {instanceID: 6164}
     - Class: 114
-      Script: {instanceID: 6166}
+      Script: {instanceID: 6172}
     - Class: 114
-      Script: {instanceID: 6174}
+      Script: {instanceID: 6206}
     - Class: 114
-      Script: {instanceID: 6570}
+      Script: {instanceID: 6572}
     - Class: 114
-      Script: {instanceID: 6576}
+      Script: {instanceID: 6578}
     - Class: 114
-      Script: {instanceID: 6856}
+      Script: {instanceID: 6894}
     - Class: 114
-      Script: {instanceID: 6872}
+      Script: {instanceID: 6960}
     - Class: 114
-      Script: {instanceID: 6900}
+      Script: {instanceID: 7036}
     - Class: 114
-      Script: {instanceID: 6962}
+      Script: {instanceID: 7226}
     - Class: 114
-      Script: {instanceID: 7038}
+      Script: {instanceID: 7258}
     - Class: 114
-      Script: {instanceID: 7228}
+      Script: {instanceID: 7518}
     - Class: 114
-      Script: {instanceID: 7260}
+      Script: {instanceID: 7554}
     - Class: 114
-      Script: {instanceID: 7442}
+      Script: {instanceID: 7712}
     - Class: 114
-      Script: {instanceID: 7520}
+      Script: {instanceID: 7976}
     - Class: 114
-      Script: {instanceID: 7556}
+      Script: {instanceID: 23984}
     - Class: 114
-      Script: {instanceID: 7978}
+      Script: {instanceID: 23990}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -355,6 +458,8 @@ ScriptsOnlyBuild:
     - Class: 135
       Script: {instanceID: 0}
     - Class: 136
+      Script: {instanceID: 0}
+    - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -375,7 +480,7 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 2a77b6728465146cc1f737420838e973
+      Hash: 05222b0fb34fc791c342bb91fbe6aa86
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Bullet
@@ -477,7 +582,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 67b9234f660ecf279aa40877f56a83e9
+      Hash: a418d97bbb1c0bfd5c730b2269232901
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
@@ -495,28 +600,16 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 4a9bb140b789bdb480075ed75ae6c8bb
+      Hash: 6a4b81d4bc4fb96be0cf239e26136ae8
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: torreta
-  - hash:
-      serializedVersion: 2
-      Hash: a9dc156b6c463830a11aab6d7f5aa58e
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ballafogueo
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: c87cad3958960e5a9e29fb3ef0b7ff63
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SessionItem
   - hash:
       serializedVersion: 2
       Hash: bcdedb1b3a567eb05111be4716618ce1
@@ -555,7 +648,7 @@ ScriptsOnlyBuild:
     className: UnityMessageListener
   - hash:
       serializedVersion: 2
-      Hash: eba9e8a23a9af76aa53cc98e4581c05f
+      Hash: 31795e084ca8064fd6e4e2de46b9ec3b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Spawner
@@ -867,6 +960,12 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LifeManager
+  - hash:
+      serializedVersion: 2
       Hash: 6298a10412e94e11ad85ac6148c9dda1
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -1005,12 +1104,6 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 6961e916a1078949a528f26c9adf6a7a
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: tank
-  - hash:
-      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1065,10 +1158,22 @@ ScriptsOnlyBuild:
     className: StateGraphAsset
   - hash:
       serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerController
+  - hash:
+      serializedVersion: 2
       Hash: 6a356b04c25c0bb008c1b24bf8b0f996
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 499ac8ff405c3f8c198f2fcd344cf373
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NetworkCharacterControllerCustom
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1167,7 +1272,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 65ee5891442243597d30299ce61889d9
+      Hash: c618cacf39f0e825d22c5c82d4300e77
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Tower
@@ -1207,6 +1312,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: ca6229a2b5d87f7ed1478348692d466a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NetworkRunnerHandler
   - hash:
       serializedVersion: 2
       Hash: a03cf6f60c605d858f83449f4b4fc400
@@ -1261,12 +1372,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
-  - hash:
-      serializedVersion: 2
-      Hash: c26b506740579ef54402d53db88a7758
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: bala
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1338,7 +1443,7 @@ ScriptsOnlyBuild:
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: "desactivada\xF1o"
+    className: LocalInputs
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1545,11 +1650,24 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
+      Hash: 60348de60fbb558ec555d7ad1cec1ad9
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: LifeManager
+    className: MainMenuHandler
+  - hash:
+      serializedVersion: 2
+      Hash: c87cad3958960e5a9e29fb3ef0b7ff63
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SessionItem
+  - hash:
+      serializedVersion: 2
+      Hash: fc6531774a2831f695196717570d11c6
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SessionListHandler
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/MainMenu.unity
+  - Assets/Scenes/Game.unity
   playerPath: Z:/Tareas de Mariel/Programacion/GitHub_Projects/Builds/TW.exe

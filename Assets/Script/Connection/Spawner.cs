@@ -21,8 +21,25 @@ public class Spawner : NetworkBehaviour, INetworkRunnerCallbacks
     {
         if (runner.IsServer)
         {
-            runner.Spawn(_playerPrefab, null, null, player);
-        }
+            var playersCount = Runner.SessionInfo.PlayerCount;
+
+            if (_initialized && playersCount >= numberOfPlayers)
+            {
+                CreatePlayer(0);
+                return;
+            }
+
+            if (player == Runner.LocalPlayer)
+            {
+                if (playersCount < numberOfPlayers)
+                    _initialized = true;
+                else
+                {
+                    CreatePlayer(playersCount - 1);
+                }
+            }
+
+        /*
         var playersCount = Runner.SessionInfo.PlayerCount;
 
         if (_initialized && playersCount >= numberOfPlayers)
@@ -39,6 +56,7 @@ public class Spawner : NetworkBehaviour, INetworkRunnerCallbacks
             {
                 CreatePlayer(playersCount - 1);
             }
+        */
         }
     }
     
