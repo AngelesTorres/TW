@@ -6,15 +6,21 @@ using Fusion;
 
 public class GameManager : NetworkBehaviour
 {
+    [SerializeField] private Spawner _networkRunnerHandler;
+
     [SerializeField] private GameObject _winImage;
     [SerializeField] private GameObject _loseImage;
     private List<PlayerRef> _players = new();
+
+    [SerializeField] public Transform[] spawnTransforms;
+    [SerializeField] public Transform[] towerSpawnTransforms;
 
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
         Instance = this;
     }
+    
     public void AddToList(Player player)
     {
         var playerRef = player.Object.StateAuthority;
@@ -28,6 +34,7 @@ public class GameManager : NetworkBehaviour
     {
         _players.Remove(player);
     }
+    
     [Rpc]
     public void RPC_Defeat(PlayerRef player)
     {

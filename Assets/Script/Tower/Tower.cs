@@ -13,16 +13,12 @@ public class Tower : NetworkBehaviour
 
     public override void Spawned()
     {
-        if (!HasStateAuthority)
+        if (Object.HasInputAuthority)
             return;
 
         recibe = false;
         _currentLife = _maxLife;
         colordaño.color = Color.green;
-    }
-
-    void Update()
-    {
     }
 
     public Player _player;

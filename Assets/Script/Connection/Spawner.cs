@@ -5,58 +5,35 @@ using UnityEngine;
 using Fusion;
 using Fusion.Sockets;
 
-public class Spawner : NetworkBehaviour, INetworkRunnerCallbacks
-{    
-    private NetworkPrefabRef _playerPrefab;
-    public GameObject towerPrefab;
+public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
+{
+    [SerializeField] private NetworkPrefabRef _playerPrefab;
+    [SerializeField] private NetworkPrefabRef towerPrefab;
 
-    private int numberOfPlayers = 2;
+    //private int numberOfPlayers = 2;
 
-    [SerializeField] private Transform[] _spawnTransforms;
-    [SerializeField] private Transform[] _towerSpawnTransforms;
-
-    private bool _initialized;
+    //private bool _initialized;
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         if (runner.IsServer)
-        {
-            var playersCount = Runner.SessionInfo.PlayerCount;
+        {        
+            var playersCount = runner.SessionInfo.PlayerCount;
 
+            CreatePlayer(playersCount - 1, runner, player);
+
+            /*
             if (_initialized && playersCount >= numberOfPlayers)
             {
-                CreatePlayer(0);
+                CreatePlayer(0, runner, player);
                 return;
             }
-
-            if (player == Runner.LocalPlayer)
-            {
-                if (playersCount < numberOfPlayers)
-                    _initialized = true;
-                else
-                {
-                    CreatePlayer(playersCount - 1);
-                }
-            }
-
-        /*
-        var playersCount = Runner.SessionInfo.PlayerCount;
-
-        if (_initialized && playersCount >= numberOfPlayers)
-        {
-            CreatePlayer(0);
-            return;
-        }
-
-        if (player == Runner.LocalPlayer)
-        {
             if (playersCount < numberOfPlayers)
                 _initialized = true;
             else
             {
-                CreatePlayer(playersCount - 1);
-            }
-        */
+            }        
+            */                               
         }
     }
     
@@ -71,34 +48,35 @@ public class Spawner : NetworkBehaviour, INetworkRunnerCallbacks
 
         input.Set(_localInputs.GetLocalInputs());
     }
-
     
-    void CreatePlayer(int spawnPointIndex)
+    void CreatePlayer(int spawnPointIndex, NetworkRunner runner, PlayerRef player)
     {
-        _initialized = false;
+        //_initialized = false;
 
-        var newPosition = _spawnTransforms[spawnPointIndex].position;
-        var newRotation = _spawnTransforms[spawnPointIndex].rotation;
+        var newPosition = GameManager.Instance.spawnTransforms[spawnPointIndex].position;
+        var newRotation = GameManager.Instance.spawnTransforms[spawnPointIndex].rotation;
 
-        NetworkObject cl = Runner.Spawn(_playerPrefab, newPosition, newRotation);
+        NetworkObject cl = runner.Spawn(_playerPrefab, newPosition, newRotation, player);
 
-        var newTowerPosition = _towerSpawnTransforms[spawnPointIndex].position;
-        var newTowerRotation = _towerSpawnTransforms[spawnPointIndex].rotation;
+        var newTowerPosition = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].position;
+        var newTowerRotation = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].rotation;
 
-        var tower = Runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
+        var tower = runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
 
-        if(tower.TryGetComponent(out Tower core) && cl.TryGetComponent(out Player player))
+        if(tower.TryGetComponent(out Tower core) && cl.TryGetComponent(out Player player2))
         {
             if (core != null)
             {
-                core.SetPlayer(player);
+                core.SetPlayer(player2);
             }
         }
     }
+    
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
     {
         runner.Shutdown();
     }
+
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) { }
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason) { }

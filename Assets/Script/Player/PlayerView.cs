@@ -4,6 +4,8 @@ using UnityEngine;
 using Fusion;
 
 [RequireComponent(typeof(Player))]
+[RequireComponent(typeof(Movility))]
+[RequireComponent(typeof(torreta))]
 public class PlayerView : NetworkBehaviour
 {    
     [SerializeField] private ParticleSystem _shootParticle;
@@ -15,10 +17,12 @@ public class PlayerView : NetworkBehaviour
         _networkMecanimAnimator = GetComponentInChildren<NetworkMecanimAnimator>();
 
         var p = GetComponent<Player>();
+        var m = GetComponent<Movility>();
+        var t = GetComponent<torreta>();
 
-        p.OnShoot += TriggerShootParticles;
+        t.OnShoot += TriggerShootParticles;
 
-        p.OnMove += MoveAnimation;
+        m.OnMove += MoveAnimation;
     }
 
     private void TriggerShootParticles()

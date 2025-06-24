@@ -22,7 +22,7 @@ public class LifeManager : NetworkBehaviour
 
         if (_currentLife != 0) return;
 
-        //DisconnectPlayer();
+        DisconnectPlayer();
     }
 
     void DisconnectPlayer()

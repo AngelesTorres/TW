@@ -4,29 +4,23 @@ using UnityEngine;
 using Fusion;
 using Fusion.Addons.Physics;
 
+[RequireComponent(typeof(Bombimg))]
 [RequireComponent(typeof(LocalInputs))]
 public class Player : NetworkBehaviour
-{
-    
+{    
     public static Player Local { get; private set; }
 
     public LocalInputs LocalInputs { get; private set; }
 
     public event Action OnLeft = delegate { };
 
-    [SerializeField] private float _speed = 20f;
-    [SerializeField] private float _turnSspeed = 150f;
     [SerializeField] private int _maxLife = 10;
 
     [SerializeField] private int _currentLife;
 
-    private float _horizontalInput;
-    private float _verticalInput;
+    [SerializeField] private Bombimg _bombing;
 
-    //[SerializeField] private Bullet _bulletPrefab;
-    //[SerializeField] private Transform _bulletSpawnerTransform;
-
-    private bool _isShootingPressed;
+    public Vector3 mySpawnPoint;
     public float wait_shoot;
     public bool recharg;
     public float charge;
@@ -35,18 +29,9 @@ public class Player : NetworkBehaviour
 
     public Action OnShoot;
     public Action<float> OnMove;
-
-    [SerializeField] private GameObject[] _bombPlaces;
-    public GameObject demobomb;
-    public GameObject demobomb2;
-    public GameObject demobomb3;
-    
-    public int countbomb;
+  
     public bool espera;
     public float waitmore;
-
-    public GameObject bomba;
-    public Transform bomsalida;
    
     public bool stop;
     public override void Spawned()
@@ -54,11 +39,16 @@ public class Player : NetworkBehaviour
         LocalInputs = GetComponent<LocalInputs>();
 
         _rb = GetComponent<NetworkRigidbody3D>();
+        _bombing = GetComponent<Bombimg>();
 
         _currentLife = _maxLife;
 
+        mySpawnPoint = transform.position;
+
         if (Object.HasInputAuthority)
         {
+            Local = this;
+            LocalInputs.enabled = true;
             Camera.main.GetComponent<FollowTarget>()?.SetTarget(this);
         }
         else
@@ -66,15 +56,7 @@ public class Player : NetworkBehaviour
             LocalInputs.enabled = false;
         }
 
-        GameManager.Instance.AddToList(this);
-    }
-
-    [SerializeField] public Tower _myTower;
-
-    public Player SetTower(Tower tower)
-    {
-        _myTower = tower;
-        return this;
+        //GameManager.Instance.AddToList(this);
     }
 
     void Update()
@@ -82,38 +64,13 @@ public class Player : NetworkBehaviour
         if (!HasStateAuthority)
             return;
 
-        _horizontalInput = Input.GetAxis("Horizontal");
-        _verticalInput = Input.GetAxis("Vertical");
+        /*
         if (recharg == false)
         {
             if (Input.GetKeyDown(KeyCode.Space))
                 _isShootingPressed = true;
         }
-        if (countbomb >= 1)
-        {
-            demobomb.SetActive(true);
-        }
-        else
-        {
-            demobomb.SetActive(false);
-        }
-        if (countbomb >= 2)
-        {
-            demobomb2.SetActive(true);
-        }
-        else
-        {
-            demobomb2.SetActive(false);
-        }
-        if (countbomb == 3)
-        {
-            demobomb3.SetActive(true);
-        }
-        else
-        {
-            demobomb3.SetActive(false);
-        }
-
+        */
         if (espera == false)
         {
             waitmore += Time.deltaTime;
@@ -124,8 +81,6 @@ public class Player : NetworkBehaviour
             espera = true;
 
         }
-
-
 
         if (wait_shoot >= 6)
         {
@@ -147,88 +102,13 @@ public class Player : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        //Movement(_verticalInput);
-        Rotation(_horizontalInput);
-
+        /*
         if (_isShootingPressed)
         {
             SpawnShoot();
             _isShootingPressed = false;
             wait_shoot += 1;
         }
-
-        if (Input.GetKeyDown(KeyCode.B) && countbomb >= 1)
-        {
-            Instantiate(bomba, bomsalida.position, bomsalida.rotation);
-            countbomb = countbomb - 1;
-        }
-    }
-
-    
-    void Movement(float xAxis)
-    {
-        /*
-        if (xAxis != 0)
-        {
-            _rb.Rigidbody.velocity += transform.forward * (xAxis * _speed * Runner.DeltaTime);
-
-            if (Mathf.Abs(_rb.Rigidbody.velocity.z) > _speed)
-            {
-                var velocity = Vector3.ClampMagnitude(_rb.Rigidbody.velocity, _speed);
-
-                velocity.y = _rb.Rigidbody.velocity.y;
-                _rb.Rigidbody.velocity = velocity;
-            }
-
-            OnMove(xAxis);
-        }
-        else
-        {
-            var velocity = _rb.Rigidbody.velocity;
-            velocity.z = 0;
-
-            _rb.Rigidbody.velocity = velocity;
-
-            OnMove(0);
-        }
-        */
-    }
-    
-
-    void Rotation(float r)
-    {
-        float turn = r * _turnSspeed;
-
-        Quaternion turnRotation = Quaternion.Euler(0f, turn * Runner.DeltaTime, 0f);
-
-        _rb.Rigidbody.MoveRotation(_rb.Rigidbody.rotation * turnRotation);
-    }
-
-    void SpawnShoot()
-    {       
-        //Runner.Spawn(_bulletPrefab, _bulletSpawnerTransform.position, _bulletSpawnerTransform.rotation).SetPlayer(this);        
-
-        //OnShoot();
-    }
-
-    void SpawnBomb()
-    {
-    /*    
-        switch(countbomb)
-            case 1: _bombPlaces[1].SetActive(true);
-                    _bombPlaces[2].SetActive(false);
-                    _bombPlaces[3].SetActive(false);
-                break;
-            case 2: _bombPlaces[2].SetActive(true);
-                    _bombPlaces[3].SetActive(false);
-                break;
-            case 3: _bombPlaces[3].SetActive(true);
-                break;
-            default:
-                    _bombPlaces[1].SetActive(false);
-                    _bombPlaces[1].SetActive(false);
-                    _bombPlaces[1].SetActive(false);
-                break;
         */
     }
 
@@ -242,7 +122,13 @@ public class Player : NetworkBehaviour
     {
          _currentLife -= dmg;
         if (_currentLife <= 0)
-            Death();
+            DieNRevive();
+    }
+
+    void DieNRevive()
+    {
+        _currentLife = _maxLife;
+        transform.position = mySpawnPoint;
     }
 
     public override void Despawned(NetworkRunner runner, bool hasState)
@@ -263,9 +149,8 @@ public class Player : NetworkBehaviour
     {
         if (other.gameObject.tag == "bombspawn" && espera == true)
         {
-            countbomb = countbomb + 1;
+            _bombing.AddBomb();
             espera = false;
         }       
-    }
-    
+    }    
 }

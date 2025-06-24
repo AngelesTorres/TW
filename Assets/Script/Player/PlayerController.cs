@@ -1,17 +1,20 @@
 using Fusion;
 using UnityEngine;
 
-[RequireComponent(typeof(NetworkCharacterControllerCustom))]
 [RequireComponent(typeof(torreta))]
+[RequireComponent(typeof(Movility))]
+[RequireComponent(typeof(Bombimg))]
 public class PlayerController : NetworkBehaviour
-{    
-    private NetworkCharacterControllerCustom _characterMovement;
+{
+    private Movility _movility;
     private torreta _torreta;
+    private Bombimg _bombing;
 
     public override void Spawned()
     {
-        _characterMovement = GetComponent<NetworkCharacterControllerCustom>();
         _torreta = GetComponent<torreta>();
+        _movility = GetComponent<Movility>();
+        _bombing = GetComponent<Bombimg>();
     }
 
     public override void FixedUpdateNetwork()
@@ -19,14 +22,12 @@ public class PlayerController : NetworkBehaviour
         if (!GetInput(out NetworkInputData inputs)) return;
 
         //Movement
-        Vector3 moveDirection = Vector3.forward * inputs.movementInput;
-        _characterMovement.Move(moveDirection);
-
-        //Rotation
-
-
-        //Shoot
+        _movility.Move(inputs.movementInput);            
         
+        //Rotation
+        _movility.Rotate(inputs.rotationInput);
+            
+        //Shoot
         if (inputs.isShootPressed)
         {
             _torreta.Shoot();
@@ -35,7 +36,7 @@ public class PlayerController : NetworkBehaviour
         //SetBomb
         if (inputs.isBombSetPressed)
         {
-            
+            _bombing.SetBomb();
         }
-    }
+    }        
 }            
