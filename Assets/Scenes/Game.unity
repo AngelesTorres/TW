@@ -1694,8 +1694,7 @@ MonoBehaviour:
   ObjectInterest: 1
   Flags: 262145
   NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 746077851}
+  NetworkedBehaviours: []
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &746077851
 MonoBehaviour:
@@ -1709,7 +1708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96831d68f7ea0274f8accdf4dc991136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _networkRunnerHandler: {fileID: 748254543452855241, guid: 022035a30c76d204481956777fc91e3f, type: 3}
   _winImage: {fileID: 753560571}
   _loseImage: {fileID: 123668172}
   _waitImage: {fileID: 630920256}

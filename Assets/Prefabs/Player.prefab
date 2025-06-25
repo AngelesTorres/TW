@@ -5401,6 +5401,7 @@ GameObject:
   - component: {fileID: 1837022819792354601}
   - component: {fileID: 6308591232353982981}
   - component: {fileID: 3302204837409525331}
+  - component: {fileID: 5124514772294592101}
   m_Layer: 0
   m_Name: Player
   m_TagString: tanque
@@ -5521,6 +5522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxLife: 10
   _currentLife: 0
+  _deathCounts: 0
   _bombing: {fileID: 1837022819792354601}
   mySpawnPoint: {x: 0, y: 0, z: 0}
   wait_shoot: 0
@@ -5630,6 +5632,7 @@ MonoBehaviour:
   - {fileID: 3943902664866142583}
   - {fileID: 1837022819792354601}
   - {fileID: 3302204837409525331}
+  - {fileID: 5124514772294592101}
   - {fileID: 4746958581574830151}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &3302204837409525331
@@ -5649,6 +5652,18 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: -0.4}
   GizmosColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   Hitboxes: []
+--- !u!114 &5124514772294592101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721536361348014723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e2451435834f64c94924e7fd4b353c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &637839935264684907
 PrefabInstance:
   m_ObjectHideFlags: 0

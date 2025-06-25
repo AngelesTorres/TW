@@ -1,24 +1,30 @@
 using Fusion;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class torreta : NetworkBehaviour
 {        
-    public float rotationSpeed = 100f;
+    //public float rotationSpeed = 100f;
     [SerializeField] private NetworkPrefabRef _bulletPrefab;
     [SerializeField] private Transform _shootPlace;
 
-    public Action OnShoot = delegate { };
+    public bool wait;
 
+    public event Action OnShoot = delegate { };
+
+    public override void Spawned()
+    {
+        wait = true;
+    }
     void Update()
     {
         if (!HasStateAuthority)
             return;
-        rotation();
+        //rotation();
     }
 
+    /*
     public Player _player;
 
     public torreta SetPlayer(Player player)
@@ -26,7 +32,6 @@ public class torreta : NetworkBehaviour
         _player = player;
         return this;
     }
-
     void rotation()
     {
         float input = 0f;
@@ -38,24 +43,51 @@ public class torreta : NetworkBehaviour
        
         transform.Rotate(Vector3.up * input * rotationSpeed * Time.deltaTime);
     }
+    */
 
     public void Shoot()
     {
-        _player.Ultimated();
-        OnShoot();
+        //_player.Ultimated();
+        if(wait == true)
+        {
+            SpawnShoot();
+        }
     }
+
 
     void SpawnShoot()
     {
-        var bullet = Runner.Spawn(_bulletPrefab, _shootPlace.position, _shootPlace.rotation);
+        Runner.Spawn(_bulletPrefab, _shootPlace.position, _shootPlace.rotation);
 
-        if (bullet.TryGetComponent(out Bullet b))
+        Runner.LagCompensation.Raycast(transform.position, transform.forward, 100f, Object.InputAuthority, out var hitInfo);
+
+        if (hitInfo.Hitbox == null) return;
+
+        if (!hitInfo.Hitbox.transform.root.TryGetComponent(out LifeManager player)) return;
+
+        player.TakeDamage(25);
+
+        wait = false;
+
+        StartCoroutine(Wait());
+
+        OnShoot();
+        /*
+        var p = _player;
+
+        if (bullet.TryGetComponent(out Bullet b) && p.TryGetComponent(out Player player))
         {
             if (b != null)
             {
-                b.SetPlayer(_player);
+                b.SetPlayer(player);
             }
         }
-        OnShoot();
-    }        
+        */
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+        wait = true;
+    }
 }

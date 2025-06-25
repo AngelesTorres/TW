@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp:
     - Bombimg
     - Bullet
+    - LifeManager
     - LocalInputs
     - Movility
     - Player
@@ -69,8 +70,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -269,37 +272,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4014}
     - Class: 114
-      Script: {instanceID: 5088}
+      Script: {instanceID: 5086}
     - Class: 114
-      Script: {instanceID: 5326}
+      Script: {instanceID: 5324}
     - Class: 114
-      Script: {instanceID: 5476}
+      Script: {instanceID: 5474}
     - Class: 114
-      Script: {instanceID: 5646}
+      Script: {instanceID: 5644}
     - Class: 114
-      Script: {instanceID: 5726}
+      Script: {instanceID: 5724}
     - Class: 114
-      Script: {instanceID: 5758}
+      Script: {instanceID: 5756}
     - Class: 114
-      Script: {instanceID: 5764}
+      Script: {instanceID: 5762}
     - Class: 114
-      Script: {instanceID: 5768}
+      Script: {instanceID: 5766}
     - Class: 114
-      Script: {instanceID: 5776}
+      Script: {instanceID: 5774}
     - Class: 114
-      Script: {instanceID: 5830}
+      Script: {instanceID: 5828}
     - Class: 114
-      Script: {instanceID: 6170}
+      Script: {instanceID: 6168}
     - Class: 114
-      Script: {instanceID: 6578}
+      Script: {instanceID: 6576}
     - Class: 114
-      Script: {instanceID: 6860}
+      Script: {instanceID: 6858}
     - Class: 114
-      Script: {instanceID: 6876}
+      Script: {instanceID: 6874}
     - Class: 114
-      Script: {instanceID: 7446}
-    - Class: 114
-      Script: {instanceID: 7718}
+      Script: {instanceID: 7444}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -396,79 +397,81 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4390}
+      Script: {instanceID: 4388}
     - Class: 114
-      Script: {instanceID: 4490}
+      Script: {instanceID: 4488}
     - Class: 114
-      Script: {instanceID: 4904}
+      Script: {instanceID: 4902}
     - Class: 114
-      Script: {instanceID: 4966}
+      Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 5016}
+      Script: {instanceID: 5014}
     - Class: 114
-      Script: {instanceID: 5024}
+      Script: {instanceID: 5022}
     - Class: 114
-      Script: {instanceID: 5088}
+      Script: {instanceID: 5086}
     - Class: 114
-      Script: {instanceID: 5338}
+      Script: {instanceID: 5336}
     - Class: 114
-      Script: {instanceID: 5476}
+      Script: {instanceID: 5474}
     - Class: 114
-      Script: {instanceID: 5536}
+      Script: {instanceID: 5534}
     - Class: 114
-      Script: {instanceID: 5646}
+      Script: {instanceID: 5644}
+    - Class: 114
+      Script: {instanceID: 5756}
     - Class: 114
       Script: {instanceID: 5758}
     - Class: 114
-      Script: {instanceID: 5760}
+      Script: {instanceID: 5762}
     - Class: 114
       Script: {instanceID: 5764}
     - Class: 114
       Script: {instanceID: 5766}
     - Class: 114
-      Script: {instanceID: 5768}
+      Script: {instanceID: 5770}
     - Class: 114
       Script: {instanceID: 5772}
     - Class: 114
       Script: {instanceID: 5774}
     - Class: 114
-      Script: {instanceID: 5776}
+      Script: {instanceID: 5828}
     - Class: 114
-      Script: {instanceID: 5830}
+      Script: {instanceID: 5912}
     - Class: 114
-      Script: {instanceID: 5914}
+      Script: {instanceID: 5932}
     - Class: 114
-      Script: {instanceID: 5934}
+      Script: {instanceID: 6144}
     - Class: 114
-      Script: {instanceID: 6146}
+      Script: {instanceID: 6168}
     - Class: 114
-      Script: {instanceID: 6170}
+      Script: {instanceID: 6176}
     - Class: 114
-      Script: {instanceID: 6178}
+      Script: {instanceID: 6210}
     - Class: 114
-      Script: {instanceID: 6212}
+      Script: {instanceID: 6576}
     - Class: 114
-      Script: {instanceID: 6578}
+      Script: {instanceID: 6582}
     - Class: 114
-      Script: {instanceID: 6584}
+      Script: {instanceID: 6898}
     - Class: 114
-      Script: {instanceID: 6900}
+      Script: {instanceID: 6964}
     - Class: 114
-      Script: {instanceID: 6966}
+      Script: {instanceID: 7040}
     - Class: 114
-      Script: {instanceID: 7042}
+      Script: {instanceID: 7230}
     - Class: 114
-      Script: {instanceID: 7232}
+      Script: {instanceID: 7262}
     - Class: 114
-      Script: {instanceID: 7264}
+      Script: {instanceID: 7522}
     - Class: 114
-      Script: {instanceID: 7524}
+      Script: {instanceID: 7558}
     - Class: 114
-      Script: {instanceID: 7560}
+      Script: {instanceID: 7716}
     - Class: 114
-      Script: {instanceID: 7718}
+      Script: {instanceID: 7980}
     - Class: 114
-      Script: {instanceID: 7982}
+      Script: {instanceID: 40702}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -496,7 +499,7 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 333775ecc6cbb00e50a429dc37963aee
+      Hash: d0abc8edc250cd9d7f5d71cce4c14e25
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Bullet
@@ -604,7 +607,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 934b78b20c46bc6dca3dae0ee1242da8
+      Hash: 001e523b27762b78679e7570e75e6b45
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
@@ -622,7 +625,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 002e25a8c9d9d1ac8a56f9050660ff81
+      Hash: 60b436a0f30a70eb5daa65a07d3c4e25
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: torreta
@@ -1162,7 +1165,7 @@ ScriptsOnlyBuild:
     className: UnityOnDeselectMessageListener
   - hash:
       serializedVersion: 2
-      Hash: af71aeeaa53f8ae462a88b5bbd2030f4
+      Hash: 4fe727bf416906f50250898ec99a228a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1682,6 +1685,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LifeManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

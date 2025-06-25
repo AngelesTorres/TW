@@ -39,8 +39,9 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
         var newPosition = GameManager.Instance.spawnTransforms[spawnPointIndex].position;
         var newRotation = GameManager.Instance.spawnTransforms[spawnPointIndex].rotation;
 
-        NetworkObject cl = runner.Spawn(_playerPrefab, newPosition, newRotation, player);
+        runner.Spawn(_playerPrefab, newPosition, newRotation, player);
 
+        /*
         var newTowerPosition = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].position;
         var newTowerRotation = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].rotation;
 
@@ -61,6 +62,7 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
                 core.SetPlayer(player3);
             }
         }
+        */
     }
     
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)

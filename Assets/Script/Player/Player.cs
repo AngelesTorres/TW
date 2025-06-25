@@ -5,6 +5,7 @@ using Fusion;
 using Fusion.Addons.Physics;
 using System.Collections;
 
+[RequireComponent(typeof(LifeManager))]
 [RequireComponent(typeof(Bombimg))]
 [RequireComponent(typeof(LocalInputs))]
 public class Player : NetworkBehaviour
@@ -15,15 +16,10 @@ public class Player : NetworkBehaviour
 
     public event Action OnLeft = delegate { };
 
-    [SerializeField] private int _maxLife = 100;
-
-    [SerializeField] private int _currentLife;
-
     [SerializeField] private Bombimg _bombing;
 
     [SerializeField] public Vector3 mySpawnPoint;
 
-    [SerializeField] private NetworkPrefabRef _bulletPrefab;
     public float wait_shoot;
     public bool recharg;
     public float charge;
@@ -41,8 +37,6 @@ public class Player : NetworkBehaviour
         _rb = GetComponent<NetworkRigidbody3D>();
         _bombing = GetComponent<Bombimg>();
 
-        _currentLife = _maxLife;
-
         mySpawnPoint = transform.position;
 
         if (Object.HasInputAuthority)
@@ -55,30 +49,13 @@ public class Player : NetworkBehaviour
         {
             LocalInputs.enabled = false;
         }
+        var l = GetComponent<LifeManager>();
+
+        l.OnRespawn += OnResurrect;
 
         GameManager.Instance.AddToList(this);
     }
-
-    void Update()
-    {
-        if (wait_shoot >= 6)
-        {
-            recharg = true;
-        }
-
-        if (recharg == true)
-        {
-            charge += Time.deltaTime;
-        }
-
-        if (charge >= 3)
-        {
-            recharg = false;
-            charge = 0;
-            wait_shoot = 0;
-        }
-    }
-
+    /*
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_TakeDamage(int dmg)
     {
@@ -96,16 +73,11 @@ public class Player : NetworkBehaviour
     public void Ultimated()
     {
         GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
-    }
+    }   
+    */
     
-    public void SpawnShoot(Vector3 p, Vector3 r)
+    private void OnResurrect()
     {
-        //Runner.Spawn(_bulletPrefab, p, r).SetPlayer(this);
-    }
-    
-    void OnResurrect()
-    {
-        _currentLife += _maxLife;
         transform.position = mySpawnPoint;
     }
 
@@ -114,36 +86,19 @@ public class Player : NetworkBehaviour
         OnLeft();
     }
 
-    void DisconnectPlayer()
-    {
-        if (!Object.HasInputAuthority)
-        {
-            Runner.Disconnect(Object.InputAuthority);
-        }
-        GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
-
-        Runner.Despawn(Object);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "bombspawn" && espera == true)
+        if (other.TryGetComponent(out bombaspawn b) && espera == true)
         {
             _bombing.AddBomb();
             espera = false;
-            StartCoroutine(WaitMore(2));
+            StartCoroutine(WaitMore());
         }       
     }    
 
-    IEnumerator WaitMore(int time)
+    IEnumerator WaitMore()
     {
-        int w = 0;
-
-        while(w < time)
-        {
-            w++;
-            yield return null;
-        }
+        yield return new WaitForSeconds(2);
         espera = true;
     }
 }

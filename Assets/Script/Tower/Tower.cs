@@ -50,7 +50,7 @@ public class Tower : NetworkBehaviour
     {
         Debug.Log($"d'oh");
 
-        _player.Ultimated();
+        //_player.Ultimated();
 
         Runner.Despawn(Object);
         //Runner.Despawn(Runner.LocalPlayer);
