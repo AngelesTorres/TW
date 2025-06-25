@@ -1712,6 +1712,7 @@ MonoBehaviour:
   _networkRunnerHandler: {fileID: 748254543452855241, guid: 022035a30c76d204481956777fc91e3f, type: 3}
   _winImage: {fileID: 753560571}
   _loseImage: {fileID: 123668172}
+  _waitImage: {fileID: 630920256}
   spawnTransforms:
   - {fileID: 35871}
   - {fileID: 506566347}
@@ -3670,6 +3671,7 @@ GameObject:
   - component: {fileID: 6619653065949842800}
   - component: {fileID: 8639657261066497249}
   - component: {fileID: 3215488823046627363}
+  - component: {fileID: 8639657261066497250}
   m_Layer: 0
   m_Name: Prototype Runner
   m_TagString: Untagged
@@ -3875,6 +3877,18 @@ MonoBehaviour:
     RawGuidValue: 82e6a593e20493d46854c266e2e23a58
   towerPrefab:
     RawGuidValue: 00000000000000000000000000000000
+--- !u!114 &8639657261066497250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133576713673697592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8edbe7108d8a43ab838cf8b8d9453df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -63,9 +63,9 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
 
         var result = await _currentRunner.StartGame(new StartGameArgs()
         {
-            GameMode = gameMode,
-            Scene = SceneRef.FromIndex(sceneIndex),
-            SessionName = sessionName
+                GameMode = gameMode,
+                Scene = SceneRef.FromIndex(sceneIndex),
+                SessionName = sessionName            
         });
 
         if (!result.Ok)

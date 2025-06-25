@@ -1,14 +1,13 @@
 using Fusion;
 using Fusion.Addons.Physics;
-using System;
 using UnityEngine;
 
 public class Bullet : NetworkBehaviour
 {    
     [SerializeField] private float _initialForce;
     [SerializeField] private float _lifeTime = 5f;
-    [SerializeField] private int _damage =1;
-   
+    [SerializeField] private byte _damage = 25;
+
     private TickTimer _lifeTimer;
 
     public Player _player;

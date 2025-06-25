@@ -1,7 +1,8 @@
+using Fusion;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Fusion;
 
 public class Tower : NetworkBehaviour
 {
@@ -9,7 +10,7 @@ public class Tower : NetworkBehaviour
     private float _maxLife = 15;
     private float _currentLife;
     public float waitdaño;
-    public Material colordaño;   
+    public Material colorBase;
 
     public override void Spawned()
     {
@@ -17,8 +18,9 @@ public class Tower : NetworkBehaviour
             return;
 
         recibe = false;
+
         _currentLife = _maxLife;
-        colordaño.color = Color.green;
+        colorBase.color = Color.green;
     }
 
     public Player _player;
@@ -33,7 +35,9 @@ public class Tower : NetworkBehaviour
     public void RPC_TakeDamage(int dmg)
     {
         Local_TakeDamage(dmg);
-        colordaño.color = Color.red;
+        colorBase.color = Color.red;
+
+        StartCoroutine(Timer(3));
     }
 
     void Local_TakeDamage(int dmg)
@@ -46,9 +50,21 @@ public class Tower : NetworkBehaviour
     {
         Debug.Log($"d'oh");
 
-        GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
+        _player.Ultimated();
 
         Runner.Despawn(Object);
         //Runner.Despawn(Runner.LocalPlayer);
+    }
+
+    IEnumerator Timer(int limit)
+    {
+        int ticks = 0;
+
+        while (ticks < limit) 
+        {
+            ticks++;
+                yield return null;
+        }
+        colorBase.color = Color.white;
     }
 }

@@ -10,9 +10,7 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private NetworkPrefabRef _playerPrefab;
     [SerializeField] private NetworkPrefabRef towerPrefab;
 
-    //private int numberOfPlayers = 2;
-
-    //private bool _initialized;
+    private int numberOfPlayers = 2;
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
@@ -21,19 +19,6 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
             var playersCount = runner.SessionInfo.PlayerCount;
 
             CreatePlayer(playersCount - 1, runner, player);
-
-            /*
-            if (_initialized && playersCount >= numberOfPlayers)
-            {
-                CreatePlayer(0, runner, player);
-                return;
-            }
-            if (playersCount < numberOfPlayers)
-                _initialized = true;
-            else
-            {
-            }        
-            */                               
         }
     }
     
@@ -51,8 +36,6 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
     
     void CreatePlayer(int spawnPointIndex, NetworkRunner runner, PlayerRef player)
     {
-        //_initialized = false;
-
         var newPosition = GameManager.Instance.spawnTransforms[spawnPointIndex].position;
         var newRotation = GameManager.Instance.spawnTransforms[spawnPointIndex].rotation;
 
@@ -68,6 +51,14 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
             if (core != null)
             {
                 core.SetPlayer(player2);
+            }
+        }
+
+        if(cl.TryGetComponent(out torreta core2) && cl.TryGetComponent(out Player player3))
+        {
+            if (core2 != null)
+            {
+                core.SetPlayer(player3);
             }
         }
     }

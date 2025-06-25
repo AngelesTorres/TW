@@ -16,7 +16,6 @@ public class PlayerView : NetworkBehaviour
     {
         _networkMecanimAnimator = GetComponentInChildren<NetworkMecanimAnimator>();
 
-        var p = GetComponent<Player>();
         var m = GetComponent<Movility>();
         var t = GetComponent<torreta>();
 

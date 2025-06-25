@@ -1,8 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp:
+    - Bombimg
     - Bullet
-    - LifeManager
     - LocalInputs
     - Movility
     - Player
@@ -15,25 +15,17 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - FollowTarget
     - GameManager
-    - LifeManager
-    - LocalInputs
     - MainMenuHandler
-    - Movility
     - NetworkRunnerHandler
-    - Player
-    - PlayerController
-    - PlayerView
     - SessionItem
     - SessionListHandler
     - Spawner
     - bomba
     - bombaspawn
     - murorompible
-    - torreta
     Fusion.Addons.Physics:
     - Fusion.Addons.Physics.NetworkRigidbody3D
     Fusion.Addons.Physics.dll:
-    - Fusion.Addons.Physics.NetworkRigidbody3D
     - Fusion.Addons.Physics.RunnerSimulatePhysics3D
     Fusion.Realtime.dll:
     - Fusion.Photon.Realtime.PhotonAppSettings
@@ -59,6 +51,7 @@ ScriptsOnlyBuild:
     - Fusion.EnableOnSingleRunner
     - Fusion.FusionBootstrap
     - Fusion.FusionBootstrapDebugGUI
+    - Fusion.RunnerEnableVisibility
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -76,10 +69,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -286,15 +277,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5646}
     - Class: 114
-      Script: {instanceID: 5760}
+      Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 5766}
+      Script: {instanceID: 5758}
     - Class: 114
-      Script: {instanceID: 5770}
+      Script: {instanceID: 5764}
     - Class: 114
-      Script: {instanceID: 5778}
+      Script: {instanceID: 5768}
     - Class: 114
-      Script: {instanceID: 5832}
+      Script: {instanceID: 5776}
+    - Class: 114
+      Script: {instanceID: 5830}
     - Class: 114
       Script: {instanceID: 6170}
     - Class: 114
@@ -399,13 +392,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3898}
     - Class: 114
-      Script: {instanceID: 4122}
+      Script: {instanceID: 4120}
     - Class: 114
-      Script: {instanceID: 4136}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4288}
+      Script: {instanceID: 4390}
     - Class: 114
-      Script: {instanceID: 4392}
+      Script: {instanceID: 4490}
     - Class: 114
       Script: {instanceID: 4904}
     - Class: 114
@@ -425,27 +418,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5646}
     - Class: 114
+      Script: {instanceID: 5758}
+    - Class: 114
       Script: {instanceID: 5760}
     - Class: 114
-      Script: {instanceID: 5762}
+      Script: {instanceID: 5764}
     - Class: 114
       Script: {instanceID: 5766}
     - Class: 114
       Script: {instanceID: 5768}
     - Class: 114
-      Script: {instanceID: 5770}
+      Script: {instanceID: 5772}
     - Class: 114
       Script: {instanceID: 5774}
     - Class: 114
       Script: {instanceID: 5776}
     - Class: 114
-      Script: {instanceID: 5778}
+      Script: {instanceID: 5830}
     - Class: 114
-      Script: {instanceID: 5832}
+      Script: {instanceID: 5914}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 5934}
     - Class: 114
-      Script: {instanceID: 5936}
+      Script: {instanceID: 6146}
     - Class: 114
       Script: {instanceID: 6170}
     - Class: 114
@@ -474,8 +469,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7718}
     - Class: 114
       Script: {instanceID: 7982}
-    - Class: 114
-      Script: {instanceID: 76818}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -503,7 +496,7 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 05222b0fb34fc791c342bb91fbe6aa86
+      Hash: 333775ecc6cbb00e50a429dc37963aee
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Bullet
@@ -611,7 +604,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 2fbdb999187e211c22394ee112a641ca
+      Hash: 934b78b20c46bc6dca3dae0ee1242da8
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
@@ -995,12 +988,6 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: LifeManager
-  - hash:
-      serializedVersion: 2
       Hash: 6298a10412e94e11ad85ac6148c9dda1
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -1023,6 +1010,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnCancelMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Movility
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1169,7 +1162,7 @@ ScriptsOnlyBuild:
     className: UnityOnDeselectMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 4cfbfcd665679deffdd8d0d49242fb4f
+      Hash: af71aeeaa53f8ae462a88b5bbd2030f4
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1301,7 +1294,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: c618cacf39f0e825d22c5c82d4300e77
+      Hash: 3e681f7db2a5d9ef6f2c19a929567b25
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Tower
@@ -1323,6 +1316,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTriggerStay2DMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 552843c72e9623f7800458845b7396cd
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Bombimg
   - hash:
       serializedVersion: 2
       Hash: 751d867553f413cde86fe5db0b02780d
@@ -1683,12 +1682,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Movility
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

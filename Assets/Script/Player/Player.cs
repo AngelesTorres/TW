@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Fusion;
 using Fusion.Addons.Physics;
+using System.Collections;
 
 [RequireComponent(typeof(Bombimg))]
 [RequireComponent(typeof(LocalInputs))]
@@ -14,21 +15,20 @@ public class Player : NetworkBehaviour
 
     public event Action OnLeft = delegate { };
 
-    [SerializeField] private int _maxLife = 10;
+    [SerializeField] private int _maxLife = 100;
 
     [SerializeField] private int _currentLife;
 
     [SerializeField] private Bombimg _bombing;
 
-    public Vector3 mySpawnPoint;
+    [SerializeField] public Vector3 mySpawnPoint;
+
+    [SerializeField] private NetworkPrefabRef _bulletPrefab;
     public float wait_shoot;
     public bool recharg;
     public float charge;
 
     private NetworkRigidbody3D _rb;
-
-    public Action OnShoot;
-    public Action<float> OnMove;
   
     public bool espera;
     public float waitmore;
@@ -56,32 +56,11 @@ public class Player : NetworkBehaviour
             LocalInputs.enabled = false;
         }
 
-        //GameManager.Instance.AddToList(this);
+        GameManager.Instance.AddToList(this);
     }
 
     void Update()
     {
-        if (!HasStateAuthority)
-            return;
-
-        /*
-        if (recharg == false)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                _isShootingPressed = true;
-        }
-        */
-        if (espera == false)
-        {
-            waitmore += Time.deltaTime;
-        }
-
-        if (waitmore >= 2)
-        {
-            espera = true;
-
-        }
-
         if (wait_shoot >= 6)
         {
             recharg = true;
@@ -100,18 +79,6 @@ public class Player : NetworkBehaviour
         }
     }
 
-    public override void FixedUpdateNetwork()
-    {
-        /*
-        if (_isShootingPressed)
-        {
-            SpawnShoot();
-            _isShootingPressed = false;
-            wait_shoot += 1;
-        }
-        */
-    }
-
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_TakeDamage(int dmg)
     {
@@ -120,14 +87,25 @@ public class Player : NetworkBehaviour
 
     void Local_TakeDamage(int dmg)
     {
-         _currentLife -= dmg;
-        if (_currentLife <= 0)
-            DieNRevive();
-    }
+        if (dmg > _currentLife) dmg = _currentLife;
+        _currentLife -= dmg;
 
-    void DieNRevive()
+        if (_currentLife != 0) return;
+        OnResurrect();
+    }
+    public void Ultimated()
     {
-        _currentLife = _maxLife;
+        GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
+    }
+    
+    public void SpawnShoot(Vector3 p, Vector3 r)
+    {
+        //Runner.Spawn(_bulletPrefab, p, r).SetPlayer(this);
+    }
+    
+    void OnResurrect()
+    {
+        _currentLife += _maxLife;
         transform.position = mySpawnPoint;
     }
 
@@ -136,10 +114,12 @@ public class Player : NetworkBehaviour
         OnLeft();
     }
 
-    public void Death()
+    void DisconnectPlayer()
     {
-        Debug.Log($"d'oh");
-
+        if (!Object.HasInputAuthority)
+        {
+            Runner.Disconnect(Object.InputAuthority);
+        }
         GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
 
         Runner.Despawn(Object);
@@ -151,6 +131,19 @@ public class Player : NetworkBehaviour
         {
             _bombing.AddBomb();
             espera = false;
+            StartCoroutine(WaitMore(2));
         }       
     }    
+
+    IEnumerator WaitMore(int time)
+    {
+        int w = 0;
+
+        while(w < time)
+        {
+            w++;
+            yield return null;
+        }
+        espera = true;
+    }
 }

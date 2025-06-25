@@ -10,6 +10,7 @@ public class GameManager : NetworkBehaviour
 
     [SerializeField] private GameObject _winImage;
     [SerializeField] private GameObject _loseImage;
+    [SerializeField] private GameObject _waitImage;
     private List<PlayerRef> _players = new();
 
     [SerializeField] public Transform[] spawnTransforms;
@@ -53,6 +54,16 @@ public class GameManager : NetworkBehaviour
     void RPC_Win([RpcTarget] PlayerRef player)
     {
         Win();
+    }
+
+    public void GoGame()
+    {
+        NoWait();        
+    }
+
+    void NoWait()
+    {
+        _waitImage.SetActive(false);
     }
 
     void Win()
