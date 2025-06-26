@@ -87,7 +87,7 @@ public class torreta : NetworkBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         wait = true;
     }
 }

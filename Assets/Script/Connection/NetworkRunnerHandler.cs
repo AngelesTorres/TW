@@ -10,7 +10,6 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
 {
     [SerializeField] private NetworkRunner _runnerPrefab;
     private NetworkRunner _currentRunner;
-    private int maxNumberOfPlayers = 2;
 
     public event Action OnJoinedLobby = delegate { };
     public event Action<List<SessionInfo>> OnSessionListUpdate = delegate { };

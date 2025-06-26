@@ -18,18 +18,12 @@ public class Player : NetworkBehaviour
 
     [SerializeField] private Bombimg _bombing;
 
-    [SerializeField] public Vector3 mySpawnPoint;
-
-    public float wait_shoot;
-    public bool recharg;
-    public float charge;
+    [SerializeField] private Vector3 mySpawnPoint;
 
     private NetworkRigidbody3D _rb;
   
-    public bool espera;
-    public float waitmore;
+    private bool espera;
    
-    public bool stop;
     public override void Spawned()
     {
         LocalInputs = GetComponent<LocalInputs>();
@@ -49,36 +43,25 @@ public class Player : NetworkBehaviour
         {
             LocalInputs.enabled = false;
         }
+
+        espera = true;
+
         var l = GetComponent<LifeManager>();
 
         l.OnRespawn += OnResurrect;
+        l.OnUltimated += OnTerminated;
 
         GameManager.Instance.AddToList(this);
     }
-    /*
-    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
-    public void RPC_TakeDamage(int dmg)
-    {
-         Local_TakeDamage(dmg);
-    }
-
-    void Local_TakeDamage(int dmg)
-    {
-        if (dmg > _currentLife) dmg = _currentLife;
-        _currentLife -= dmg;
-
-        if (_currentLife != 0) return;
-        OnResurrect();
-    }
-    public void Ultimated()
-    {
-        GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
-    }   
-    */
     
     private void OnResurrect()
     {
         transform.position = mySpawnPoint;
+    }
+
+    private void OnTerminated()
+    {
+        GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
     }
 
     public override void Despawned(NetworkRunner runner, bool hasState)
@@ -90,6 +73,7 @@ public class Player : NetworkBehaviour
     {
         if (other.TryGetComponent(out bombaspawn b) && espera == true)
         {
+            b.Recharge();
             _bombing.AddBomb();
             espera = false;
             StartCoroutine(WaitMore());

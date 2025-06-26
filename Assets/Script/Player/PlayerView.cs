@@ -14,6 +14,9 @@ public class PlayerView : NetworkBehaviour
 
     public override void Spawned()
     {
+        if (!HasStateAuthority)
+            return;
+
         _networkMecanimAnimator = GetComponentInChildren<NetworkMecanimAnimator>();
 
         var m = GetComponent<Movility>();
@@ -22,6 +25,12 @@ public class PlayerView : NetworkBehaviour
         t.OnShoot += TriggerShootParticles;
 
         m.OnMove += MoveAnimation;
+    }
+
+    void Update()
+    {
+        if (!HasStateAuthority)
+            return;
     }
 
     private void TriggerShootParticles()

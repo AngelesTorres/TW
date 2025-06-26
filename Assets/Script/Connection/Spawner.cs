@@ -8,17 +8,20 @@ using Fusion.Sockets;
 public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 {
     [SerializeField] private NetworkPrefabRef _playerPrefab;
-    [SerializeField] private NetworkPrefabRef towerPrefab;
-
-    private int numberOfPlayers = 2;
+    //[SerializeField] private NetworkPrefabRef towerPrefab;
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
+        var playersCount = runner.SessionInfo.PlayerCount;
+
         if (runner.IsServer)
         {        
-            var playersCount = runner.SessionInfo.PlayerCount;
-
             CreatePlayer(playersCount - 1, runner, player);
+        }
+
+        if (playersCount == 2)
+        {
+            GameManager.Instance.AllowBomb();
         }
     }
     

@@ -12,6 +12,7 @@ public class LifeManager : NetworkBehaviour
     private int _deathCounts;
 
     public event Action OnRespawn = delegate { };
+    public event Action OnUltimated = delegate { };
 
     public override void Spawned()
     {
@@ -20,6 +21,7 @@ public class LifeManager : NetworkBehaviour
             _currentLife = MAX_LIFE;
         }
     }
+
 
     public void TakeDamage(byte dmg)
     {
@@ -32,11 +34,12 @@ public class LifeManager : NetworkBehaviour
         if (_deathCounts > 2)
         {
             DisconnectPlayer();
-            GameManager.Instance.RPC_Defeat(Runner.LocalPlayer);
+            OnUltimated();
             Runner.Despawn(Object);
         }
         StartCoroutine(RespawnCooldown());
     }
+
 
     IEnumerator RespawnCooldown()
     {

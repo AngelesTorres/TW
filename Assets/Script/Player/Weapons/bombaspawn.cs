@@ -1,33 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
 public class bombaspawn : MonoBehaviour
 {
-    public bool toma;
-    public float watibom;
+    public static bombaspawn Instance { get; private set; }
     public GameObject bomba;
-    
-    void Start()
+
+    private void Awake()
     {
-        toma = true;
+        Instance = this;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Recharge()
     {
-        if (other.gameObject.tag=="tanque" && toma == true)
-        {
-             bomba.SetActive(false);
-            toma = false;
-            StartCoroutine(Cooldown());
-        }
+        bomba.SetActive(false);
+        StartCoroutine(Cooldown());
     }
 
     IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(2);
 
-        toma = true;
         bomba.SetActive(true);
     }
 }

@@ -11,7 +11,7 @@ public class Movility : NetworkBehaviour
     float _speed = 20f;
     float _turnSpeed = 150f;
 
-    public Action<float> OnMove;
+    public event Action<float> OnMove;
 
     public override void Spawned()
     {

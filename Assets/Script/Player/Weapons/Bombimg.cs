@@ -15,6 +15,12 @@ public class Bombimg : NetworkBehaviour
             return;
     }
 
+    void Update()
+    {
+        if (!HasStateAuthority)
+            return;
+    }
+
     public void AddBomb()
     {
         countBomb++;
