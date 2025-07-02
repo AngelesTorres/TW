@@ -61,6 +61,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerPrefab:
     RawGuidValue: 82e6a593e20493d46854c266e2e23a58
+  towerPrefab:
+    RawGuidValue: 157702ca9ec5d1149b206cea265e3241
 --- !u!114 &-4132085433961757145
 MonoBehaviour:
   m_ObjectHideFlags: 0

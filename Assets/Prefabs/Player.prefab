@@ -5631,10 +5631,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7cb5410c820bd408f3e887b5ea3f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 100
   _bulletPrefab:
     RawGuidValue: e95509daeff647641b1524812bb6b24d
   _shootPlace: {fileID: 426826263682421453}
   wait: 0
+  _player: {fileID: 4887078815507229573}
 --- !u!114 &3943902664866142583
 MonoBehaviour:
   m_ObjectHideFlags: 0

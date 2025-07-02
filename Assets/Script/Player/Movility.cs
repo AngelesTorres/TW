@@ -32,7 +32,7 @@ public class Movility : NetworkBehaviour
                 _rb.Rigidbody.velocity = velocity;
             }
 
-            OnMove(xAxis);
+            //OnMove(xAxis);
         }
         else
         {
@@ -41,7 +41,7 @@ public class Movility : NetworkBehaviour
 
             _rb.Rigidbody.velocity = velocity;
 
-            OnMove(0);
+            //OnMove(0);
         }
     }
     public void Rotate(float r)

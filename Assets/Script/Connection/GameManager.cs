@@ -40,10 +40,6 @@ public class GameManager : NetworkBehaviour
     
         RemoveFromList(player);
     */
-    public void AllowBomb()
-    {
-        bombaspawn.Instance.Recharge();
-    }
 
     [Rpc]
     public void RPC_Defeat(PlayerRef player)

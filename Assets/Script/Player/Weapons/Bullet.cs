@@ -9,8 +9,7 @@ public class Bullet : NetworkBehaviour
     [SerializeField] private byte _damage = 25;
 
     private TickTimer _lifeTimer;
-
-    /*
+    
     public Player _player;
 
     public Bullet SetPlayer(Player player)
@@ -18,7 +17,7 @@ public class Bullet : NetworkBehaviour
         _player = player;
         return this;
     }
-    */
+    
     public override void Spawned()
     {
         if(!HasStateAuthority)
@@ -50,14 +49,12 @@ public class Bullet : NetworkBehaviour
         {
             lifeHandler.TakeDamage(_damage);
         }        
-            DespawnObject();
-        /*
-        else if (other.TryGetComponent(out Tower tower) && tower._player != _player)
+        
+        if (other.TryGetComponent(out Tower tower) && tower._player != _player)
         {
             tower.RPC_TakeDamage(_damage);
             DespawnObject();
-        }
-        */
-           
+        }                   
+            DespawnObject();
     }    
 }

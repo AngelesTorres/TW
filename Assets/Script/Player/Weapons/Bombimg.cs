@@ -23,8 +23,11 @@ public class Bombimg : NetworkBehaviour
 
     public void AddBomb()
     {
-        countBomb++;
-        CountBombs(countBomb);
+        if(countBomb < 3)
+        {
+            countBomb++;
+            CountBombs(countBomb);
+        }
     }
 
     public void SetBomb()

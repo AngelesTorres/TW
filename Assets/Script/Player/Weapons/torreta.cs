@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class torreta : NetworkBehaviour
 {        
-    //public float rotationSpeed = 100f;
+    public float rotationSpeed = 100f;
     [SerializeField] private NetworkPrefabRef _bulletPrefab;
     [SerializeField] private Transform _shootPlace;
 
@@ -21,10 +21,10 @@ public class torreta : NetworkBehaviour
     {
         if (!HasStateAuthority)
             return;
-        //rotation();
+        rotation();
     }
 
-    /*
+    
     public Player _player;
 
     public torreta SetPlayer(Player player)
@@ -43,46 +43,45 @@ public class torreta : NetworkBehaviour
        
         transform.Rotate(Vector3.up * input * rotationSpeed * Time.deltaTime);
     }
-    */
+    
 
     public void Shoot()
     {
         //_player.Ultimated();
         if(wait == true)
         {
-            SpawnShoot();
+            //SpawnShoot(_player);
         }
     }
 
 
-    void SpawnShoot()
+    void SpawnShoot(PlayerRef player)
     {
-        Runner.Spawn(_bulletPrefab, _shootPlace.position, _shootPlace.rotation);
+        //Runner.LagCompensation.Raycast(transform.position, transform.forward, 100f, Object.InputAuthority, out var hitInfo);
 
-        Runner.LagCompensation.Raycast(transform.position, transform.forward, 100f, Object.InputAuthority, out var hitInfo);
+        //if (hitInfo.Hitbox == null) return;
 
-        if (hitInfo.Hitbox == null) return;
+        //if (!hitInfo.Hitbox.transform.root.TryGetComponent(out LifeManager player)) return;
 
-        if (!hitInfo.Hitbox.transform.root.TryGetComponent(out LifeManager player)) return;
-
-        player.TakeDamage(25);
-
+        //player.TakeDamage(25);
         wait = false;
 
         StartCoroutine(Wait());
 
         OnShoot();
-        /*
-        var p = _player;
 
-        if (bullet.TryGetComponent(out Bullet b) && p.TryGetComponent(out Player player))
+        var p = _player;
+        
+        var bullet = Runner.Spawn(_bulletPrefab, _shootPlace.position, _shootPlace.rotation, player);
+
+        if (bullet.TryGetComponent(out Bullet b) && p.TryGetComponent(out Player player2))
         {
             if (b != null)
             {
-                b.SetPlayer(player);
+                b.SetPlayer(player2);
             }
         }
-        */
+        
     }
 
     IEnumerator Wait()

@@ -12,7 +12,10 @@ public class bombaspawn : MonoBehaviour
     {
         Instance = this;
     }
-
+    private void Start()
+    {
+        Recharge();
+    }
     public void Recharge()
     {
         bomba.SetActive(false);

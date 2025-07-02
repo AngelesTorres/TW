@@ -58,24 +58,27 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Player\NetworkInputData.cs" />
-    <Compile Include="Assets\Script\Menu\MainMenuHandler.cs" />
-    <Compile Include="Assets\Script\Player\LocalInputs.cs" />
+    <Compile Include="Assets\Script\Player\Weapons\Bombimg.cs" />
+    <Compile Include="Assets\Script\Player\Weapons\bomba.cs" />
     <Compile Include="Assets\Script\MainMenu\SessionListHandler.cs" />
-    <Compile Include="Assets\Script\Camera\FollowTarget.cs" />
+    <Compile Include="Assets\Script\Connection\NetworkRunnerHandler.cs" />
+    <Compile Include="Assets\Script\Connection\Spawner.cs" />
     <Compile Include="Assets\Script\Player\LifeManager.cs" />
-    <Compile Include="Assets\Script\Player\torreta.cs" />
+    <Compile Include="Assets\Script\Player\Weapons\bombaspawn.cs" />
+    <Compile Include="Assets\Script\Player\Movility.cs" />
     <Compile Include="Assets\Script\Wall\murorompible.cs" />
-    <Compile Include="Assets\Script\MainMenu\SessionListHandler - Copy.cs" />
+    <Compile Include="Assets\Script\Player\Inputs\LocalInputs.cs" />
     <Compile Include="Assets\Script\MainMenu\SessionItem.cs" />
     <Compile Include="Assets\Script\Player\PlayerView.cs" />
+    <Compile Include="Assets\Script\MainMenu\MainMenuHandler.cs" />
     <Compile Include="Assets\Script\Tower\Tower.cs" />
-    <Compile Include="Assets\Script\GameManager.cs" />
-    <Compile Include="Assets\Script\Player\Bullet.cs" />
-    <Compile Include="Assets\Script\Spawner\Spawner.cs" />
-    <Compile Include="Assets\Script\bombaspawn.cs" />
-    <Compile Include="Assets\Script\bomba.cs" />
+    <Compile Include="Assets\Script\Player\Weapons\Bullet.cs" />
+    <Compile Include="Assets\Script\Connection\GameManager.cs" />
+    <Compile Include="Assets\Script\Player\Camera\FollowTarget.cs" />
+    <Compile Include="Assets\Script\Player\PlayerController.cs" />
+    <Compile Include="Assets\Script\Player\Inputs\NetworkInputData.cs" />
     <Compile Include="Assets\Script\Player\Player.cs" />
+    <Compile Include="Assets\Script\Player\Weapons\torreta.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

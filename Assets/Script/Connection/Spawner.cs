@@ -8,20 +8,13 @@ using Fusion.Sockets;
 public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 {
     [SerializeField] private NetworkPrefabRef _playerPrefab;
-    //[SerializeField] private NetworkPrefabRef towerPrefab;
+    [SerializeField] private NetworkPrefabRef towerPrefab;
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        var playersCount = runner.SessionInfo.PlayerCount;
-
         if (runner.IsServer)
         {        
-            CreatePlayer(playersCount - 1, runner, player);
-        }
-
-        if (playersCount == 2)
-        {
-            GameManager.Instance.AllowBomb();
+            CreatePlayer(runner.SessionInfo.PlayerCount - 1, runner, player);
         }
     }
     
@@ -42,13 +35,13 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
         var newPosition = GameManager.Instance.spawnTransforms[spawnPointIndex].position;
         var newRotation = GameManager.Instance.spawnTransforms[spawnPointIndex].rotation;
 
-        runner.Spawn(_playerPrefab, newPosition, newRotation, player);
+        var cl = runner.Spawn(_playerPrefab, newPosition, newRotation, player);
 
-        /*
+        
         var newTowerPosition = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].position;
         var newTowerRotation = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].rotation;
 
-        var tower = runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
+        var tower = runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation, player);
 
         if(tower.TryGetComponent(out Tower core) && cl.TryGetComponent(out Player player2))
         {
@@ -65,7 +58,7 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
                 core.SetPlayer(player3);
             }
         }
-        */
+        
     }
     
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
