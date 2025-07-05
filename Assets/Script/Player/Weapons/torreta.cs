@@ -22,9 +22,7 @@ public class torreta : NetworkBehaviour
         if (!HasStateAuthority)
             return;
         rotation();
-    }
-
-    
+    }    
     public Player _player;
 
     public torreta SetPlayer(Player player)
@@ -47,8 +45,9 @@ public class torreta : NetworkBehaviour
 
     public void Shoot()
     {
+        if (!HasStateAuthority) return;
         //_player.Ultimated();
-        if(wait == true)
+        if (wait == true)
         {
             //SpawnShoot(_player);
         }
@@ -80,13 +79,12 @@ public class torreta : NetworkBehaviour
             {
                 b.SetPlayer(player2);
             }
-        }
-        
+        }        
     }
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         wait = true;
     }
 }

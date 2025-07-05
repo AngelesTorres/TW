@@ -8,6 +8,7 @@ using System.Collections;
 [RequireComponent(typeof(LifeManager))]
 [RequireComponent(typeof(Bombimg))]
 [RequireComponent(typeof(LocalInputs))]
+[RequireComponent(typeof(torreta))]
 public class Player : NetworkBehaviour
 {    
     public static Player Local { get; private set; }
@@ -17,6 +18,7 @@ public class Player : NetworkBehaviour
     public event Action OnLeft = delegate { };
 
     [SerializeField] private Bombimg _bombing;
+    [SerializeField] private torreta _torreta;
 
     [SerializeField] private Vector3 mySpawnPoint;
 
@@ -30,8 +32,11 @@ public class Player : NetworkBehaviour
 
         _rb = GetComponent<NetworkRigidbody3D>();
         _bombing = GetComponent<Bombimg>();
+        _torreta = GetComponent<torreta>();
 
         mySpawnPoint = transform.position;
+
+        _torreta.SetPlayer(this);
 
         if (Object.HasInputAuthority)
         {

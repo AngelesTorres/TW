@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9190168442470851711}
   - component: {fileID: 3786454572194296283}
   - component: {fileID: 7356627409117074086}
-  - component: {fileID: 8565499496352360379}
+  - component: {fileID: 1838032982399569704}
   m_Layer: 0
   m_Name: nucleobase 1
   m_TagString: nucleo
@@ -101,7 +101,6 @@ MonoBehaviour:
   recibe: 0
   "waitda\xF1o": 0
   colorBase: {fileID: 2100000, guid: 0834355b6601b584da19868580c4d22c, type: 2}
-  "colorDa\xF1o": {fileID: 2100000, guid: ed81513f103441447843c045aa6d8a40, type: 2}
   _player: {fileID: 0}
 --- !u!136 &7356627409117074086
 CapsuleCollider:
@@ -126,7 +125,7 @@ CapsuleCollider:
   m_Height: 9.424557
   m_Direction: 1
   m_Center: {x: -0.29265675, y: 4.2555375, z: -0.008245744}
---- !u!114 &8565499496352360379
+--- !u!114 &1838032982399569704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,9 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 853444769
+  SortKey: 3667256898
   ObjectInterest: 1
-  Flags: 262145
+  Flags: 1
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 3786454572194296283}

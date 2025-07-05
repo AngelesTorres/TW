@@ -61,14 +61,14 @@ AnimatorController:
   m_Name: Animator_Tank
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: xAxis
-    m_Type: 1
+  - m_Name: IsShooting
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: IsShooting
-    m_Type: 4
+  - m_Name: zAxis
+    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -100,7 +100,7 @@ AnimatorStateMachine:
     m_Position: {x: 30, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6067944154038880089}
-    m_Position: {x: 30, y: 290, z: 0}
+    m_Position: {x: 30, y: 390, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -135,7 +135,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: xAxis
     m_Mirror: 0
-  m_BlendParameter: xAxis
+  m_BlendParameter: zAxis
   m_BlendParameterY: xAxis
   m_MinThreshold: 0
   m_MaxThreshold: 1

@@ -10,11 +10,27 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private NetworkPrefabRef _playerPrefab;
     [SerializeField] private NetworkPrefabRef towerPrefab;
 
+    private int numberOfPlayers = 2;
+
+    private bool _initialized = true;
+
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        if (runner.IsServer)
+        var playersCount = runner.SessionInfo.PlayerCount;
+
+        if (_initialized && playersCount >= numberOfPlayers)
+        {
+            CreatePlayer(0, runner, player);
+            return;
+        }
+        if (player == runner.LocalPlayer)
         {        
-            CreatePlayer(runner.SessionInfo.PlayerCount - 1, runner, player);
+            if(playersCount <  numberOfPlayers)
+                _initialized = true;
+            else
+            {
+                CreatePlayer(runner.SessionInfo.PlayerCount - 1, runner, player);
+            }
         }
     }
     
@@ -32,14 +48,14 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
     
     void CreatePlayer(int spawnPointIndex, NetworkRunner runner, PlayerRef player)
     {
+        _initialized = false;
+
         var newPosition = GameManager.Instance.spawnTransforms[spawnPointIndex].position;
         var newRotation = GameManager.Instance.spawnTransforms[spawnPointIndex].rotation;
-
-        var cl = runner.Spawn(_playerPrefab, newPosition, newRotation, player);
-
-        
         var newTowerPosition = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].position;
         var newTowerRotation = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].rotation;
+
+        var cl = runner.Spawn(_playerPrefab, newPosition, newRotation, player);        
 
         var tower = runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation, player);
 
@@ -57,8 +73,7 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
             {
                 core.SetPlayer(player3);
             }
-        }
-        
+        }        
     }
     
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
-using Fusion;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Fusion;
 using Fusion.Addons.Physics;
 
 [RequireComponent(typeof(NetworkRigidbody3D))]
@@ -9,20 +11,26 @@ public class Movility : NetworkBehaviour
 {
     private NetworkRigidbody3D _rb;
     float _speed = 20f;
-    float _turnSpeed = 150f;
 
-    public event Action<float> OnMove;
+    public event Action<float> OnMove = delegate { };
 
     public override void Spawned()
     {
         _rb = GetComponent<NetworkRigidbody3D>();
     }
 
-    public void Move(float xAxis)
+    void Update()
     {
-        if (xAxis != 0)
+        if (!HasStateAuthority) return;
+    }
+
+    public void Movement(float zAxis)
+    {
+        if (!HasStateAuthority) return;
+
+        if (zAxis != 0)
         {
-            _rb.Rigidbody.velocity += transform.forward * (xAxis * _speed * Runner.DeltaTime);
+            _rb.Rigidbody.velocity += transform.forward * (zAxis * _speed * Runner.DeltaTime);
 
             if (Mathf.Abs(_rb.Rigidbody.velocity.z) > _speed)
             {
@@ -31,8 +39,6 @@ public class Movility : NetworkBehaviour
                 velocity.y = _rb.Rigidbody.velocity.y;
                 _rb.Rigidbody.velocity = velocity;
             }
-
-            //OnMove(xAxis);
         }
         else
         {
@@ -40,16 +46,7 @@ public class Movility : NetworkBehaviour
             velocity.z = 0;
 
             _rb.Rigidbody.velocity = velocity;
-
-            //OnMove(0);
         }
-    }
-    public void Rotate(float r)
-    {
-        float turn = r * _turnSpeed;
-
-        Quaternion turnRotation = Quaternion.Euler(0f, turn * Runner.DeltaTime, 0f);
-
-        _rb.Rigidbody.MoveRotation(_rb.Rigidbody.rotation * turnRotation);
+        OnMove(zAxis);
     }
 }

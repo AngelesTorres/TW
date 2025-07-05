@@ -5158,7 +5158,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 935ebf5508bab0347a80494f22897cf5, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -5473,6 +5473,7 @@ GameObject:
   - component: {fileID: 6308591232353982981}
   - component: {fileID: 3302204837409525331}
   - component: {fileID: 5124514772294592101}
+  - component: {fileID: 814758206973841493}
   m_Layer: 0
   m_Name: Player
   m_TagString: tanque
@@ -5593,6 +5594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bombing: {fileID: 1837022819792354601}
+  _torreta: {fileID: 0}
   mySpawnPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &6748718808759435758
 MonoBehaviour:
@@ -5636,7 +5638,7 @@ MonoBehaviour:
     RawGuidValue: e95509daeff647641b1524812bb6b24d
   _shootPlace: {fileID: 426826263682421453}
   wait: 0
-  _player: {fileID: 4887078815507229573}
+  _player: {fileID: 0}
 --- !u!114 &3943902664866142583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5695,6 +5697,7 @@ MonoBehaviour:
   - {fileID: 1837022819792354601}
   - {fileID: 3302204837409525331}
   - {fileID: 5124514772294592101}
+  - {fileID: 814758206973841493}
   - {fileID: 4746958581574830151}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &3302204837409525331
@@ -5724,6 +5727,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09e2451435834f64c94924e7fd4b353c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &814758206973841493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721536361348014723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98346382f93cc784ea590ab074bd1f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &637839935264684907

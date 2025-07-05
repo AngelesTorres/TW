@@ -3,10 +3,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(torreta))]
 [RequireComponent(typeof(Movility))]
+[RequireComponent(typeof(Rotation))]
 [RequireComponent(typeof(Bombimg))]
 public class PlayerController : NetworkBehaviour
 {
     private Movility _movility;
+    private Rotation _rotation;
     private torreta _torreta;
     private Bombimg _bombing;
 
@@ -14,6 +16,7 @@ public class PlayerController : NetworkBehaviour
     {
         _torreta = GetComponent<torreta>();
         _movility = GetComponent<Movility>();
+        _rotation = GetComponent<Rotation>();
         _bombing = GetComponent<Bombimg>();
     }
 
@@ -22,10 +25,10 @@ public class PlayerController : NetworkBehaviour
         if (!GetInput(out NetworkInputData inputs)) return;
 
         //Movement
-        _movility.Move(inputs.movementInput);            
+        _movility.Movement(inputs.movementInput);            
         
         //Rotation
-        _movility.Rotate(inputs.rotationInput);
+        _rotation.Rotate(inputs.rotationInput);
             
         //Shoot
         if (inputs.isShootPressed)
