@@ -9,15 +9,7 @@ public class Bullet : NetworkBehaviour
     [SerializeField] private byte _damage = 25;
 
     private TickTimer _lifeTimer;
-    
-    public Player _player;
-
-    public Bullet SetPlayer(Player player)
-    {
-        _player = player;
-        return this;
-    }
-    
+        
     public override void Spawned()
     {
         if(!HasStateAuthority)
@@ -26,6 +18,14 @@ public class Bullet : NetworkBehaviour
         GetComponent<NetworkRigidbody3D>().Rigidbody.AddForce(transform.forward * _initialForce, ForceMode.VelocityChange);
 
         _lifeTimer = TickTimer.CreateFromSeconds(Runner, _lifeTime);
+    }
+
+    public Player _player;
+
+    public Bullet SetPlayer(Player player)
+    {
+        _player = player;
+        return this;
     }
 
     public override void FixedUpdateNetwork()

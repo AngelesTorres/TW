@@ -1,7 +1,7 @@
-using Fusion;
 using System;
 using System.Collections;
-using System.Collections.Generic;
+//using System.Collections.Generic;
+using Fusion;
 using UnityEngine;
 
 public class Tower : NetworkBehaviour
@@ -14,12 +14,13 @@ public class Tower : NetworkBehaviour
 
     public override void Spawned()
     {
+        _currentLife = _maxLife;
+
         if (Object.HasInputAuthority)
             return;
 
         recibe = false;
 
-        _currentLife = _maxLife;
         colorBase.color = Color.green;
     }
 

@@ -18,7 +18,13 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
     {
         var playersCount = runner.SessionInfo.PlayerCount;
 
-        if (_initialized && playersCount >= numberOfPlayers)
+        if (runner.IsServer)
+        {            
+            CreatePlayer(runner.SessionInfo.PlayerCount - 1, runner, player);
+        }
+
+        /*
+        if (_initialized = true && playersCount >= numberOfPlayers)
         {
             CreatePlayer(0, runner, player);
             return;
@@ -32,6 +38,7 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
                 CreatePlayer(runner.SessionInfo.PlayerCount - 1, runner, player);
             }
         }
+        */
     }
     
     private LocalInputs _localInputs;
@@ -52,28 +59,21 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 
         var newPosition = GameManager.Instance.spawnTransforms[spawnPointIndex].position;
         var newRotation = GameManager.Instance.spawnTransforms[spawnPointIndex].rotation;
+
+        var p = runner.Spawn(_playerPrefab, newPosition, newRotation, player);        
+
         var newTowerPosition = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].position;
         var newTowerRotation = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].rotation;
 
-        var cl = runner.Spawn(_playerPrefab, newPosition, newRotation, player);        
+        var t = runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
 
-        var tower = runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation, player);
-
-        if(tower.TryGetComponent(out Tower core) && cl.TryGetComponent(out Player player2))
+        if(t.TryGetComponent(out Tower tower) && p.TryGetComponent(out Player pl))
         {
-            if (core != null)
+            if (tower != null)
             {
-                core.SetPlayer(player2);
+                tower.SetPlayer(pl);
             }
-        }
-
-        if(cl.TryGetComponent(out torreta core2) && cl.TryGetComponent(out Player player3))
-        {
-            if (core2 != null)
-            {
-                core.SetPlayer(player3);
-            }
-        }        
+        }    
     }
     
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
