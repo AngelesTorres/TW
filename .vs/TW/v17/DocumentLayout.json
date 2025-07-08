@@ -1,46 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\",
+  "WorkspaceRootPath": "Z:\\Tareas de Mariel\\Programacion\\GitHub_Projects\\TW\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\player\\weapons\\torreta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player\\weapons\\torreta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Documents\\GitHub\\TW\\assets\\script\\tower\\tower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\tower\\tower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\connection\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\connection\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\player\\movility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|z:\\tareas de mariel\\programacion\\github_projects\\tw\\assets\\script\\player\\movility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player\\movility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Documents\\GitHub\\TW\\assets\\script\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\player\\weapons\\bombaspawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player\\weapons\\bombaspawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\connection\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\connection\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\player\\weapons\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player\\weapons\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\player\\weapons\\bombimg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player\\weapons\\bombimg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|c:\\users\\alumno\\documents\\github\\tw\\assets\\script\\connection\\networkrunnerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBF1F3F6-3087-E5D2-73DC-98E1601F106F}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\connection\\networkrunnerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,136 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Connection\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Connection\\GameManager.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Connection\\GameManager.cs",
-              "RelativeToolTip": "Assets\\Script\\Connection\\GameManager.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwCkAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T18:39:26.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Movility.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Movility.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Player\\Movility.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Movility.cs",
-              "RelativeToolTip": "Assets\\Script\\Player\\Movility.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCIAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T18:34:29.456Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "torreta.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Weapons\\torreta.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Player\\Weapons\\torreta.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Weapons\\torreta.cs",
-              "RelativeToolTip": "Assets\\Script\\Player\\Weapons\\torreta.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAADwvzQAAAAOAAAAAAAAAA==",
+              "Title": "Movility.cs",
+              "DocumentMoniker": "Z:\\Tareas de Mariel\\Programacion\\GitHub_Projects\\TW\\Assets\\Script\\Player\\Movility.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Player\\Movility.cs",
+              "ToolTip": "Z:\\Tareas de Mariel\\Programacion\\GitHub_Projects\\TW\\Assets\\Script\\Player\\Movility.cs",
+              "RelativeToolTip": "Assets\\Script\\Player\\Movility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T18:13:15.369Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Bombimg.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Weapons\\Bombimg.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Player\\Weapons\\Bombimg.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Weapons\\Bombimg.cs",
-              "RelativeToolTip": "Assets\\Script\\Player\\Weapons\\Bombimg.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T17:33:01.139Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "bombaspawn.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Weapons\\bombaspawn.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Player\\Weapons\\bombaspawn.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Weapons\\bombaspawn.cs",
-              "RelativeToolTip": "Assets\\Script\\Player\\Weapons\\bombaspawn.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T17:32:53.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Bullet.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Weapons\\Bullet.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Player\\Weapons\\Bullet.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Weapons\\Bullet.cs",
-              "RelativeToolTip": "Assets\\Script\\Player\\Weapons\\Bullet.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T17:21:32.261Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Spawner.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Connection\\Spawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Connection\\Spawner.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Connection\\Spawner.cs",
-              "RelativeToolTip": "Assets\\Script\\Connection\\Spawner.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCAAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T17:15:03.595Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "NetworkRunnerHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Connection\\NetworkRunnerHandler.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Connection\\NetworkRunnerHandler.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Connection\\NetworkRunnerHandler.cs",
-              "RelativeToolTip": "Assets\\Script\\Connection\\NetworkRunnerHandler.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAgwFwAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T17:18:06.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Player\\Player.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Player\\Player.cs",
-              "RelativeToolTip": "Assets\\Script\\Player\\Player.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T17:24:08.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Tower.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Tower\\Tower.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Tower\\Tower.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Documents\\GitHub\\TW\\Assets\\Script\\Tower\\Tower.cs",
-              "RelativeToolTip": "Assets\\Script\\Tower\\Tower.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T17:01:53.74Z",
+              "WhenOpened": "2025-07-07T05:55:58.19Z",
               "EditorCaption": ""
             }
           ]

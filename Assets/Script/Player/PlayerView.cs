@@ -39,8 +39,8 @@ public class PlayerView : NetworkBehaviour
         _shootParticle.Play();
     }
 
-    private void MoveAnimation(float xAxis)
+    private void MoveAnimation(float zAxis)
     {
-        _networkMecanimAnimator.Animator.SetFloat("xAxis", Mathf.Abs(xAxis));
+        _networkMecanimAnimator.Animator.SetFloat("zAxis", Mathf.Abs(zAxis));
     }    
 }

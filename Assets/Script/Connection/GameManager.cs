@@ -36,10 +36,6 @@ public class GameManager : NetworkBehaviour
     {
         _players.Remove(player);
     }
-    /*
-    
-        RemoveFromList(player);
-    */
 
     [Rpc]
     public void RPC_Defeat(PlayerRef player)

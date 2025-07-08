@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 373069246145337109}
   - component: {fileID: 1135421866554985638}
   - component: {fileID: 65249062786911535}
-  - component: {fileID: 458402924364075830}
   m_Layer: 0
   m_Name: murorompible
   m_TagString: Untagged
@@ -64,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8603992496552894461, guid: 9717645fa24d08a46b86586726f3652b, type: 3}
+  - {fileID: 2100000, guid: 0cd552085fac23f4ab5659cf13cb9d95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,22 +118,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a695c990191e248acbf4ceb1588fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &458402924364075830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666092093232418222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 3944731830
-  ObjectInterest: 1
-  Flags: 1
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 65249062786911535}
-  ForceRemoteRenderTimeframe: 0

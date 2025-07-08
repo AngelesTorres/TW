@@ -16,7 +16,7 @@ public class Tower : NetworkBehaviour
     {
         _currentLife = _maxLife;
 
-        if (Object.HasInputAuthority)
+        if (!HasStateAuthority)
             return;
 
         recibe = false;

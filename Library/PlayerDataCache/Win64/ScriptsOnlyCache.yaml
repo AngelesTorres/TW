@@ -12,7 +12,6 @@ ScriptsOnlyBuild:
     - Rotation
     - Tower
     - bomba
-    - murorompible
     - torreta
     Assembly-CSharp.dll:
     - FollowTarget
@@ -54,6 +53,7 @@ ScriptsOnlyBuild:
     - Fusion.EnableOnSingleRunner
     - Fusion.FusionBootstrap
     - Fusion.FusionBootstrapDebugGUI
+    - Fusion.RunnerEnableVisibility
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -71,8 +71,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -279,6 +281,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5646}
     - Class: 114
+      Script: {instanceID: 5726}
+    - Class: 114
       Script: {instanceID: 5758}
     - Class: 114
       Script: {instanceID: 5764}
@@ -420,6 +424,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5646}
     - Class: 114
+      Script: {instanceID: 5726}
+    - Class: 114
       Script: {instanceID: 5756}
     - Class: 114
       Script: {instanceID: 5758}
@@ -451,8 +457,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 6178}
     - Class: 114
       Script: {instanceID: 6212}
-    - Class: 114
-      Script: {instanceID: 6578}
     - Class: 114
       Script: {instanceID: 6584}
     - Class: 114

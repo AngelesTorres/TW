@@ -64,7 +64,8 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
         {
                 GameMode = gameMode,
                 Scene = SceneRef.FromIndex(sceneIndex),
-                SessionName = sessionName            
+                SessionName = sessionName,
+                PlayerCount = 2
         });
 
         if (!result.Ok)

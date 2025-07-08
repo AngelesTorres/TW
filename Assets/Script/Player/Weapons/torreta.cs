@@ -40,8 +40,7 @@ public class torreta : NetworkBehaviour
             input = 1f;
        
         transform.Rotate(Vector3.up * input * rotationSpeed * Time.deltaTime);
-    }
-    
+    }    
 
     public void Shoot()
     {
@@ -49,20 +48,12 @@ public class torreta : NetworkBehaviour
         //_player.Ultimated();
         if (wait == true)
         {
-            //SpawnShoot(_player);
+            SpawnShoot();
         }
     }
 
-
-    void SpawnShoot(PlayerRef player)
+    void SpawnShoot()
     {
-        //Runner.LagCompensation.Raycast(transform.position, transform.forward, 100f, Object.InputAuthority, out var hitInfo);
-
-        //if (hitInfo.Hitbox == null) return;
-
-        //if (!hitInfo.Hitbox.transform.root.TryGetComponent(out LifeManager player)) return;
-
-        //player.TakeDamage(25);
         wait = false;
 
         StartCoroutine(Wait());
@@ -71,7 +62,7 @@ public class torreta : NetworkBehaviour
 
         var p = _player;
         
-        var bullet = Runner.Spawn(_bulletPrefab, _shootPlace.position, _shootPlace.rotation, player);
+        var bullet = Runner.Spawn(_bulletPrefab, _shootPlace.position, _shootPlace.rotation);
 
         if (bullet.TryGetComponent(out Bullet b) && p.TryGetComponent(out Player player2))
         {

@@ -10,35 +10,35 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private NetworkPrefabRef _playerPrefab;
     [SerializeField] private NetworkPrefabRef towerPrefab;
 
-    private int numberOfPlayers = 2;
-
-    private bool _initialized = true;
-
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         var playersCount = runner.SessionInfo.PlayerCount;
 
         if (runner.IsServer)
         {            
-            CreatePlayer(runner.SessionInfo.PlayerCount - 1, runner, player);
+            CreatePlayer(playersCount - 1, runner, player);
         }
+    }
 
-        /*
-        if (_initialized = true && playersCount >= numberOfPlayers)
+    void CreatePlayer(int spawnPointIndex, NetworkRunner runner, PlayerRef player)
+    {
+        var newPosition = GameManager.Instance.spawnTransforms[spawnPointIndex].position;
+        var newRotation = GameManager.Instance.spawnTransforms[spawnPointIndex].rotation;
+
+        var p = runner.Spawn(_playerPrefab, newPosition, newRotation, player);   
+        
+        var newTowerPosition = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].position;
+        var newTowerRotation = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].rotation;
+
+        var t = runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation, player);
+
+        if(t.TryGetComponent(out Tower tower) && p.TryGetComponent(out Player pl))
         {
-            CreatePlayer(0, runner, player);
-            return;
-        }
-        if (player == runner.LocalPlayer)
-        {        
-            if(playersCount <  numberOfPlayers)
-                _initialized = true;
-            else
+            if (tower != null)
             {
-                CreatePlayer(runner.SessionInfo.PlayerCount - 1, runner, player);
+                tower.SetPlayer(pl);
             }
-        }
-        */
+        }    
     }
     
     private LocalInputs _localInputs;
@@ -51,29 +51,6 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
         _localInputs ??= Player.Local.LocalInputs;
 
         input.Set(_localInputs.GetLocalInputs());
-    }
-    
-    void CreatePlayer(int spawnPointIndex, NetworkRunner runner, PlayerRef player)
-    {
-        _initialized = false;
-
-        var newPosition = GameManager.Instance.spawnTransforms[spawnPointIndex].position;
-        var newRotation = GameManager.Instance.spawnTransforms[spawnPointIndex].rotation;
-
-        var p = runner.Spawn(_playerPrefab, newPosition, newRotation, player);        
-
-        var newTowerPosition = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].position;
-        var newTowerRotation = GameManager.Instance.towerSpawnTransforms[spawnPointIndex].rotation;
-
-        var t = runner.Spawn(towerPrefab, newTowerPosition, newTowerRotation);
-
-        if(t.TryGetComponent(out Tower tower) && p.TryGetComponent(out Player pl))
-        {
-            if (tower != null)
-            {
-                tower.SetPlayer(pl);
-            }
-        }    
     }
     
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)

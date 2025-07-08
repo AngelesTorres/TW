@@ -28,7 +28,6 @@ public class Player : NetworkBehaviour
    
     public override void Spawned()
     {
-        LocalInputs = GetComponent<LocalInputs>();
 
         _rb = GetComponent<NetworkRigidbody3D>();
         _bombing = GetComponent<Bombimg>();
@@ -38,6 +37,7 @@ public class Player : NetworkBehaviour
 
         _torreta.SetPlayer(this);
 
+        LocalInputs = GetComponent<LocalInputs>();
         if (Object.HasInputAuthority)
         {
             Local = this;
